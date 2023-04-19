@@ -20,7 +20,7 @@ The purpose of this project is to develop hardware and software for small wirele
 
 ### Communication
 
-We are looking for a communication method that prioritizes long range and low power over bandwidth, since the bandwidth needs of these sensors are small and they need to run on battery power.
+We are looking for a communication method that prioritizes long range and low power over bandwidth, since the bandwidth needs of these sensors are small and they need to run on battery power. Here are some examples of communication methods currently used.
 
 #### WiFi
 
@@ -35,6 +35,31 @@ The initial thought was to use Bluetooth Low Energy (BLE) to replace WiFi as the
 
 #### LoRa
 
-LoRa is short for "Long Range" and appears to be an ideal communication mode to use for these sensors. It is low bandwidth, with an adjustable data rate from 0.3 to 50 kbps. The lower data rates provide the longest range. The maximum range will vary based on a lot of factors but is typically several kilometers at least, easily enough to cover most properties.
+LoRa is short for "Long Range" and appears to be an ideal communication mode to use for these sensors. It uses Chirp Spread Spectrum modulation which improves immunity to RF noise and resistance to multipath fading. It is low bandwidth, with an adjustable data rate from 0.3 to 50 kbps. The lower data rates provide the longest range. The maximum range will vary based on a lot of factors but is typically several kilometers at least, easily enough to cover most properties. One downside is that the lower frequencies used (902-928 MHz in the U.S.) requires a larger antenna than devices operating at 2.4 GHz.
 
-Looking at the SX1262 chip from Semtech as the LoRa transceiver. There is also a module with this chip along with a processor core called the ASR6501, however it does not seem to be readily available.
+#### 433 MHz
+
+A number of consumer devices use this frequency (typically 433.92 MHz) to send low bandwidth data from battery powered devices. Examples include home weather stations, wireless doorbells, and garage door openers. They typically use simple Amplitude Shift Keying modulation and have a range of 90 meters or less. Communication is one-way from the transmitter to the receiver.
+
+#### Zigbee
+
+Zigbee is based on IEEE 802.15.4 which is a standard for Wireless Personal Area Networks (WPANs). It is intended for low power, low data rate, and close proximity (short range). Range is listed as 10-100 meters. Zigbee does support a mesh network, so devices can retransmit to other devices to extend the range. It can operate in the 2.4 GHz band but also in the 915 MHz band. It has been used for home automation sensors, thermostats, switches, lights, outlets, door and window sensors, and door locks. Philips Hue lights use Zigbee, for example. Because of its mesh network design the communications will improve as more devices are added.
+
+#### Z-Wave Plus
+
+Z-Wave is another communication method intended for home automation devices. It operates in the 915 MHz band to avoid interference with WiFi. It is a mesh network like Zigbee. This is a proprietary standard managed by a group of companies called the Z-Wave Alliance, and requires a license from Silicon Laboratories to develop.
+
+#### Thread and Matter
+
+Matter is a new home automation standard intended to allow interoperability between a wide range of home automation devices. It addresses the proliferation of proprietary hubs needed to connect devices today. It is intended to assure consumers that if they buy a device with the Matter emlem on the box, it will just work in their home automation system. It remains to be seen if Matter will become the one standard to rule them all, or just another addition to the list of home automation standards.
+
+The Matter standard allows for devices that communicate via WiFi, Bluetooth, and a new protocol called Thread. Thread is based on Zigbee at the hardware level, but changes the software so that the device can appear directly on the internet with an IPv6 address. This involves quite a bit of protocol and security overhead as you would expect, but makes routing of messages between the Thread network and the Internet easy and straightforward. 
+
+The Thread network is a mesh network with some devices designated as routers and some designated as end devices. Since it is based on Zigbee hardware the range is the same, 10-100 meters.
+
+### Hardware Design
+
+Based on the above list of communication methods, LoRa is selected as the choice for this design, assuming that a reasonably priced hardware solution can be implemented.
+
+Currently looking at the SX1262 chip from Semtech as the LoRa transceiver. There is also a module with this chip along with a processor core called the ASR6501, however it does not seem to be readily available.
+
