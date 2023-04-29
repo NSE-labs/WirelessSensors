@@ -1,0 +1,21 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 81d1aadf-85d2-4fd0-839e-05ac66879581)
+
+  (paper "USLetter")
+
+  (title_block
+    (title "LoRa Development Board")
+    (date "2023-04-29")
+    (rev "1")
+    (company "NSE Labs")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
