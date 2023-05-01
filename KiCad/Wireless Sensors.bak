@@ -1,5 +1,5 @@
 (kicad_symbol_lib (version 20220914) (generator kicad_symbol_editor)
-  (symbol "SX1262" (pin_names (offset 0.002)) (in_bom yes) (on_board yes)
+  (symbol "SX1262" (pin_names (offset 0.5)) (in_bom yes) (on_board yes)
     (property "Reference" "U" (at -11.43 25.4 0)
       (effects (font (size 1.27 1.27)))
     )
