@@ -864,12 +864,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="C4" library="NSE LABS" deviceset="C_0603" device="" value="3pF"/>
 <part name="C5" library="NSE LABS" deviceset="C_0402" device="" value="5.6pF"/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="L1" library="NSE LABS" deviceset="L_0603" device=""/>
+<part name="L1" library="NSE LABS" deviceset="L_0603" device="" value="47nH"/>
 <part name="C1" library="NSE LABS" deviceset="C_0603" device="" value="47nF"/>
 <part name="C2" library="NSE LABS" deviceset="C_0603" device="" value="47pF"/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="Y1" library="NSE LABS" deviceset="XTAL_SMD2016-4P" device=""/>
+<part name="Y1" library="NSE LABS" deviceset="XTAL_SMD2016-4P" device="" value="32MHz"/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C14" library="NSE LABS" deviceset="C_0402" device="" value="1uF"/>
 <part name="C15" library="NSE LABS" deviceset="C_0402" device="" value="100nF"/>

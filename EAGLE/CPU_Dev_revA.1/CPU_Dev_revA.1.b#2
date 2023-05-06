@@ -3,7 +3,7 @@
 <eagle version="9.1.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -175,6 +175,8 @@
 <wire x1="50.8" y1="0" x2="50.8" y2="38.1" width="0" layer="20"/>
 <wire x1="50.8" y1="38.1" x2="0" y2="38.1" width="0" layer="20"/>
 <wire x1="0" y1="38.1" x2="0" y2="0" width="0" layer="20"/>
+<text x="2.921" y="30.099" size="1.016" layer="21" font="vector" align="center">RUN</text>
+<text x="3.302" y="20.066" size="1.016" layer="21" font="vector" align="center">LOAD</text>
 </plain>
 <libraries>
 <library name="NSE LABS">
@@ -662,7 +664,7 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="NSE LABS" package="LQFP-48_7X7" value="STM32L151C8T6" x="25.4" y="19.05">
+<element name="U1" library="NSE LABS" package="LQFP-48_7X7" value="STM32L151C8T6" x="25.4" y="19.05" smashed="yes">
 <attribute name="ARROW_PART_NUMBER" value="STM32L151C8T6" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
 <attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stm32l151c8t6/stmicroelectronics?region=nac" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
 <attribute name="DESCRIPTION" value="MCU 32-bit ARM Cortex M3 RISC 64KB Flash 2.5V/3.3V 48-Pin LQFP Tray" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
@@ -671,38 +673,118 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="STM32L151C8T6" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PART_NUMBER" value="511-STM32L151C8T6" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32L151C8T6?qs=G0rgft3hAxIeaXnyBBjaCA%3D%3D" x="25.4" y="19.05" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="25.4" y="25.4" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="25.4" y="12.7" size="1.27" layer="27" align="center"/>
 </element>
-<element name="J1" library="NSE LABS" package="10118192-0002LF" package3d_urn="urn:adsk.eagle:package:970926/2" value="MICRO_USB_SMD" x="50.165" y="16.51" rot="R90">
+<element name="J1" library="NSE LABS" package="10118192-0002LF" package3d_urn="urn:adsk.eagle:package:970926/2" value="MICRO_USB_SMD" x="50.165" y="16.51" smashed="yes" rot="R90">
 <attribute name="MFPN" value="" x="50.165" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="44.368" y="17.212" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
 <attribute name="PARTNO" value="" x="50.165" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="47.565" y="21.71" size="0.8128" layer="27" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="U2" library="NSE LABS" package="SOT223" value="" x="35.56" y="8.89" rot="R90"/>
-<element name="Y1" library="NSE LABS" package="SMD3225-4P" value="" x="17.78" y="20.32" rot="R90"/>
-<element name="J4" library="NSE LABS" package="HEADER_16PIN" value="HEADER_16PIN" x="21.59" y="2.54"/>
-<element name="J5" library="NSE LABS" package="HEADER_16PIN" value="HEADER_16PIN" x="21.59" y="35.56" rot="R180"/>
-<element name="J2" library="NSE LABS" package="HEADER_5PIN" value="HEADER_5PIN" x="48.26" y="30.48" rot="R90"/>
-<element name="J3" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="48.26" y="5.08" rot="R90"/>
-<element name="J6" library="NSE LABS" package="HEADER_3PIN" value="HEADER_3PIN" x="2.54" y="25.4" rot="R90"/>
-<element name="C1" library="NSE LABS" package="0402" value="100nF" x="19.05" y="24.003" rot="R180"/>
-<element name="C2" library="NSE LABS" package="0402" value="100nF" x="29.21" y="12.7" rot="R270"/>
-<element name="C3" library="NSE LABS" package="0402" value="100nF" x="31.75" y="22.86"/>
-<element name="C4" library="NSE LABS" package="0402" value="100nF" x="21.59" y="25.4" rot="R90"/>
-<element name="C5" library="NSE LABS" package="0402" value="4.7uF" x="14.605" y="8.89" rot="R270"/>
-<element name="C6" library="NSE LABS" package="0402" value="1uF" x="16.51" y="12.7" rot="R270"/>
-<element name="C7" library="NSE LABS" package="0402" value="10nF" x="12.7" y="12.7" rot="R270"/>
-<element name="L1" library="NSE LABS" package="0603" value="68nH" x="14.605" y="12.7" rot="R90"/>
-<element name="C8" library="NSE LABS" package="0402" value="10pF" x="16.51" y="22.86"/>
-<element name="C9" library="NSE LABS" package="0402" value="10pF" x="16.51" y="17.78" rot="R180"/>
-<element name="C10" library="NSE LABS" package="0402" value="100nF" x="11.43" y="12.7" rot="R270"/>
-<element name="C11" library="NSE LABS" package="1206" value="22uF" x="41.91" y="10.16" rot="R90"/>
-<element name="C12" library="NSE LABS" package="0402" value="1uF" x="38.1" y="15.24"/>
-<element name="R1" library="NSE LABS" package="0402" value="10K" x="24.638" y="27.686" rot="R270"/>
-<element name="R2" library="NSE LABS" package="0402" value="1.5K" x="6.35" y="25.4" rot="R180"/>
-<element name="R3" library="NSE LABS" package="0402" value="330R" x="41.91" y="6.35" rot="R90"/>
-<element name="R4" library="NSE LABS" package="0402" value="1.5K" x="44.45" y="6.35" rot="R90"/>
-<element name="D1" library="NSE LABS" package="LED_0603" value="BLUE" x="10.16" y="25.4" rot="R180"/>
-<element name="D2" library="NSE LABS" package="LED_0603" value="GREEN" x="44.45" y="10.16" rot="R270"/>
-<element name="SW1" library="NSE LABS" package="PUSHBUTTON_SMD" value="RESET" x="6.35" y="12.7"/>
+<element name="U2" library="NSE LABS" package="SOT223" value="" x="35.56" y="8.89" smashed="yes" rot="R90">
+<attribute name="NAME" x="30.4292" y="8.89" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="40.6908" y="8.89" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="Y1" library="NSE LABS" package="SMD3225-4P" value="" x="17.78" y="20.32" smashed="yes" rot="R90">
+<attribute name="NAME" x="15.24" y="19.92" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="20.32" y="19.92" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="J4" library="NSE LABS" package="HEADER_16PIN" value="HEADER_16PIN" x="21.59" y="2.54" smashed="yes">
+<attribute name="NAME" x="21.59" y="-1.27" size="1.016" layer="21" font="vector" align="center"/>
+</element>
+<element name="J5" library="NSE LABS" package="HEADER_16PIN" value="HEADER_16PIN" x="21.59" y="35.56" smashed="yes" rot="R180">
+<attribute name="NAME" x="21.59" y="39.37" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
+</element>
+<element name="J2" library="NSE LABS" package="HEADER_5PIN" value="HEADER_5PIN" x="48.26" y="30.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="52.07" y="30.48" size="1.016" layer="21" font="vector" rot="R90" align="center"/>
+</element>
+<element name="J3" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="48.26" y="6.35" smashed="yes" rot="R90">
+<attribute name="NAME" x="52.07" y="6.35" size="1.016" layer="21" font="vector" rot="R90" align="center"/>
+</element>
+<element name="J6" library="NSE LABS" package="HEADER_3PIN" value="HEADER_3PIN" x="2.54" y="25.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="4.953" y="28.067" size="1.016" layer="21" font="vector" rot="R90" align="center"/>
+</element>
+<element name="C1" library="NSE LABS" package="0402" value="100nF" x="19.05" y="24.003" smashed="yes" rot="R180">
+<attribute name="NAME" x="18.542" y="25.781" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="VALUE" x="19.05" y="25.273" size="1.27" layer="27" rot="R180" align="center"/>
+</element>
+<element name="C2" library="NSE LABS" package="0402" value="100nF" x="29.21" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="30.48" y="12.7" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="27.94" y="12.7" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="C3" library="NSE LABS" package="0402" value="100nF" x="31.75" y="22.86" smashed="yes">
+<attribute name="NAME" x="31.75" y="24.13" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="31.75" y="21.59" size="1.27" layer="27" align="center"/>
+</element>
+<element name="C4" library="NSE LABS" package="0402" value="100nF" x="21.59" y="25.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="20.32" y="25.4" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="22.86" y="25.4" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="C5" library="NSE LABS" package="0402" value="4.7uF" x="14.605" y="8.89" smashed="yes" rot="R270">
+<attribute name="NAME" x="14.478" y="6.604" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="13.335" y="8.89" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="C6" library="NSE LABS" package="0402" value="1uF" x="16.51" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="16.891" y="10.795" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="15.24" y="12.7" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="C7" library="NSE LABS" package="0402" value="10nF" x="12.7" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="12.954" y="10.033" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="11.43" y="12.7" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="L1" library="NSE LABS" package="0603" value="68nH" x="14.605" y="12.7" smashed="yes" rot="R90">
+<attribute name="NAME" x="14.224" y="15.494" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="16.51" y="12.7" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="C8" library="NSE LABS" package="0402" value="10pF" x="16.51" y="22.86" smashed="yes">
+<attribute name="NAME" x="16.51" y="24.13" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="16.51" y="21.59" size="1.27" layer="27" align="center"/>
+</element>
+<element name="C9" library="NSE LABS" package="0402" value="10pF" x="16.51" y="17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="16.51" y="16.51" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="VALUE" x="16.51" y="19.05" size="1.27" layer="27" rot="R180" align="center"/>
+</element>
+<element name="C10" library="NSE LABS" package="0402" value="100nF" x="11.43" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="11.557" y="9.652" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="10.16" y="12.7" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="C11" library="NSE LABS" package="1206" value="22uF" x="41.91" y="10.16" smashed="yes" rot="R90">
+<attribute name="NAME" x="40.132" y="10.16" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="43.688" y="10.16" size="0.889" layer="27" rot="R270" align="center"/>
+</element>
+<element name="C12" library="NSE LABS" package="0402" value="1uF" x="38.1" y="15.24" smashed="yes">
+<attribute name="NAME" x="38.1" y="16.51" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="38.1" y="13.97" size="1.27" layer="27" align="center"/>
+</element>
+<element name="R1" library="NSE LABS" package="0402" value="10K" x="24.638" y="27.686" smashed="yes" rot="R270">
+<attribute name="NAME" x="25.908" y="27.686" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="23.368" y="27.686" size="1.27" layer="27" rot="R270" align="center"/>
+</element>
+<element name="R2" library="NSE LABS" package="0402" value="1.5K" x="6.35" y="25.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.35" y="23.749" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="VALUE" x="6.35" y="26.67" size="1.27" layer="27" rot="R180" align="center"/>
+</element>
+<element name="R3" library="NSE LABS" package="0402" value="330R" x="41.91" y="6.35" smashed="yes" rot="R90">
+<attribute name="NAME" x="40.64" y="6.35" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="43.18" y="6.35" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="R4" library="NSE LABS" package="0402" value="1.5K" x="44.45" y="6.35" smashed="yes" rot="R90">
+<attribute name="NAME" x="43.18" y="6.35" size="1.016" layer="25" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="45.72" y="6.35" size="1.27" layer="27" rot="R90" align="center"/>
+</element>
+<element name="D1" library="NSE LABS" package="LED_0603" value="BLUE" x="10.16" y="25.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="10.16" y="24.003" size="1.016" layer="25" font="vector" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="10.16" y="26.035" size="0.6096" layer="27" ratio="20" rot="R180" align="top-center"/>
+</element>
+<element name="D2" library="NSE LABS" package="LED_0603" value="GREEN" x="44.45" y="10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="45.085" y="10.16" size="1.016" layer="25" font="vector" rot="R270" align="center"/>
+<attribute name="VALUE" x="43.815" y="10.16" size="0.6096" layer="27" ratio="20" rot="R270" align="top-center"/>
+</element>
+<element name="SW1" library="NSE LABS" package="PUSHBUTTON_SMD" value="RESET" x="6.35" y="12.7" smashed="yes">
+<attribute name="NAME" x="6.35" y="17.78" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="6.35" y="7.62" size="1.27" layer="27" align="center"/>
+</element>
 </elements>
 <signals>
 <signal name="N$1">
@@ -755,10 +837,8 @@ design rules under a new name.</description>
 <vertex x="50.8" y="38.1"/>
 <vertex x="0" y="38.1"/>
 </polygon>
-<wire x1="29.638" y1="21.3" x2="32.131" y2="21.3" width="0.254" layer="1"/>
-<wire x1="32.131" y1="21.3" x2="32.131" y2="21.971" width="0.254" layer="1"/>
-<wire x1="32.131" y1="21.971" x2="32.3" y2="21.971" width="0.254" layer="1"/>
-<wire x1="32.3" y1="21.971" x2="32.3" y2="22.86" width="0.254" layer="1"/>
+<wire x1="29.638" y1="21.3" x2="32.3" y2="21.3" width="0.254" layer="1"/>
+<wire x1="32.3" y1="21.3" x2="32.3" y2="22.86" width="0.254" layer="1"/>
 <wire x1="21.162" y1="18.3" x2="22.8374" y2="18.3" width="0.254" layer="1"/>
 <wire x1="22.8374" y1="18.3" x2="22.8374" y2="18.288" width="0.254" layer="1"/>
 <via x="22.8374" y="18.288" extent="1-16" drill="0.35"/>
@@ -793,15 +873,17 @@ design rules under a new name.</description>
 <contactref element="J3" pad="P$2"/>
 <contactref element="D2" pad="A"/>
 <contactref element="R3" pad="2"/>
-<wire x1="32.461" y1="8.89" x2="38.6588" y2="8.89" width="0.254" layer="1"/>
-<wire x1="44.45" y1="11.037" x2="44.589" y2="11.037" width="0.254" layer="1"/>
-<wire x1="48.26" y1="7.366" x2="48.26" y2="6.35" width="0.254" layer="1"/>
-<wire x1="44.589" y1="11.037" x2="48.26" y2="7.366" width="0.254" layer="1"/>
+<wire x1="36.195" y1="8.89" x2="38.6588" y2="8.89" width="1.016" layer="1"/>
 <wire x1="38.6588" y1="8.89" x2="38.8888" y2="8.66" width="0.254" layer="1"/>
 <wire x1="38.8888" y1="8.66" x2="41.91" y2="8.66" width="0.254" layer="1"/>
 <wire x1="41.91" y1="8.66" x2="41.91" y2="6.9" width="0.254" layer="1"/>
-<wire x1="41.91" y1="8.66" x2="44.287" y2="11.037" width="0.254" layer="1"/>
-<wire x1="44.287" y1="11.037" x2="44.45" y2="11.037" width="0.254" layer="1"/>
+<wire x1="32.461" y1="8.89" x2="36.195" y2="8.89" width="2.032" layer="1"/>
+<wire x1="43.815" y1="11.037" x2="41.91" y2="9.132" width="0.254" layer="1"/>
+<wire x1="44.45" y1="11.037" x2="45.097" y2="11.037" width="0.254" layer="1"/>
+<wire x1="45.097" y1="11.037" x2="48.26" y2="7.874" width="0.254" layer="1"/>
+<wire x1="44.45" y1="11.037" x2="43.815" y2="11.037" width="0.254" layer="1"/>
+<wire x1="41.91" y1="9.132" x2="41.91" y2="8.66" width="0.254" layer="1"/>
+<wire x1="48.26" y1="7.874" x2="48.26" y2="7.62" width="0.254" layer="1"/>
 </signal>
 <signal name="N$4">
 <contactref element="D2" pad="C"/>
@@ -833,9 +915,7 @@ design rules under a new name.</description>
 <wire x1="29.21" y1="13.752" x2="29.21" y2="13.25" width="0.254" layer="1"/>
 <wire x1="14.605" y1="11.85" x2="14.605" y2="10.075" width="0.254" layer="1"/>
 <wire x1="14.605" y1="10.075" x2="14.605" y2="9.44" width="0.254" layer="1"/>
-<wire x1="48.26" y1="3.81" x2="45.847" y2="6.223" width="0.254" layer="16"/>
 <wire x1="45.847" y1="22.987" x2="48.26" y2="25.4" width="0.254" layer="16"/>
-<wire x1="45.847" y1="6.223" x2="45.847" y2="22.987" width="0.254" layer="16"/>
 <wire x1="2.54" y1="2.54" x2="9.44" y2="9.44" width="0.254" layer="1"/>
 <wire x1="9.44" y1="9.44" x2="14.605" y2="9.44" width="0.254" layer="1"/>
 <wire x1="28.15" y1="14.812" x2="28.15" y2="14.812" width="0.254" layer="1"/>
@@ -858,6 +938,8 @@ design rules under a new name.</description>
 <wire x1="19.6" y1="24.003" x2="19.6" y2="24.85" width="0.254" layer="1"/>
 <wire x1="19.6" y1="24.85" x2="17.399" y2="27.051" width="0.254" layer="1"/>
 <wire x1="21.59" y1="24.85" x2="19.6" y2="24.85" width="0.254" layer="1"/>
+<wire x1="48.26" y1="5.08" x2="45.847" y2="7.493" width="0.254" layer="16"/>
+<wire x1="45.847" y1="7.493" x2="45.847" y2="22.987" width="0.254" layer="16"/>
 </signal>
 <signal name="VDDA">
 <contactref element="L1" pad="2"/>
@@ -947,9 +1029,9 @@ design rules under a new name.</description>
 <wire x1="48.26" y1="27.94" x2="49.657" y2="26.543" width="0.254" layer="1"/>
 <wire x1="49.657" y1="26.543" x2="49.657" y2="24.384" width="0.254" layer="1"/>
 <wire x1="49.657" y1="24.384" x2="48.641" y2="23.368" width="0.254" layer="1"/>
-<wire x1="48.641" y1="23.368" x2="43.18" y2="23.368" width="0.254" layer="1"/>
-<wire x1="43.18" y1="23.368" x2="40.612" y2="20.8" width="0.254" layer="1"/>
-<wire x1="40.612" y1="20.8" x2="29.638" y2="20.8" width="0.254" layer="1"/>
+<wire x1="48.641" y1="23.368" x2="38.1" y2="23.368" width="0.254" layer="1"/>
+<wire x1="38.1" y1="23.368" x2="35.532" y2="20.8" width="0.254" layer="1"/>
+<wire x1="35.532" y1="20.8" x2="29.638" y2="20.8" width="0.254" layer="1"/>
 </signal>
 <signal name="SWCLK">
 <contactref element="J2" pad="P$3"/>
