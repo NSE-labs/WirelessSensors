@@ -1,0 +1,23 @@
+Microprocessor Board,,,,,,,
+Part Designation,Description,Manufacturer,MFR Part Number,JCLPCB Part Number,Package,,Price
+"C1, C2, C3, C4, C10",100 nF Multilayer Ceramic Capacitor,Samsung,CL05B104KB54PNC,C307331,0402,Basic Part,$0.0068
+C5,4.7 uF Multilayer Ceramic Capacitor,Samsung,CL05A475MP5NRNC,C23733,0402,Basic Part,$0.0071
+"C6, C12",1 uF Multilayer Ceramic Capacitor,Samsung,CL05A105KA5NQNC,C52923,0402,Basic Part,$0.0039
+C7,10 nF Multilayer Ceramic Capacitor,Samsung,CL05B103KB5NNNC,C15195,0402,Basic Part,$0.0012
+"C8, C9",10 pF Multilayer Ceramic Capacitor,Samsung,CL05C100JB5NNNC,C32949,0402,Basic Part,$0.0055
+C11,22 uF Multilayer Ceramic Capacitor,Samsung,CL31A226KPHNNNE,C5672,1206,Basic Part,$0.0247
+D1,Blue LED,Everlight Elec,19-217/BHC-ZL1M2RY/3T,C72041,0603,Basic Part,$0.0179
+D2,Green LED,Everlight Elec,19-217/GHC-YR1S2/3T,C72043,0603,Basic Part,$0.0264
+J1,Micro USB Connector,Amphenol ICC,10118192-0002LF,C2972784,SMD,Extended Part,$0.2800
+J2,Provide holes for 0.1 inch spacing pins,,,,,,
+J3,Provide holes for 0.1 inch spacing pins,,,,,,
+"J4, J5",Provide holes for 0.1 inch spacing pins,,,,,,
+J6,Provide holes for 0.1 inch spacing pins,,,,,,
+L1,68nH Inductor,Sunlord,SDCL1608C68NJTDF,C13415,0603,Basic Part,$0.0079
+R1,10K Resistor,Uniroyal Elec,0402WGF1002TCE,C25744,0402,Basic Part,$0.0006
+"R2, R4",1.5K Resistor,Uniroyal Elec,0402WGF1501TCE,C25867,0402,Basic Part,$0.0005
+R3,330 ohm Resistor,Uniroyal Elec,0402WGF3300TCE,C25104,0402,Basic Part,$0.0005
+SW1,Push Button,XKB Connectivity,TS-1187A-B-A-B,C318884 ,SMD,Basic Part,$0.0153
+U1,Microprocessor,ST Microelectronics,STM32L151C8T6,C9861,LQFP-48 (7x7),Basic Part,$3.0764
+U2,3.3V LDO Regulator,Advanced Monolithic Systems,AMS1117-3.3,C6186,SOT-223-3,Basic Part,$0.1413
+Y1,16 MHz 9pF 4-pin Crystal,Yangxing Tech,X322516MLB4SI,C13738,SMD3225-4P,Basic Part,$0.0811
