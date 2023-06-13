@@ -10,6 +10,7 @@ The two prototype boards were received in good order.
 2. Pin headers were soldered onto the top of the board for the Power jumper, the Run/Load jumper, and the 5-pin Debug port. Jumper blocks were installed in the Power jumper and in Run position of the Run/Load jumper.
 3. A debug cable was fabricated to connect an STLINK-V3MINIE in-circuit debugger to the debug port. Pins were soldered to the edge connector on the STLINK-V3MINIE to support this connection.
 ![Debug connector](Images/Debug%20connector.JPG)
+![Debug cable](Images/Debug%20cable.JPG)
 4. The STLINK-V3MINIE USB was connected to the development PC. STM32 CubeIDE (v1.12.0) was started on the PC. The micro USB cable was reconnected to J1 to supply power to the board.
 5. An atempt was made to load driver code to the board using the CubeIDE interface. CubeIDE reported that the processor was being held in reset so code could not be loaded.
 6. Brief tracing of signals revealed that the RESET button was connected in a way that held the reset line low, thus keeping the processor in reset. The offending pin was gently desoldered and lifted from the board.
