@@ -61,7 +61,7 @@ The Thread network is a mesh network with some devices designated as routers and
 
 Based on the above list of communication methods, LoRa is selected as the choice for this design.
 
-Two boards have been designed and built for initial testing and debugging. One contains an ST Microelectronics STM32L151C8T6 microcontroller. This microcontroller was chosen due to its low power consumption, ready availability of development and debugging tools, and the fact that it was in stock at JLCPCB and listed as a "basic" part there, meaning no setup charge to load the part.
+Two small prototype boards were designed and built for initial testing and debugging. One contains an ST Microelectronics STM32L151C8T6 microcontroller. This microcontroller was chosen due to its low power consumption, ready availability of development and debugging tools, and the fact that it was in stock at JLCPCB and listed as a "basic" part there, meaning no setup charge to load the part.
 
 The second board has an SX1262 LoRa transceiver and associated RF circuitry including a u.FL connector for external antenna.
 
