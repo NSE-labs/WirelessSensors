@@ -23,6 +23,7 @@ If we choose to make another revision of this board, the following changes are r
 1. The reset button should be corrected. I was able to remove it from the board and rotate it 90 degrees so it now functions. But since the pins are not symmetrical it doesn't fit properly on the pads. For the prototype I was able to bridge the difference with solder.
 2. The debug port could be changed to the standard 14-pin debug connector that comes standard on the STLINK-V3MINIE. This would remove the need for making a custom debug cable, and would also include a reset signal to allow for hardware reset of the processor from the debugger.
 3. If possible, individual pin labels on the two 16-pin headers would be handy.
+![Pin labels](Images/CPU%20Board%20labels.JPG)
 
 Overall this is already a very useful and functional board.
 
