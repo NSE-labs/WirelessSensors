@@ -19,11 +19,12 @@ The two prototype boards were received in good order.
 9. Code was writted to set up the USB port as a virtual COM port and data was successfully printed on a terminal window on the PC.
 10. Pin headers were soldered on the bottom of the board in the two 16-pin connectors on the edges of the board, to allow installation in a solderless breadboard.
 
-If we choose to make another revision of this board, the following changes are recommended.
+If we choose to make another revision of this board, the following changes should be considered.
 
 1. The reset button should be corrected. I was able to remove it from the board and rotate it 90 degrees so it now functions. But since the pins are not symmetrical it doesn't fit properly on the pads. For the prototype I was able to bridge the difference with solder.
 2. The debug port could be changed to the standard 14-pin debug connector that comes standard on the STLINK-V3MINIE. This would remove the need for making a custom debug cable, and would also include a reset signal to allow for hardware reset of the processor from the debugger.
-3. If possible, individual pin labels on the two 16-pin headers would be handy.
+3. The board is too wide to fit on a standard solderless breadboard. It can be used on a large breadboard if it straddles two lanes. If the two 16-pin headers were 0.3 inches closer together it would fit in a single lane on a standard breadboard.
+4. If possible, individual pin labels on the two 16-pin headers would be handy.
 ![Pin labels](Images/CPU%20Board%20labels.JPG)
 
 Overall this is already a very useful and functional board.
