@@ -1,0 +1,2 @@
+../MyDrivers/SX1262/Src/SX1262.c:10:19:LoRa_SPI_Init	8	static
+../MyDrivers/SX1262/Src/SX1262.c:27:9:LoRaGetStatus	24	static
