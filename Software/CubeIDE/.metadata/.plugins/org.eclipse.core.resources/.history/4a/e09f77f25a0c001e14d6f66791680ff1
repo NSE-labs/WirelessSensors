@@ -13,7 +13,7 @@ HAL_StatusTypeDef LoRa_SPI_Init(void);
 #define LORA_GET_STATUS 0xC0;
 
 /* Function definitions */
-HAL_StatusTypeDef LoRa_Init(void);
+HAL_StatusTypeDef LoRa_SPI_Init(void);
 uint8_t LoRaGetStatus(void); /* returns the status byte from the SX1262 chip */
 
 #endif

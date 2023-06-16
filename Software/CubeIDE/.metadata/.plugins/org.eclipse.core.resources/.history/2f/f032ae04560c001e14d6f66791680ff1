@@ -4,14 +4,11 @@
  * Free to use
  */
 #include <SX1262.h>
-#include "main.h"
 
 SPI_HandleTypeDef hspi;
 
-HAL_StatusTypeDef LoRa_Init(void)
+HAL_StatusTypeDef LoRa_SPI_Init(void)
 {
-  HAL_StatusTypeDef retValue;
-
   /* SPI1 parameter configuration*/
   hspi.Instance = SPI1;
   hspi.Init.Mode = SPI_MODE_MASTER;
@@ -24,14 +21,10 @@ HAL_StatusTypeDef LoRa_Init(void)
   hspi.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi.Init.CRCPolynomial = 10;
-
-  /* Initialize the SPI port */
-  retValue = HAL_SPI_Init(&hspi);
+  return HAL_SPI_Init(&hspi);
 
   /* Take SX1262 chip out of reset */
   HAL_GPIO_WritePin(LoRa_NRST_GPIO_Port, LoRa_NRST_Pin, GPIO_PIN_SET);
-
-  return(retValue);
 
 }
 
@@ -41,14 +34,9 @@ uint8_t LoRaGetStatus(void)
 	uint8_t status = 0;
 	uint8_t opcode = LORA_GET_STATUS;
 
-	if(HAL_SPI_Transmit(&hspi, &opcode, 1, 100) != HAL_OK)
+	if(HAL_SPI_TransmitReceive(&hspi, &opcode, &status, 1, 100) != HAL_OK)
 	{
 		return 0xFF;
-	}
-
-	if(HAL_SPI_Receive(&hspi, &status, 1, 100) != HAL_OK)
-	{
-			return 0xFF;
 	}
 
 	return status;

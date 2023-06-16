@@ -34,4 +34,8 @@ Overall this is already a very useful and functional board.
 1. A pin header was soldered to the 12-pin connector at the edge of the board.
 2. The board was installed in a solderless breadboard, along with the CPU board.
 3. A 915 MHz antenna was connected to J1 on the board.
-
+![Initial breadboard](Images/Inital%20Breadboard.JPG)
+4. A logic analyzer was connected to monitor all lines between the processor board and the LoRa board.
+![Logic analyzer](Images/Breadboard%20with%20Logic%20Analyzer.JPG)
+5. Code was written to initialize the SPI port, pull the NRST line high, send the SPI command to get the chip status, and receive the result. Below is the resulting successful communications as shown on the logic analyzer.
+![Status communications](Images/SPI%20status%20communications.JPG)

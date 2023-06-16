@@ -41,14 +41,9 @@ uint8_t LoRaGetStatus(void)
 	uint8_t status = 0;
 	uint8_t opcode = LORA_GET_STATUS;
 
-	if(HAL_SPI_Transmit(&hspi, &opcode, 1, 100) != HAL_OK)
+	if(HAL_SPI_TransmitReceive(&hspi, &opcode, &status, 1, 100) != HAL_OK)
 	{
 		return 0xFF;
-	}
-
-	if(HAL_SPI_Receive(&hspi, &status, 1, 100) != HAL_OK)
-	{
-			return 0xFF;
 	}
 
 	return status;

@@ -1,2 +1,2 @@
-SX1262.c:10:19:LoRa_SPI_Init	1
-SX1262.c:27:9:LoRaGetStatus	2
+SX1262.c:11:19:LoRa_Init	1
+SX1262.c:38:9:LoRaGetStatus	3

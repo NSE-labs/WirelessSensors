@@ -99,7 +99,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   uint8_t buffer[100];
   uint8_t LoRaStatus;
-  LoRa_Init();
+  LoRa_SPI_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
