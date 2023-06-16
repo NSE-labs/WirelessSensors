@@ -12,11 +12,11 @@ The two prototype boards were received in good order.
 ![Debug connector](Images/Debug%20connector.JPG)
 ![Debug cable](Images/Debug%20cable.JPG)
 4. The STLINK-V3MINIE USB was connected to the development PC. STM32 CubeIDE (v1.12.0) was started on the PC. The micro USB cable was reconnected to J1 to supply power to the board.
-5. An atempt was made to load driver code to the board using the CubeIDE interface. CubeIDE reported that the processor was being held in reset so code could not be loaded.
+5. An attempt was made to load driver code to the board using the CubeIDE interface. CubeIDE reported that the processor was being held in reset so code could not be loaded.
 6. Brief tracing of signals revealed that the RESET button was connected in a way that held the reset line low, thus keeping the processor in reset. The offending pin was gently desoldered and lifted from the board.
 7. CubeIDE was now able to download and execute code, read processor registers, and step through code. 
 8. Code was written to blink the blue LED (D1) and this executed successfully.
-9. Code was writted to set up the USB port as a virtual COM port and data was successfully printed on a terminal window on the PC.
+9. Code was written to set up the USB port as a virtual COM port and data was successfully printed on a terminal window on the PC.
 10. Pin headers were soldered on the bottom of the board in the two 16-pin connectors on the edges of the board, to allow installation in a solderless breadboard.
 
 If we choose to make another revision of this board, the following changes should be considered.
