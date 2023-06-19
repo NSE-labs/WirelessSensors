@@ -99,7 +99,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
   uint8_t buffer[100];
   uint8_t LoRaStatus;
-  LoRa_Init();
+  LoRa_Init(&hspi1);	/* initialize the LoRa chip */
+  LoRaStatus = LoRaGetStatus();
+  sprintf((char *)buffer, "Status = %x\r\n", LoRaStatus);
+  CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
+  /* Try a little transmitting */
+  LoRaSetTxContinuousWave();
+  LoRaStatus = LoRaGetStatus();
+  HAL_Delay(100);
+  LoRaSetStandbyMode();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,9 +115,6 @@ int main(void)
   while (1)
   {
 	  HAL_GPIO_TogglePin (LED_GPIO_Port, LED_Pin); /* Toggle the LED */
-	  LoRaStatus = LoRaGetStatus();
-	  sprintf((char *)buffer, "Status = %x\r\n", LoRaStatus);
-	  CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
 	  HAL_Delay (500);   /* Delay 500 ms */
   }
     /* USER CODE END WHILE */
