@@ -39,3 +39,9 @@ Overall this is already a very useful and functional board.
 ![Logic analyzer](Images/Breadboard%20with%20Logic%20Analyzer.JPG)
 5. Code was written to initialize the SPI port, pull the NRST line high, send the SPI command to get the chip status, and receive the result. Below is the resulting successful communications as shown on the logic analyzer.
 ![Status communications](Images/SPI%20status%20communications.JPG)
+6. The SX1262 device driver code was written to initialize the various chip registers and put the chip into a test mode where it transmits a carrier at 915 MHz. In the timing diagram below you can see the initialization sequence.
+    1. NRST is pulled low to reset the chip.
+    2. NRST goes high and BUSY stays high while the chip executes its reset sequence.
+    3. Once BUSY goes low a bunch of configuration commands are sent, eventually resulting in DIO2 going high indicating the chip is transmitting.
+    
+![Startup sequence](Images/Initialization%20and%20transmit.JPG)
