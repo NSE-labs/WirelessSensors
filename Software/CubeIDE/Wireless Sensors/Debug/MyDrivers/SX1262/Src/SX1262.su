@@ -1,5 +1,7 @@
-../MyDrivers/SX1262/Src/SX1262.c:20:20:WaitWhileBusy	24	static
-../MyDrivers/SX1262/Src/SX1262.c:47:13:LoRa_Init	24	static
-../MyDrivers/SX1262/Src/SX1262.c:135:9:LoRaGetStatus	24	static
-../MyDrivers/SX1262/Src/SX1262.c:159:13:LoRaSetTxContinuousWave	16	static
-../MyDrivers/SX1262/Src/SX1262.c:179:13:LoRaSetStandbyMode	16	static
+../MyDrivers/SX1262/Src/SX1262.c:27:20:WaitWhileBusy	24	static
+../MyDrivers/SX1262/Src/SX1262.c:59:20:SPI_Send	16	static
+../MyDrivers/SX1262/Src/SX1262.c:99:20:SPI_Receive	16	static
+../MyDrivers/SX1262/Src/SX1262.c:134:13:LoRa_Init	24	static
+../MyDrivers/SX1262/Src/SX1262.c:220:9:LoRaGetStatus	16	static
+../MyDrivers/SX1262/Src/SX1262.c:248:13:LoRaSetTxContinuousWave	16	static
+../MyDrivers/SX1262/Src/SX1262.c:268:13:LoRaSetStandbyMode	16	static

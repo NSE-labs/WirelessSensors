@@ -1,10 +1,10 @@
-12:59:53 **** Incremental Build of configuration Debug for project Wireless Sensors ****
+11:24:12 **** Incremental Build of configuration Debug for project Wireless Sensors ****
 make -j8 all 
 arm-none-eabi-size   Wireless\ Sensors.elf 
    text	   data	    bss	    dec	    hex	filename
-  38540	    488	   6288	  45316	   b104	Wireless Sensors.elf
+  39500	    488	   6288	  46276	   b4c4	Wireless Sensors.elf
 Finished building: default.size.stdout
  
 
-12:59:53 Build Finished. 0 errors, 0 warnings. (took 367ms)
+11:24:12 Build Finished. 0 errors, 0 warnings. (took 390ms)
 

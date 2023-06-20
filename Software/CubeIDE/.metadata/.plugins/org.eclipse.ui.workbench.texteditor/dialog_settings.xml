@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="SPI_HandleTypeDef"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="assert_param"/>
+			<item value="IS_SPI_NSS"/>
+			<item value="SPI_Slave_Select_management"/>
 			<item value="SPI_HandleTypeDef"/>
 			<item value="hspi1"/>
 			<item value="SPI"/>

@@ -83,46 +83,6 @@ static LoRa_Status SPI_Send(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
 }
 
 /*
- * SPI_Receive
- * Get bytes from the SX1262 via SPI
- * Arguments
- *  Pointer to the receive buffer
- *  Number of bytes to receive
- *  moreToCome
- *   if True then leave NSS low because more is coming in this sequence
- *   if False the bring NSS high at the end of the transmission
- * Return Value
- *  LoRa_OK for success
- *  LoRa_ERROR in case of error
- *
- */
-static LoRa_Status SPI_Receive(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
-{
-
-	/* make sure chip isn't busy */
-	if(WaitWhileBusy(10) != LoRa_OK)
-	{
-		return(LoRa_ERROR);
-	}
-
-	/* Set NSS low */
-	HAL_GPIO_WritePin(LoRa_NSS_GPIO_Port, LoRa_NSS_Pin, GPIO_PIN_RESET);
-
-	if(HAL_SPI_Receive(hspi, buffer, numBytes, 100) != HAL_OK)
-	{
-		return(LoRa_ERROR);
-	}
-
-	if(moreToCome != true)
-	{
-		/* Set NSS high */
-		HAL_GPIO_WritePin(LoRa_NSS_GPIO_Port, LoRa_NSS_Pin, GPIO_PIN_SET);
-	}
-
-	return(LoRa_OK);
-}
-
-/*
  * LoRa_Init
  * Initialize the SX1262 chip
  * Arguments
@@ -146,9 +106,9 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
   HAL_Delay(1); 															/* delay 1mS */
   HAL_GPIO_WritePin(LoRa_NRST_GPIO_Port, LoRa_NRST_Pin, GPIO_PIN_SET);		/* Set NRST high */
 
-  /* Set the chip to Standby mode and using the internal oscillator */
+  /* Set the chip to Standby mode and using the external oscillator */
   xmitBuffer[0] = LORA_SET_STANDBY_OPCODE;
-  xmitBuffer[1] = LORA_STDBY_RC;
+  xmitBuffer[1] = LORA_STDBY_XOSC;
   if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
   {
 	  return(LoRa_ERROR);
@@ -223,14 +183,10 @@ uint8_t LoRaGetStatus(void)
 	uint8_t status = 0;
 	uint8_t opcode = LORA_GET_STATUS_OPCODE;
 
-	if(SPI_Send(&opcode, 1, true) != LoRa_OK)
+	/* Can use simultaneous TransmitReceive because the SX1262 always sends status while master transmits a command */
+	if(HAL_SPI_TransmitReceive(hspi, &opcode, &status, 1, 100) != HAL_OK)
 	{
-		return(LoRa_ERROR);
-	}
-
-	if(SPI_Receive(&status, 1, false) != LoRa_OK)
-	{
-		return(LoRa_ERROR);
+		return(0xFF);
 	}
 
 	return(status);
@@ -269,7 +225,7 @@ LoRa_Status LoRaSetStandbyMode(void)
 {
 	uint8_t buffer[2];
 	buffer[0] = LORA_SET_STANDBY_OPCODE;
-	buffer[1] = LORA_STDBY_RC; /* Use internal RC oscillator to save power */
+	buffer[1] = LORA_STDBY_XOSC;
 	if(SPI_Send(buffer, 2, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
