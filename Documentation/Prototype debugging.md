@@ -49,3 +49,8 @@ Overall this is already a very useful and functional board.
 ![Cal result](Images/Spectrum%20analyzer%20cal%20result.JPG)
 8. Now the RF output of the LoRa board was connected to the spectrum analyzer.
 ![Spectrum analyzer test setup](Images/Spectrum%20analyzer%20test%20setup.JPG)
+Here's an example of an RF output measurement at maximum output settings. Note the frequency measured at 914.98674 MHz versus the target frequency of 915 MHz, a difference of 0.1%. It may be interesting to try adjusting the crystal capacitor loading registers to see what effect that might have.
+![RF output measurement](Images/RF%20Power%20Measurement.JPG)
+And here is the measured RF output based on power amplifier settings recommended in the data sheet.
+![Measured RF output](Images/RF%20Output%20Power%20Graph.png)
+Now we've reached the point where it's time to test actual LoRa communications. So we'll shift gears to develop a basic LoRa gateway for this board to talk to.
