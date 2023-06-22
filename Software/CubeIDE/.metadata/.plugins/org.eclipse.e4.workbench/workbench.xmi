@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6CPKwAkfEe6API8tY2Kc-w" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_6CPKwQkfEe6API8tY2Kc-w" bindingContexts="_6CVVowkfEe6API8tY2Kc-w">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/main.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/main.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.asm.AsmEditor&quot; name=&quot;startup_stm32l151c8tx.s&quot; tooltip=&quot;Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_spi.h&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_spi.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.st.stm32cube.common.mx.startCubeMx&quot; name=&quot;Wireless Sensors.ioc&quot; tooltip=&quot;Wireless Sensors/Wireless Sensors.ioc&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Wireless Sensors.ioc&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;system_stm32l1xx.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/system_stm32l1xx.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/system_stm32l1xx.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_gpio.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.h&quot; tooltip=&quot;Wireless Sensors/Core/Inc/main.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Inc/main.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.h&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_it.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/stm32l1xx_it.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/stm32l1xx_it.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/main.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/main.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.asm.AsmEditor&quot; name=&quot;startup_stm32l151c8tx.s&quot; tooltip=&quot;Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sysmem.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/sysmem.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/sysmem.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_spi.h&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_spi.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.st.stm32cube.common.mx.startCubeMx&quot; name=&quot;Wireless Sensors.ioc&quot; tooltip=&quot;Wireless Sensors/Wireless Sensors.ioc&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Wireless Sensors.ioc&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;system_stm32l1xx.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/system_stm32l1xx.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/system_stm32l1xx.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal_gpio.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.h&quot; tooltip=&quot;Wireless Sensors/Core/Inc/main.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Inc/main.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.h&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_it.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/stm32l1xx_it.c&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Wireless Sensors/Core/Src/stm32l1xx_it.c&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_6CPKwQkfEe6API8tY2Kc-w" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_6CPKwgkfEe6API8tY2Kc-w" x="0" y="0" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_6CPKwQkfEe6API8tY2Kc-w" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_6CPKwgkfEe6API8tY2Kc-w" x="0" y="0" width="1043" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -103,6 +103,7 @@
               </children>
               <children xsi:type="basic:PartSashContainer" xmi:id="_6CPK0QkfEe6API8tY2Kc-w" containerData="2500" selectedElement="_6CPK0gkfEe6API8tY2Kc-w" horizontal="true">
                 <children xsi:type="basic:PartStack" xmi:id="_6CPK0gkfEe6API8tY2Kc-w" elementId="bottom" containerData="5000" selectedElement="_6CPK1QkfEe6API8tY2Kc-w">
+                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_6CPK0wkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.views.ProblemView" ref="_6CVSmwkfEe6API8tY2Kc-w" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:General</tags>
@@ -122,7 +123,6 @@
                 </children>
                 <children xsi:type="basic:PartStack" xmi:id="_6CPK1wkfEe6API8tY2Kc-w" elementId="com.st.stm32cube.ide.mcu.buildanalyzer.viewMStack" containerData="5000" selectedElement="_6CPK2wkfEe6API8tY2Kc-w">
                   <tags>General</tags>
-                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_6CPK2AkfEe6API8tY2Kc-w" elementId="com.st.stm32cube.ide.mcu.buildanalyzer.view" ref="_6CVTDQkfEe6API8tY2Kc-w" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:C/C++</tags>
@@ -310,8 +310,9 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_6CPK_gkfEe6API8tY2Kc-w" elementId="org.eclipse.debug.internal.ui.ToolsFolderView" containerData="2500" selectedElement="_6CPK_wkfEe6API8tY2Kc-w">
+              <children xsi:type="basic:PartStack" xmi:id="_6CPK_gkfEe6API8tY2Kc-w" elementId="org.eclipse.debug.internal.ui.ToolsFolderView" visible="false" containerData="2500" selectedElement="_6CPK_wkfEe6API8tY2Kc-w">
                 <tags>Debug</tags>
+                <tags>Minimized</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_6CPK_wkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.console.ConsoleView" ref="_6CVSpwkfEe6API8tY2Kc-w" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
@@ -403,34 +404,40 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_6CVSIwkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.editorss" selectedElement="_6CVSJAkfEe6API8tY2Kc-w">
-      <children xsi:type="basic:PartStack" xmi:id="_6CVSJAkfEe6API8tY2Kc-w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_wMDTYArNEe6a38VxV4LykA">
+      <children xsi:type="basic:PartStack" xmi:id="_6CVSJAkfEe6API8tY2Kc-w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_u2fuABEVEe6LFqgQJOBnHg">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <children xsi:type="basic:Part" xmi:id="_ISNowAkmEe6HfcdwxsxxBg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Core/Src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3041&quot; selectionTopPixel=&quot;1185&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Core/Src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3131&quot; selectionTopPixel=&quot;1065&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_wMDTYArNEe6a38VxV4LykA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SX1262.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; partName=&quot;SX1262.c&quot; title=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4866&quot; selectionTopPixel=&quot;2370&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; partName=&quot;SX1262.c&quot; title=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4547&quot; selectionTopPixel=&quot;2326&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Gmx0AArOEe6a38VxV4LykA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SX1262.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.h&quot; partName=&quot;SX1262.h&quot; title=&quot;SX1262.h&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;30&quot; selectionOffset=&quot;831&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.h&quot; partName=&quot;SX1262.h&quot; title=&quot;SX1262.h&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;22&quot; selectionOffset=&quot;720&quot; selectionTopPixel=&quot;60&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_0O-vUBBJEe6c8tlJ1ig8Ig" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="stm32l1xx_hal.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal.c&quot; partName=&quot;stm32l1xx_hal.c&quot; title=&quot;stm32l1xx_hal.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;10985&quot; selectionTopPixel=&quot;4455&quot;/>&#xD;&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_u2fuABEVEe6LFqgQJOBnHg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="stm32l1xx_hal.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;stm32l1xx_hal.c&quot; partName=&quot;stm32l1xx_hal.c&quot; title=&quot;stm32l1xx_hal.c&quot; tooltip=&quot;Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;10985&quot; selectionTopPixel=&quot;4350&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_3riVwBBJEe6c8tlJ1ig8Ig" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="startup_stm32l151c8tx.s" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/s_file_obj.gif" closeable="true">
+        <children xsi:type="basic:Part" xmi:id="_x_dqEBEVEe6LFqgQJOBnHg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="sysmem.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;sysmem.c&quot; partName=&quot;sysmem.c&quot; title=&quot;sysmem.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/sysmem.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Core/Src/sysmem.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2724&quot; selectionTopPixel=&quot;540&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_vEAwIBEWEe6LFqgQJOBnHg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="startup_stm32l151c8tx.s" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/s_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.asm.AsmEditor&quot; name=&quot;startup_stm32l151c8tx.s&quot; partName=&quot;startup_stm32l151c8tx.s&quot; title=&quot;startup_stm32l151c8tx.s&quot; tooltip=&quot;Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Core/Startup/startup_stm32l151c8tx.s&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2356&quot; selectionTopPixel=&quot;960&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
@@ -492,6 +499,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_6CVSqAkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -618,8 +627,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_6CVTXgkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.views.ProgressView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -783,7 +790,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVT6gkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_KAOz8BAwEe6c8tlJ1ig8Ig" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_6CVa-QkfEe6API8tY2Kc-w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_kty_txEVEe6LFqgQJOBnHg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_6CVa-QkfEe6API8tY2Kc-w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVT-gkfEe6API8tY2Kc-w" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -814,7 +821,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVUTgkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_KAVhoBAwEe6c8tlJ1ig8Ig" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_6CVangkfEe6API8tY2Kc-w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_kt5GWREVEe6LFqgQJOBnHg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_6CVangkfEe6API8tY2Kc-w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVUXAkfEe6API8tY2Kc-w" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -861,9 +868,25 @@
         <tags>TrimStack</tags>
         <tags>Draggable</tags>
       </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_fzbIsBEbEe6LFqgQJOBnHg" elementId="org.eclipse.debug.internal.ui.NavigatorFolderView(IDEWindow).(org.eclipse.debug.ui.DebugPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_Q4bTkBEcEe6LFqgQJOBnHg" elementId="org.eclipse.ui.editorss(IDEWindow).(org.eclipse.debug.ui.DebugPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
     </trimBars>
     <trimBars xmi:id="_6CVUdwkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Right">
       <children xsi:type="menu:ToolControl" xmi:id="_6CVUeAkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.editorss(IDEWindow).(com.st.stm32cube.common.mx.perspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_fzn9ABEbEe6LFqgQJOBnHg" elementId="org.eclipse.debug.internal.ui.OutlineFolderView(IDEWindow).(org.eclipse.debug.ui.DebugPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_fz0KQBEbEe6LFqgQJOBnHg" elementId="org.eclipse.debug.internal.ui.ToolsFolderView(IDEWindow).(org.eclipse.debug.ui.DebugPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
         <tags>Draggable</tags>
       </children>

@@ -29,7 +29,6 @@ typedef enum
 #define LORA_SET_PA_CONFIG_OPCODE				0x95;
 
 #define LORA_SET_TX_PARAMS_OPCODE				0x8E;
-#define LORA_STANDARD_RAMPTIME					0x04; /* 200mS ramp time */
 
 #define LORA_SET_DIO2_AS_RF_SWITCH_CTRL_OPCODE	0x9D;
 
@@ -43,6 +42,5 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *);
 uint8_t LoRaGetStatus(void);
 LoRa_Status LoRaSetTxContinuousWave(void);
 LoRa_Status LoRaSetStandbyMode(void);
-LoRa_Status LoRaSetTxPower(int8_t);
 
 #endif

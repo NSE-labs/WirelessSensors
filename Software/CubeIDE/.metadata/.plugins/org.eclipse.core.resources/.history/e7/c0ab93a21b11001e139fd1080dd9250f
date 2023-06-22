@@ -26,16 +26,17 @@ SPI_HandleTypeDef *hspi;
  */
 static LoRa_Status WaitWhileBusy(uint16_t timeout)
 {
-	uint16_t timeoutCounter = 0;
+
+	uint32_t startTime;
+
+	startTime = HAL_GetTick();
 
 	while(HAL_GPIO_ReadPin(LoRa_BUSY_GPIO_Port, LoRa_BUSY_Pin) == GPIO_PIN_SET)
 	{
-		timeoutCounter++;
-		if(timeoutCounter > timeout)
+		if((HAL_GetTick() - startTime) > timeout)
 		{
 			return(LoRa_TIMEOUT);
 		}
-		HAL_Delay(1); /* Delay 1 mS */
 	}
 
 	return(LoRa_OK);
@@ -82,6 +83,46 @@ static LoRa_Status SPI_Send(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
 }
 
 /*
+ * SPI_Receive
+ * Get bytes from the SX1262 via SPI
+ * Arguments
+ *  Pointer to the receive buffer
+ *  Number of bytes to receive
+ *  moreToCome
+ *   if True then leave NSS low because more is coming in this sequence
+ *   if False the bring NSS high at the end of the transmission
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_ERROR in case of error
+ *
+ */
+static LoRa_Status SPI_Receive(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
+{
+
+	/* make sure chip isn't busy */
+	if(WaitWhileBusy(10) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Set NSS low */
+	HAL_GPIO_WritePin(LoRa_NSS_GPIO_Port, LoRa_NSS_Pin, GPIO_PIN_RESET);
+
+	if(HAL_SPI_Receive(hspi, buffer, numBytes, 100) != HAL_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	if(moreToCome != true)
+	{
+		/* Set NSS high */
+		HAL_GPIO_WritePin(LoRa_NSS_GPIO_Port, LoRa_NSS_Pin, GPIO_PIN_SET);
+	}
+
+	return(LoRa_OK);
+}
+
+/*
  * LoRa_Init
  * Initialize the SX1262 chip
  * Arguments
@@ -105,9 +146,9 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
   HAL_Delay(1); 															/* delay 1mS */
   HAL_GPIO_WritePin(LoRa_NRST_GPIO_Port, LoRa_NRST_Pin, GPIO_PIN_SET);		/* Set NRST high */
 
-  /* Set the chip to Standby mode and using the external oscillator */
+  /* Set the chip to Standby mode and using the internal oscillator */
   xmitBuffer[0] = LORA_SET_STANDBY_OPCODE;
-  xmitBuffer[1] = LORA_STDBY_XOSC;
+  xmitBuffer[1] = LORA_STDBY_RC;
   if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
   {
 	  return(LoRa_ERROR);
@@ -124,21 +165,21 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
   /* Set the frequency to 915 MHz  */
   /* See datasheet for calculation */
   xmitBuffer[0] = LORA_SET_RF_FREQUENCY_OPCODE;
-  xmitBuffer[1] = 0x34;
-  xmitBuffer[2] = 0x03;
+  xmitBuffer[1] = 0x39;
+  xmitBuffer[2] = 0x30;
   xmitBuffer[3] = 0x00;
-  xmitBuffer[4] = 0xA0;
+  xmitBuffer[4] = 0x00;
   if(SPI_Send(xmitBuffer, 5, false) != LoRa_OK)
   {
 	  return(LoRa_ERROR);
   }
 
   /* Set the power amplifier configuration */
-  /* For now set output power to +14 dBm   */
+  /* Set output power to +22 dBm           */
   /* See datasheet page 74                 */
   xmitBuffer[0] = LORA_SET_PA_CONFIG_OPCODE;
-  xmitBuffer[1] = 0x02; /* paDutyCycle */
-  xmitBuffer[2] = 0x02; /* hpMax */
+  xmitBuffer[1] = 0x04; /* paDutyCycle */
+  xmitBuffer[2] = 0x07; /* hpMax */
   xmitBuffer[3] = 0x00; /* devSel */
   xmitBuffer[4] = 0x01; /* paLut */
   if(SPI_Send(xmitBuffer, 5, false) != LoRa_OK)
@@ -148,20 +189,28 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
 
   /* Set the TX parameters */
   xmitBuffer[0] = LORA_SET_TX_PARAMS_OPCODE;
-  xmitBuffer[1] = 0x16; /* power */
-  xmitBuffer[2] = 0x04; /* RampTime */
+  xmitBuffer[1] = 22; /* power +22 dBm   */
+  xmitBuffer[2] = LORA_STANDARD_RAMPTIME;
   if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
   {
 	  return(LoRa_ERROR);
   }
 
   /* Set DIO2 as the control for the RF switch */
-  xmitBuffer[0] = LORA_SET_DIO2_AS_RF_SWITCH_CTRL;
+  xmitBuffer[0] = LORA_SET_DIO2_AS_RF_SWITCH_CTRL_OPCODE;
   xmitBuffer[1] = 1; /* enable */
   if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
   {
 	  return(LoRa_ERROR);
   }
+
+  /* Set regulator mode to use the DC-DC converter */
+  xmitBuffer[0] = LORA_SET_REGULATOR_MODE_OPCODE;
+  xmitBuffer[1] = 1; /* Use DC-DC converter */
+  if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
+   {
+ 	  return(LoRa_ERROR);
+   }
 
   return(LoRa_OK);
 
@@ -182,13 +231,44 @@ uint8_t LoRaGetStatus(void)
 	uint8_t status = 0;
 	uint8_t opcode = LORA_GET_STATUS_OPCODE;
 
-	/* Can use simultaneous TransmitReceive because the SX1262 always sends status while master transmits a command */
-	if(HAL_SPI_TransmitReceive(hspi, &opcode, &status, 1, 100) != HAL_OK)
+	if(SPI_Send(&opcode, 1, true) != LoRa_OK)
 	{
-		return(0xFF);
+		return(LoRa_ERROR);
+	}
+
+	if(SPI_Receive(&status, 1, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
 	}
 
 	return(status);
+}
+
+/*
+ * LoRaSetTxPower
+ * Set the RF transmit power to specified level
+ * Arguments
+ *  Transmit power in dBm (-9 to +22 dBm)
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_ERROR in case of error
+ */
+LoRa_Status LoRaSetTxPower(int8_t power)
+{
+	int8_t buffer[3];
+
+	if (power > 16) power = 16;
+	if (power < -9) power = -9;
+
+	buffer[0] = LORA_SET_TX_PARAMS_OPCODE;
+	buffer[1] = power;
+	buffer[2] = LORA_STANDARD_RAMPTIME;
+	if(SPI_Send((uint8_t *)buffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	return(LoRa_OK);
 }
 
 /*
@@ -202,7 +282,7 @@ uint8_t LoRaGetStatus(void)
  */
 LoRa_Status LoRaSetTxContinuousWave(void)
 {
-	uint8_t opcode = LORA_SET_TX_CONTINUOUS_WAVE;
+	uint8_t opcode = LORA_SET_TX_CONTINUOUS_WAVE_OPCODE;
 	if(SPI_Send(&opcode, 1, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
@@ -224,8 +304,8 @@ LoRa_Status LoRaSetStandbyMode(void)
 {
 	uint8_t buffer[2];
 	buffer[0] = LORA_SET_STANDBY_OPCODE;
-	buffer[1] = LORA_STDBY_XOSC;
-	if(HAL_SPI_Transmit(hspi, buffer, 2, 100) != HAL_OK)
+	buffer[1] = LORA_STDBY_RC; /* Use internal RC oscillator to save power */
+	if(SPI_Send(buffer, 2, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}

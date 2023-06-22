@@ -104,13 +104,9 @@ int main(void)
   sprintf((char *)buffer, "Status = %x\r\n", LoRaStatus);
   CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
   /* Try a little transmitting */
-  int8_t power;
   LoRaSetTxContinuousWave();
-  for(power = -9; power <= 22; power++)
-  {
-	  LoRaSetTxPower(power);
-	  HAL_Delay(100);
-  }
+  LoRaStatus = LoRaGetStatus();
+  HAL_Delay(100);
   LoRaSetStandbyMode();
   /* USER CODE END 2 */
 
