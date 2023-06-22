@@ -45,3 +45,7 @@ Overall this is already a very useful and functional board.
     3. Once BUSY goes low a bunch of configuration commands are sent, eventually resulting in DIO2 going high indicating the chip is transmitting.
     
 ![Startup sequence](Images/Initialization%20and%20transmit.JPG)
+7. Next step was to connect the RF output of the LoRa board to the HP8568B Spectrum Analyzer. But prior to that, the spectrum analyzer was calibrated according to manual. Below is the measurement screen after completing calibration, measuring the internal precision 20MHz -10dBm signal. The measurment reads exactly -10dBm at 20MHz.
+![Cal result](Images/Spectrum%20analyzer%20cal%20result.JPG)
+8. Now the RF output of the LoRa board was connected to the spectrum analyzer.
+![Spectrum analyzer test setup](Images/Spectrum%20analyzer%20test%20setup.JPG)
