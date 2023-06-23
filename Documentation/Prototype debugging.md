@@ -53,4 +53,4 @@ Here's an example of an RF output measurement at maximum output settings. Note t
 ![RF output measurement](Images/RF%20Power%20Measurement.JPG)
 And here is the measured RF output based on power amplifier settings recommended in the data sheet.
 ![Measured RF output](Images/RF%20Output%20Power%20Graph.png)
-Now we've reached the point where it's time to test actual LoRa communications. So we'll shift gears to develop a basic LoRa gateway for this board to talk to.
+Now we've reached the point where it's time to test actual LoRa communications. So we'll shift gears to develop a basic LoRa gateway for this board to talk to. The development of that gateway is covered [here](./LoRa%20gateway%20development.md).
