@@ -12,3 +12,4 @@ This board contains an ESP32 processor with WiFi and Bluetooth, an SX1262 LoRa t
 
 ![Inital power up](Images/Heltec%20board.JPG)
 
+[Back to project outline](../README.md)
