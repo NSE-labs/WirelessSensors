@@ -1,4 +1,4 @@
-
+﻿
 # Wireless Sensor Project
 
 The purpose of this project is to develop hardware and software for small wireless sensors. The sensors could be used to monitor parameters such as temperature, humidity, light levels, or actuation of a switch or contact.
@@ -59,7 +59,18 @@ The Thread network is a mesh network with some devices designated as routers and
 
 ### Hardware Design
 
-Based on the above list of communication methods, LoRa is selected as the choice for this design, assuming that a reasonably priced hardware solution can be implemented.
+Based on the above list of communication methods, LoRa is selected as the choice for this design.
 
-Currently looking at the SX1262 chip from Semtech as the LoRa transceiver. There is also a module with this chip along with a processor core called the ASR6501, however it does not seem to be readily available.
+Two small prototype boards were designed and built for initial testing and debugging. One contains an ST Microelectronics STM32L151C8T6 microcontroller. This microcontroller was chosen due to its low power consumption, ready availability of development and debugging tools, and the fact that it was in stock at JLCPCB and listed as a "basic" part there, meaning no setup charge to load the part.
 
+The second board has an SX1262 LoRa transceiver and associated RF circuitry including a u.FL connector for external antenna.
+
+![CPU board](Images/CPU%20board.png)
+
+![LoRa board](Images/LoRa%20board.png)
+
+![Actual boards](Images/First%20round%20boards.JPG)
+
+[NEXT: Prototype debugging](./Prototype%20debugging.md)
+
+[Back to project outline](../README.md)

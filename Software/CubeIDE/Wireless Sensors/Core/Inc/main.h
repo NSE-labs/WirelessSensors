@@ -57,6 +57,20 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_Pin GPIO_PIN_13
+#define LED_GPIO_Port GPIOC
+#define LoRa_NRST_Pin GPIO_PIN_0
+#define LoRa_NRST_GPIO_Port GPIOA
+#define LoRa_DIO3_Pin GPIO_PIN_1
+#define LoRa_DIO3_GPIO_Port GPIOA
+#define LoRa_DIO2_Pin GPIO_PIN_2
+#define LoRa_DIO2_GPIO_Port GPIOA
+#define LoRa_DIO1_Pin GPIO_PIN_3
+#define LoRa_DIO1_GPIO_Port GPIOA
+#define LoRa_NSS_Pin GPIO_PIN_4
+#define LoRa_NSS_GPIO_Port GPIOA
+#define LoRa_BUSY_Pin GPIO_PIN_8
+#define LoRa_BUSY_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
