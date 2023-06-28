@@ -207,9 +207,27 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
   xmitBuffer[0] = LORA_SET_REGULATOR_MODE_OPCODE;
   xmitBuffer[1] = 1; /* Use DC-DC converter */
   if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
-   {
- 	  return(LoRa_ERROR);
-   }
+  {
+	  return(LoRa_ERROR);
+  }
+
+  /* Set LoRa modulation parameters */
+  xmitBuffer[0] = LORA_SET_MODULATION_PARAMS_OPCODE;
+  xmitBuffer[1] = 7; 		/* Spreading factor */
+  xmitBuffer[2] = 0x04; 	/* BW = 125 KHz */
+  xmitBuffer[3] = 0x01;		/* Coding Rate = 4/5 */
+  xmitBuffer[4] = 0;		/* Low data rate optimization off */
+  if(SPI_Send(xmitBuffer, 5, false) != LoRa_OK)
+  {
+	  return(LoRa_ERROR);
+  }
+
+  /* Set LoRa packet parameters */
+  xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
+  xmitBuffer[1] = 0;
+  xmitBuffer[2] = 0x08;	/* Preamble length (2 bytes) */
+  xmitBuffer[3] = 0;	/* Variable length packet */
+
 
   return(LoRa_OK);
 
@@ -305,6 +323,70 @@ LoRa_Status LoRaSetStandbyMode(void)
 	buffer[0] = LORA_SET_STANDBY_OPCODE;
 	buffer[1] = LORA_STDBY_RC; /* Use internal RC oscillator to save power */
 	if(SPI_Send(buffer, 2, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	return(LoRa_OK);
+}
+
+/*
+ * LoRaTransmit
+ * Send a message over the airwaves
+ * Arguments
+ *  pointer to message to be sent
+ *  number of bytes to send (max 127)
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_ERROR in case of error
+ */
+LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
+{
+	uint8_t xmitBuffer[128];
+	uint8_t i;
+
+	if(numBytes > 127) return(LoRa_ERROR);
+
+	/* Set base address of transmit and receive buffer */
+	xmitBuffer[0] = LORA_SET_BUFFER_BASE_ADDRESS_OPCODE;
+	xmitBuffer[1] = 0x7F; /* Transmit buffer start address */
+	xmitBuffer[2] = 0x00; /* Receive buffer start address */
+	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Write the message to the transmit buffer on the SX1262 chip*/
+	xmitBuffer[0] = LORA_WRITE_BUFFER_OPCODE;
+	for(i=1; i <= numBytes; i++)
+	{
+		xmitBuffer[i] = *msg++;
+	}
+	if(SPI_Send(xmitBuffer, numBytes+1, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Set LoRa packet parameters */
+	xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
+	xmitBuffer[1] = 0x7F;		/* Offset of transmit buffer */
+	xmitBuffer[2] = 0;
+	xmitBuffer[3] = 0x08;		/* Preamble length (2 bytes) */
+	xmitBuffer[4] = 0;			/* Variable length packet */
+	xmitBuffer[5] = numBytes; 	/* Size of message */
+	xmitBuffer[6] = 0;			/* CRC off */
+	xmitBuffer[7] = 0;			/* Standard IQ setup */
+	if(SPI_Send(xmitBuffer, 8, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Put the chip in transmit mode to send the message */
+	xmitBuffer[0] = LORA_SET_TX_OPCODE;
+	xmitBuffer[1] = 0;
+	xmitBuffer[2] = 0;
+	xmitBuffer[3] = 0; 	/* timeout value (3 bytes) set to zero for no timeout */
+	if(SPI_Send(xmitBuffer, 4, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}

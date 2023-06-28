@@ -35,7 +35,17 @@ typedef enum
 
 #define LORA_SET_TX_CONTINUOUS_WAVE_OPCODE		0xD1;
 
-#define LORA_SET_REGULATOR_MODE_OPCODE			0X96;
+#define LORA_SET_REGULATOR_MODE_OPCODE			0x96;
+
+#define LORA_SET_BUFFER_BASE_ADDRESS_OPCODE		0x8F;
+
+#define LORA_SET_MODULATION_PARAMS_OPCODE		0x8B;
+
+#define LORA_SET_PACKET_PARAMS_OPCODE			0x8C;
+
+#define LORA_WRITE_BUFFER_OPCODE				0x0E;
+
+#define LORA_SET_TX_OPCODE						0x83;
 
 
 /* Function definitions */
@@ -44,5 +54,6 @@ uint8_t LoRaGetStatus(void);
 LoRa_Status LoRaSetTxContinuousWave(void);
 LoRa_Status LoRaSetStandbyMode(void);
 LoRa_Status LoRaSetTxPower(int8_t);
+LoRa_Status LoRaTransmit(uint8_t *, uint8_t);
 
 #endif
