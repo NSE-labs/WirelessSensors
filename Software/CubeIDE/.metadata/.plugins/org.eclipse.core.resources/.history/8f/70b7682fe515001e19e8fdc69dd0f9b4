@@ -358,8 +358,7 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 
 	/* Write the message to the transmit buffer on the SX1262 chip*/
 	xmitBuffer[0] = LORA_WRITE_BUFFER_OPCODE;
-	xmitBuffer[1] = 0; 		/* Offset of transmit buffer */
-	for(i=2; i <= (numBytes+1); i++)
+	for(i=1; i <= numBytes; i++)
 	{
 		xmitBuffer[i] = *msg++;
 	}
@@ -370,13 +369,14 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 
 	/* Set LoRa packet parameters */
 	xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
-	xmitBuffer[1] = 0;
-	xmitBuffer[2] = 0x08;		/* Preamble length (2 bytes) */
-	xmitBuffer[3] = 0;			/* Variable length packet */
-	xmitBuffer[4] = numBytes; 	/* Size of message */
-	xmitBuffer[5] = 0;			/* CRC off */
-	xmitBuffer[6] = 0;			/* Standard IQ setup */
-	if(SPI_Send(xmitBuffer, 7, false) != LoRa_OK)
+	xmitBuffer[1] = 0;			/* Offset of transmit buffer */
+	xmitBuffer[2] = 0;
+	xmitBuffer[3] = 0x08;		/* Preamble length (2 bytes) */
+	xmitBuffer[4] = 0;			/* Variable length packet */
+	xmitBuffer[5] = numBytes; 	/* Size of message */
+	xmitBuffer[6] = 0;			/* CRC off */
+	xmitBuffer[7] = 0;			/* Standard IQ setup */
+	if(SPI_Send(xmitBuffer, 8, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
