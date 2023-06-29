@@ -42,44 +42,6 @@ static LoRa_Status WaitWhileBusy(uint16_t timeout)
 	return(LoRa_OK);
 }
 
-
-/*
- * WaitWhileTransmit
- * wait for the DIO2 line on the SX1262 to go high then low indicating done transmitting
- * Arguments
- *  timeout in milliseconds (maximum time to wait for line to go low)
- * Return Value
- *  LoRa_OK for success
- *  LoRa_TIMEOUT for timeout
- */
-static LoRa_Status WaitWhileTransmit(uint16_t timeout)
-{
-
-	uint32_t startTime;
-
-	startTime = HAL_GetTick();
-
-	/* wait for DIO2 to go high */
-	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_RESET)
-	{
-		if((HAL_GetTick() - startTime) > timeout)
-		{
-			return(LoRa_TIMEOUT);
-		}
-	}
-
-	/* Now wait for DIO2 to go low indicating finished transmitting */
-	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_SET)
-	{
-		if((HAL_GetTick() - startTime) > timeout)
-		{
-			return(LoRa_TIMEOUT);
-		}
-	}
-
-	return(LoRa_OK);
-}
-
 /*
  * SPI_Send
  * Send bytes to the SX1262 via SPI
@@ -401,7 +363,7 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 	{
 		xmitBuffer[i] = *msg++;
 	}
-	if(SPI_Send(xmitBuffer, numBytes+2, false) != LoRa_OK)
+	if(SPI_Send(xmitBuffer, numBytes+1, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -425,11 +387,6 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 	xmitBuffer[2] = 0;
 	xmitBuffer[3] = 0; 	/* timeout value (3 bytes) set to zero for no timeout */
 	if(SPI_Send(xmitBuffer, 4, false) != LoRa_OK)
-	{
-		return(LoRa_ERROR);
-	}
-
-	if(WaitWhileTransmit(500) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
