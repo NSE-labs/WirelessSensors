@@ -12,4 +12,8 @@ This board contains an ESP32 processor with WiFi and Bluetooth, an SX1262 LoRa t
 
 ![Inital power up](Images/Heltec%20board.JPG)
 
+Software was written using the Arduino IDE and some examples from Heltec to receive packets and display them on the OLED screen. This was used to successfully test the transmit capability of our custom LoRa board.
+
+![Transmit test](Images/Gateway%20receiving.JPG)
+
 [Back to project outline](../README.md)
