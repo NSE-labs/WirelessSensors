@@ -61,6 +61,6 @@ LoRa_Status LoRaSetTxContinuousWave(void);
 LoRa_Status LoRaSetStandbyMode(void);
 LoRa_Status LoRaSetTxPower(int8_t);
 LoRa_Status LoRaTransmit(uint8_t *, uint8_t);
-LoRa_Status LoRaReceive(uint8_t *, uint32_t);
+LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 
 #endif

@@ -102,7 +102,7 @@ int main(void)
   LoRa_Init(&hspi1);
 
   /* Send a status message to USB port */
-  uint8_t buffer[100];
+  uint8_t buffer[256];
   sprintf((char *)buffer, "Entering transmit loop\r\n");
   CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
 
@@ -119,6 +119,7 @@ int main(void)
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); /* Turn on the LED */
 	  LoRaTransmit(buffer, strlen((char *)buffer));
 	  HAL_GPIO_WritePin (LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); /* Turn off the LED */
+	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
 	  HAL_Delay (1000);   /* Delay 1 second */
   }
     /* USER CODE END WHILE */
