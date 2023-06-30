@@ -74,6 +74,10 @@ And here is the measured RF output based on power amplifier settings recommended
 
 Now we've reached the point where it's time to test actual LoRa communications. So we'll shift gears to develop a basic LoRa gateway for this board to talk to. 
 
-[NEXT: Gateway development](./LoRa%20gateway%20development.md)
+[Gateway development](./LoRa%20gateway%20development.md)
+
+Once the gateway was up and running, it was used to receive and display packets, thus verifying the transmit functionality of the LoRa board.
+
+![Transmit test](Images/Gateway%20receiving.JPG)
 
 [Back to project outline](../README.md)

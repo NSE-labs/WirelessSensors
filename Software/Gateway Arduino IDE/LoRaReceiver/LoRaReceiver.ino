@@ -47,6 +47,14 @@ int16_t rssi,rxSize;
 
 bool lora_idle = true;
 
+void displayString(char *string, int xpos, int ypos)
+{
+      oled.clear();
+      oled.setTextAlignment(TEXT_ALIGN_LEFT);
+      oled.drawString(xpos, ypos, string);
+      oled.display();
+}
+
 void setup() {
     Serial.begin(115200);
     Mcu.begin();
@@ -69,14 +77,12 @@ void setup() {
                                LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
                                LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON,
                                0, true, 0, 0, LORA_IQ_INVERSION_ON, true );
+
+   displayString("Now in Rx mode", 30, 0);
 }
 
-void displayString(char *string, int xpos, int ypos)
-{
-      oled.setTextAlignment(TEXT_ALIGN_LEFT);
-      oled.drawString(xpos, ypos, string);
-      oled.display();
-}
+
+
 
 void loop()
 {
@@ -84,7 +90,6 @@ void loop()
   {
     lora_idle = false;
     Serial.println("into RX mode");
-    displayString("Now in Rx mode", 30, 0);
     Radio.Rx(0);
   }
   Radio.IrqProcess( );
@@ -100,7 +105,7 @@ void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
     rxpacket[size]='\0';
     Radio.Sleep( );
     Serial.printf("\r\nreceived packet \"%s\" with rssi %d , length %d\r\n",rxpacket,rssi,rxSize);
-    sprintf(buffer,"Received packet \"%s\" with rssi %d , length %d",rxpacket,rssi,rxSize);
+    sprintf(buffer,"Received packet\n \"%s\" \nrssi %d\nlength %d",rxpacket,rssi,rxSize);
     displayString(buffer, 0, 0);
     lora_idle = true;
 }

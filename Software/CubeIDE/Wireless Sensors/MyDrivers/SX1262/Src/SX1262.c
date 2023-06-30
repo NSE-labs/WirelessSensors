@@ -42,6 +42,60 @@ static LoRa_Status WaitWhileBusy(uint16_t timeout)
 	return(LoRa_OK);
 }
 
+
+/*
+ * WaitWhileTransmit
+ * wait for the DIO2 line on the SX1262 to go high then low indicating done transmitting
+ * Arguments
+ *  timeout in milliseconds (maximum time to wait for line to go low)
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_TIMEOUT for timeout
+ */
+static LoRa_Status WaitWhileTransmit(uint16_t timeout)
+{
+
+	uint32_t startTime;
+
+	startTime = HAL_GetTick();
+
+	/* wait for DIO2 to go high */
+	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_RESET)
+	{
+		if((HAL_GetTick() - startTime) > timeout)
+		{
+			return(LoRa_TIMEOUT);
+		}
+	}
+
+	/* Now wait for DIO2 to go low indicating finished transmitting */
+	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_SET)
+	{
+		if((HAL_GetTick() - startTime) > timeout)
+		{
+			return(LoRa_TIMEOUT);
+		}
+	}
+
+	return(LoRa_OK);
+}
+
+/*
+ * WaitWhileReceive
+ * wait for the DIO1 line on the SX1262 to go high indicating received packet
+ * Arguments
+ *  None
+ * Return Value
+ *  LoRa_OK for success
+ */
+static LoRa_Status WaitWhileReceive(void)
+{
+	/* wait for DIO1 to go high */
+	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_RESET);
+
+	return(LoRa_OK);
+}
+
 /*
  * SPI_Send
  * Send bytes to the SX1262 via SPI
@@ -133,7 +187,7 @@ static LoRa_Status SPI_Receive(uint8_t* buffer, uint16_t numBytes, bool moreToCo
  */
 LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
 {
-	uint8_t xmitBuffer[6];
+	uint8_t xmitBuffer[10];
 
   /* store the hspi pointer for future use */
   hspi = hspiPtr;
@@ -207,9 +261,35 @@ LoRa_Status LoRa_Init(SPI_HandleTypeDef *hspiPtr)
   xmitBuffer[0] = LORA_SET_REGULATOR_MODE_OPCODE;
   xmitBuffer[1] = 1; /* Use DC-DC converter */
   if(SPI_Send(xmitBuffer, 2, false) != LoRa_OK)
-   {
- 	  return(LoRa_ERROR);
-   }
+  {
+	  return(LoRa_ERROR);
+  }
+
+  /* Set LoRa modulation parameters */
+  xmitBuffer[0] = LORA_SET_MODULATION_PARAMS_OPCODE;
+  xmitBuffer[1] = 7; 		/* Spreading factor */
+  xmitBuffer[2] = 0x04; 	/* BW = 125 KHz */
+  xmitBuffer[3] = 0x01;		/* Coding Rate = 4/5 */
+  xmitBuffer[4] = 0;		/* Low data rate optimization off */
+  if(SPI_Send(xmitBuffer, 5, false) != LoRa_OK)
+  {
+	  return(LoRa_ERROR);
+  }
+
+  /* Set DIO IRQ parameters */
+  xmitBuffer[0] = LORA_SET_DIO_IRQ_PARAMS_OPCODE;
+  xmitBuffer[1] = 0x02;	/* Enable timeout interrupt */
+  xmitBuffer[2] = 0x02;	/* Enable RX done interrupt */
+  xmitBuffer[3] = 0x02;	/* Map timeout to DIO1 */
+  xmitBuffer[4] = 0x02; /* Map RX done to DIO1 */
+  xmitBuffer[5] = 0;
+  xmitBuffer[6] = 0;	/* No interrupts to DIO2 */
+  xmitBuffer[7]	= 0;
+  xmitBuffer[8]	= 0;	/* No interrupts to DIO3 */
+  if(SPI_Send(xmitBuffer, 9, false) != LoRa_OK)
+  {
+	  return(LoRa_ERROR);
+  }
 
   return(LoRa_OK);
 
@@ -311,3 +391,137 @@ LoRa_Status LoRaSetStandbyMode(void)
 
 	return(LoRa_OK);
 }
+
+
+/*
+ * LoRaTransmit
+ * Send a message over the airwaves
+ * Arguments
+ *  pointer to message to send
+ *  number of bytes to send
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_ERROR in case of error
+ */
+LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
+{
+	uint8_t xmitBuffer[128];
+	uint8_t i;
+
+	if(numBytes > 127) return(LoRa_ERROR);
+
+	/* Set base address of transmit and receive buffer */
+	xmitBuffer[0] = LORA_SET_BUFFER_BASE_ADDRESS_OPCODE;
+	xmitBuffer[1] = 0; /* Transmit buffer start address */
+	xmitBuffer[2] = 0; /* Receive buffer start address */
+	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Write the message to the transmit buffer on the SX1262 chip*/
+	xmitBuffer[0] = LORA_WRITE_BUFFER_OPCODE;
+	xmitBuffer[1] = 0; 		/* Offset of transmit buffer */
+	for(i=2; i <= (numBytes+1); i++)
+	{
+		xmitBuffer[i] = *msg++;
+	}
+	if(SPI_Send(xmitBuffer, numBytes+2, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Set LoRa packet parameters */
+	xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
+	xmitBuffer[1] = 0;
+	xmitBuffer[2] = 0x08;		/* Preamble length (2 bytes) */
+	xmitBuffer[3] = 0;			/* Variable length packet */
+	xmitBuffer[4] = numBytes; 	/* Size of message */
+	xmitBuffer[5] = 0;			/* CRC off */
+	xmitBuffer[6] = 0;			/* Standard IQ setup */
+	if(SPI_Send(xmitBuffer, 7, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Put the chip in transmit mode to send the message */
+	xmitBuffer[0] = LORA_SET_TX_OPCODE;
+	xmitBuffer[1] = 0;
+	xmitBuffer[2] = 0;
+	xmitBuffer[3] = 0; 	/* timeout value (3 bytes) set to zero for no timeout */
+	if(SPI_Send(xmitBuffer, 4, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	if(WaitWhileTransmit(500) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	return(LoRa_OK);
+}
+
+/*
+ * LoRaReceive
+ * Go into receive mode and wait for a message
+ * Arguments
+ *  pointer to buffer to receive message
+ *  timeout as specified in table 13-9 pg 72 of datasheet
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_ERROR in case of error
+ */
+LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
+{
+	uint8_t xmitBuffer[10];
+
+	/* Set base address of transmit and receive buffer */
+	xmitBuffer[0] = LORA_SET_BUFFER_BASE_ADDRESS_OPCODE;
+	xmitBuffer[1] = 0; /* Transmit buffer start address */
+	xmitBuffer[2] = 0; /* Receive buffer start address */
+	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Set LoRa packet parameters */
+	xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
+	xmitBuffer[1] = 0;
+	xmitBuffer[2] = 0x08;		/* Preamble length (2 bytes) */
+	xmitBuffer[3] = 0;			/* Variable length packet */
+	xmitBuffer[4] = 128; 		/* Max size of message */
+	xmitBuffer[5] = 0;			/* CRC off */
+	xmitBuffer[6] = 0;			/* Standard IQ setup */
+	if(SPI_Send(xmitBuffer, 7, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Put the chip in receive mode */
+	xmitBuffer[0] = LORA_SET_RX_OPCODE;
+	xmitBuffer[1] = (timeout & 0xFF0000) >> 16;
+	xmitBuffer[2] = (timeout & 0xFF00) >> 8;
+	xmitBuffer[3] = timeout & 0xFF;
+	if(SPI_Send(xmitBuffer, 4, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	if(WaitWhileReceive() != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Clear IRQ status */
+	xmitBuffer[0] = LORA_CLEAR_IRQ_STATUS_OPCODE;
+	xmitBuffer[1] = 0x02; /* Clear timeout interrupt */
+	xmitBuffer[2] = 0x02; /* Clear RX done interrupt */
+	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	return(LoRa_OK);
+}
+
