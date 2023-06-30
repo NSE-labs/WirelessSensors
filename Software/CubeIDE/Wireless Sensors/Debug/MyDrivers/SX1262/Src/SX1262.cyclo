@@ -9,4 +9,4 @@ SX1262.c:335:13:LoRaSetTxPower	4
 SX1262.c:362:13:LoRaSetTxContinuousWave	2
 SX1262.c:382:13:LoRaSetStandbyMode	2
 SX1262.c:406:13:LoRaTransmit	8
-SX1262.c:475:13:LoRaReceive	6
+SX1262.c:475:13:LoRaReceive	11
