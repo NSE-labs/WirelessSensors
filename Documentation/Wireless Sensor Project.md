@@ -71,6 +71,4 @@ The second board has an SX1262 LoRa transceiver and associated RF circuitry incl
 
 ![Actual boards](Images/First%20round%20boards.JPG)
 
-[NEXT: Prototype debugging](./Prototype%20debugging.md)
-
 [Back to project outline](../README.md)
