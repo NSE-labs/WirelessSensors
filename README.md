@@ -11,4 +11,6 @@
 
  [LoRa Gateway Development](./Documentation/LoRa%20gateway%20development.md)
 
+ [CPU Board Rev B.2](./Documentation/CPU%20board%20rev%20B.2.md)
+
  
