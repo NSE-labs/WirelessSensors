@@ -122,6 +122,8 @@ int main(void)
 //	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
 	  CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
 	  HAL_Delay(1000);
+
+
   }
     /* USER CODE END WHILE */
 

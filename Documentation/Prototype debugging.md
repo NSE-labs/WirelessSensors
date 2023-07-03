@@ -76,8 +76,10 @@ Now we've reached the point where it's time to test actual LoRa communications. 
 
 [Gateway development](./LoRa%20gateway%20development.md)
 
-Once the gateway was up and running, it was used to receive and display packets, thus verifying the transmit functionality of the LoRa board.
+9. Once the gateway was up and running, it was used to receive and display packets, thus verifying the transmit functionality of the LoRa board.
 
 ![Transmit test](Images/Gateway%20receiving.JPG)
+
+10. Further testing verified the transmit capability of the gateway board, and receiving functionality of the LoRa board.
 
 [Back to project outline](../README.md)
