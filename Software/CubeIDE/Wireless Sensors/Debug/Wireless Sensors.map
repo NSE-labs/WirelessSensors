@@ -3347,6 +3347,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./MyDrivers/SX1262/Src/SX1262.o
  .data          0x0000000000000000        0x0 ./MyDrivers/SX1262/Src/SX1262.o
  .bss           0x0000000000000000        0x0 ./MyDrivers/SX1262/Src/SX1262.o
+ .text.WaitWhileTransmit
+                0x0000000000000000       0x68 ./MyDrivers/SX1262/Src/SX1262.o
  .text.WaitWhileReceive
                 0x0000000000000000       0x20 ./MyDrivers/SX1262/Src/SX1262.o
  .text.SPI_Receive
@@ -3359,6 +3361,8 @@ Discarded input sections
                 0x0000000000000000       0x2a ./MyDrivers/SX1262/Src/SX1262.o
  .text.LoRaSetStandbyMode
                 0x0000000000000000       0x2e ./MyDrivers/SX1262/Src/SX1262.o
+ .text.LoRaTransmit
+                0x0000000000000000      0x110 ./MyDrivers/SX1262/Src/SX1262.o
  .text.LoRaReceive
                 0x0000000000000000      0x160 ./MyDrivers/SX1262/Src/SX1262.o
  .debug_macro   0x0000000000000000      0xa6c ./MyDrivers/SX1262/Src/SX1262.o
@@ -4211,7 +4215,7 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000000                g_pfnVectors
                 0x000000000800013c                . = ALIGN (0x4)
 
-.text           0x000000000800013c     0x9320
+.text           0x000000000800013c     0x919c
                 0x000000000800013c                . = ALIGN (0x4)
  *(.text)
  .text          0x000000000800013c       0x40 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
@@ -4225,686 +4229,681 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000490                __aeabi_idiv0
                 0x0000000008000490                __aeabi_ldiv0
  *(.text*)
- .text.main     0x0000000008000494       0xc0 ./Core/Src/main.o
+ .text.main     0x0000000008000494       0xb4 ./Core/Src/main.o
                 0x0000000008000494                main
  .text.SystemClock_Config
-                0x0000000008000554       0xa4 ./Core/Src/main.o
-                0x0000000008000554                SystemClock_Config
+                0x0000000008000548       0xa4 ./Core/Src/main.o
+                0x0000000008000548                SystemClock_Config
  .text.MX_I2C1_Init
-                0x00000000080005f8       0x5c ./Core/Src/main.o
+                0x00000000080005ec       0x5c ./Core/Src/main.o
  .text.MX_SPI1_Init
-                0x0000000008000654       0x68 ./Core/Src/main.o
+                0x0000000008000648       0x68 ./Core/Src/main.o
  .text.MX_GPIO_Init
-                0x00000000080006bc       0xf4 ./Core/Src/main.o
+                0x00000000080006b0       0xf4 ./Core/Src/main.o
  .text.Error_Handler
-                0x00000000080007b0        0xa ./Core/Src/main.o
-                0x00000000080007b0                Error_Handler
- *fill*         0x00000000080007ba        0x2 
+                0x00000000080007a4        0xa ./Core/Src/main.o
+                0x00000000080007a4                Error_Handler
+ *fill*         0x00000000080007ae        0x2 
  .text.HAL_MspInit
-                0x00000000080007bc       0x5c ./Core/Src/stm32l1xx_hal_msp.o
-                0x00000000080007bc                HAL_MspInit
+                0x00000000080007b0       0x5c ./Core/Src/stm32l1xx_hal_msp.o
+                0x00000000080007b0                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0000000008000818       0x88 ./Core/Src/stm32l1xx_hal_msp.o
-                0x0000000008000818                HAL_I2C_MspInit
+                0x000000000800080c       0x88 ./Core/Src/stm32l1xx_hal_msp.o
+                0x000000000800080c                HAL_I2C_MspInit
  .text.HAL_SPI_MspInit
-                0x00000000080008a0       0x88 ./Core/Src/stm32l1xx_hal_msp.o
-                0x00000000080008a0                HAL_SPI_MspInit
+                0x0000000008000894       0x88 ./Core/Src/stm32l1xx_hal_msp.o
+                0x0000000008000894                HAL_SPI_MspInit
  .text.NMI_Handler
-                0x0000000008000928        0x6 ./Core/Src/stm32l1xx_it.o
-                0x0000000008000928                NMI_Handler
+                0x000000000800091c        0x6 ./Core/Src/stm32l1xx_it.o
+                0x000000000800091c                NMI_Handler
  .text.HardFault_Handler
-                0x000000000800092e        0x6 ./Core/Src/stm32l1xx_it.o
-                0x000000000800092e                HardFault_Handler
+                0x0000000008000922        0x6 ./Core/Src/stm32l1xx_it.o
+                0x0000000008000922                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008000934        0x6 ./Core/Src/stm32l1xx_it.o
-                0x0000000008000934                MemManage_Handler
+                0x0000000008000928        0x6 ./Core/Src/stm32l1xx_it.o
+                0x0000000008000928                MemManage_Handler
  .text.BusFault_Handler
-                0x000000000800093a        0x6 ./Core/Src/stm32l1xx_it.o
-                0x000000000800093a                BusFault_Handler
+                0x000000000800092e        0x6 ./Core/Src/stm32l1xx_it.o
+                0x000000000800092e                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008000940        0x6 ./Core/Src/stm32l1xx_it.o
-                0x0000000008000940                UsageFault_Handler
+                0x0000000008000934        0x6 ./Core/Src/stm32l1xx_it.o
+                0x0000000008000934                UsageFault_Handler
  .text.SVC_Handler
-                0x0000000008000946        0xc ./Core/Src/stm32l1xx_it.o
-                0x0000000008000946                SVC_Handler
+                0x000000000800093a        0xc ./Core/Src/stm32l1xx_it.o
+                0x000000000800093a                SVC_Handler
  .text.DebugMon_Handler
-                0x0000000008000952        0xc ./Core/Src/stm32l1xx_it.o
-                0x0000000008000952                DebugMon_Handler
+                0x0000000008000946        0xc ./Core/Src/stm32l1xx_it.o
+                0x0000000008000946                DebugMon_Handler
  .text.PendSV_Handler
-                0x000000000800095e        0xc ./Core/Src/stm32l1xx_it.o
-                0x000000000800095e                PendSV_Handler
+                0x0000000008000952        0xc ./Core/Src/stm32l1xx_it.o
+                0x0000000008000952                PendSV_Handler
  .text.SysTick_Handler
-                0x000000000800096a        0xc ./Core/Src/stm32l1xx_it.o
-                0x000000000800096a                SysTick_Handler
- *fill*         0x0000000008000976        0x2 
+                0x000000000800095e        0xc ./Core/Src/stm32l1xx_it.o
+                0x000000000800095e                SysTick_Handler
+ *fill*         0x000000000800096a        0x2 
  .text.USB_LP_IRQHandler
-                0x0000000008000978       0x14 ./Core/Src/stm32l1xx_it.o
-                0x0000000008000978                USB_LP_IRQHandler
- .text._sbrk    0x000000000800098c       0x6c ./Core/Src/sysmem.o
-                0x000000000800098c                _sbrk
+                0x000000000800096c       0x14 ./Core/Src/stm32l1xx_it.o
+                0x000000000800096c                USB_LP_IRQHandler
+ .text._sbrk    0x0000000008000980       0x6c ./Core/Src/sysmem.o
+                0x0000000008000980                _sbrk
  .text.SystemInit
-                0x00000000080009f8        0xc ./Core/Src/system_stm32l1xx.o
-                0x00000000080009f8                SystemInit
+                0x00000000080009ec        0xc ./Core/Src/system_stm32l1xx.o
+                0x00000000080009ec                SystemInit
  .text.Reset_Handler
-                0x0000000008000a04       0x48 ./Core/Startup/startup_stm32l151c8tx.o
-                0x0000000008000a04                Reset_Handler
+                0x00000000080009f8       0x48 ./Core/Startup/startup_stm32l151c8tx.o
+                0x00000000080009f8                Reset_Handler
  .text.Default_Handler
-                0x0000000008000a4c        0x2 ./Core/Startup/startup_stm32l151c8tx.o
-                0x0000000008000a4c                RTC_Alarm_IRQHandler
-                0x0000000008000a4c                EXTI2_IRQHandler
-                0x0000000008000a4c                TIM10_IRQHandler
-                0x0000000008000a4c                USB_HP_IRQHandler
-                0x0000000008000a4c                TIM6_IRQHandler
-                0x0000000008000a4c                PVD_IRQHandler
-                0x0000000008000a4c                EXTI3_IRQHandler
-                0x0000000008000a4c                EXTI0_IRQHandler
-                0x0000000008000a4c                I2C2_EV_IRQHandler
-                0x0000000008000a4c                SPI1_IRQHandler
-                0x0000000008000a4c                USB_FS_WKUP_IRQHandler
-                0x0000000008000a4c                DMA1_Channel4_IRQHandler
-                0x0000000008000a4c                ADC1_IRQHandler
-                0x0000000008000a4c                USART3_IRQHandler
-                0x0000000008000a4c                DMA1_Channel7_IRQHandler
-                0x0000000008000a4c                TIM4_IRQHandler
-                0x0000000008000a4c                I2C1_EV_IRQHandler
-                0x0000000008000a4c                DMA1_Channel6_IRQHandler
-                0x0000000008000a4c                TIM3_IRQHandler
-                0x0000000008000a4c                RCC_IRQHandler
-                0x0000000008000a4c                DMA1_Channel1_IRQHandler
-                0x0000000008000a4c                Default_Handler
-                0x0000000008000a4c                EXTI15_10_IRQHandler
-                0x0000000008000a4c                TIM7_IRQHandler
-                0x0000000008000a4c                EXTI9_5_IRQHandler
-                0x0000000008000a4c                TIM9_IRQHandler
-                0x0000000008000a4c                TAMPER_STAMP_IRQHandler
-                0x0000000008000a4c                RTC_WKUP_IRQHandler
-                0x0000000008000a4c                SPI2_IRQHandler
-                0x0000000008000a4c                DMA1_Channel5_IRQHandler
-                0x0000000008000a4c                EXTI4_IRQHandler
-                0x0000000008000a4c                DMA1_Channel3_IRQHandler
-                0x0000000008000a4c                COMP_IRQHandler
-                0x0000000008000a4c                WWDG_IRQHandler
-                0x0000000008000a4c                TIM2_IRQHandler
-                0x0000000008000a4c                DAC_IRQHandler
-                0x0000000008000a4c                EXTI1_IRQHandler
-                0x0000000008000a4c                TIM11_IRQHandler
-                0x0000000008000a4c                USART2_IRQHandler
-                0x0000000008000a4c                I2C2_ER_IRQHandler
-                0x0000000008000a4c                DMA1_Channel2_IRQHandler
-                0x0000000008000a4c                FLASH_IRQHandler
-                0x0000000008000a4c                USART1_IRQHandler
-                0x0000000008000a4c                I2C1_ER_IRQHandler
+                0x0000000008000a40        0x2 ./Core/Startup/startup_stm32l151c8tx.o
+                0x0000000008000a40                RTC_Alarm_IRQHandler
+                0x0000000008000a40                EXTI2_IRQHandler
+                0x0000000008000a40                TIM10_IRQHandler
+                0x0000000008000a40                USB_HP_IRQHandler
+                0x0000000008000a40                TIM6_IRQHandler
+                0x0000000008000a40                PVD_IRQHandler
+                0x0000000008000a40                EXTI3_IRQHandler
+                0x0000000008000a40                EXTI0_IRQHandler
+                0x0000000008000a40                I2C2_EV_IRQHandler
+                0x0000000008000a40                SPI1_IRQHandler
+                0x0000000008000a40                USB_FS_WKUP_IRQHandler
+                0x0000000008000a40                DMA1_Channel4_IRQHandler
+                0x0000000008000a40                ADC1_IRQHandler
+                0x0000000008000a40                USART3_IRQHandler
+                0x0000000008000a40                DMA1_Channel7_IRQHandler
+                0x0000000008000a40                TIM4_IRQHandler
+                0x0000000008000a40                I2C1_EV_IRQHandler
+                0x0000000008000a40                DMA1_Channel6_IRQHandler
+                0x0000000008000a40                TIM3_IRQHandler
+                0x0000000008000a40                RCC_IRQHandler
+                0x0000000008000a40                DMA1_Channel1_IRQHandler
+                0x0000000008000a40                Default_Handler
+                0x0000000008000a40                EXTI15_10_IRQHandler
+                0x0000000008000a40                TIM7_IRQHandler
+                0x0000000008000a40                EXTI9_5_IRQHandler
+                0x0000000008000a40                TIM9_IRQHandler
+                0x0000000008000a40                TAMPER_STAMP_IRQHandler
+                0x0000000008000a40                RTC_WKUP_IRQHandler
+                0x0000000008000a40                SPI2_IRQHandler
+                0x0000000008000a40                DMA1_Channel5_IRQHandler
+                0x0000000008000a40                EXTI4_IRQHandler
+                0x0000000008000a40                DMA1_Channel3_IRQHandler
+                0x0000000008000a40                COMP_IRQHandler
+                0x0000000008000a40                WWDG_IRQHandler
+                0x0000000008000a40                TIM2_IRQHandler
+                0x0000000008000a40                DAC_IRQHandler
+                0x0000000008000a40                EXTI1_IRQHandler
+                0x0000000008000a40                TIM11_IRQHandler
+                0x0000000008000a40                USART2_IRQHandler
+                0x0000000008000a40                I2C2_ER_IRQHandler
+                0x0000000008000a40                DMA1_Channel2_IRQHandler
+                0x0000000008000a40                FLASH_IRQHandler
+                0x0000000008000a40                USART1_IRQHandler
+                0x0000000008000a40                I2C1_ER_IRQHandler
  .text.HAL_Init
-                0x0000000008000a4e       0x30 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000008000a4e                HAL_Init
- *fill*         0x0000000008000a7e        0x2 
+                0x0000000008000a42       0x30 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x0000000008000a42                HAL_Init
+ *fill*         0x0000000008000a72        0x2 
  .text.HAL_InitTick
-                0x0000000008000a80       0x74 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000008000a80                HAL_InitTick
+                0x0000000008000a74       0x74 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x0000000008000a74                HAL_InitTick
  .text.HAL_IncTick
-                0x0000000008000af4       0x24 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000008000af4                HAL_IncTick
+                0x0000000008000ae8       0x24 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x0000000008000ae8                HAL_IncTick
  .text.HAL_GetTick
-                0x0000000008000b18       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000008000b18                HAL_GetTick
+                0x0000000008000b0c       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x0000000008000b0c                HAL_GetTick
  .text.HAL_Delay
-                0x0000000008000b2c       0x44 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000008000b2c                HAL_Delay
+                0x0000000008000b20       0x44 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x0000000008000b20                HAL_Delay
  .text.__NVIC_SetPriorityGrouping
-                0x0000000008000b70       0x48 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000b64       0x48 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.__NVIC_GetPriorityGrouping
-                0x0000000008000bb8       0x1c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000bac       0x1c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.__NVIC_EnableIRQ
-                0x0000000008000bd4       0x38 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000bc8       0x38 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.__NVIC_SetPriority
-                0x0000000008000c0c       0x54 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000c00       0x54 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.NVIC_EncodePriority
-                0x0000000008000c60       0x64 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000c54       0x64 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.SysTick_Config
-                0x0000000008000cc4       0x44 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000cb8       0x44 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .text.HAL_NVIC_SetPriorityGrouping
-                0x0000000008000d08       0x16 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
-                0x0000000008000d08                HAL_NVIC_SetPriorityGrouping
+                0x0000000008000cfc       0x16 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000cfc                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x0000000008000d1e       0x38 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
-                0x0000000008000d1e                HAL_NVIC_SetPriority
+                0x0000000008000d12       0x38 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000d12                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x0000000008000d56       0x1c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
-                0x0000000008000d56                HAL_NVIC_EnableIRQ
+                0x0000000008000d4a       0x1c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000d4a                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x0000000008000d72       0x18 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
-                0x0000000008000d72                HAL_SYSTICK_Config
- *fill*         0x0000000008000d8a        0x2 
+                0x0000000008000d66       0x18 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+                0x0000000008000d66                HAL_SYSTICK_Config
+ *fill*         0x0000000008000d7e        0x2 
  .text.HAL_GPIO_Init
-                0x0000000008000d8c      0x300 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
-                0x0000000008000d8c                HAL_GPIO_Init
+                0x0000000008000d80      0x300 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+                0x0000000008000d80                HAL_GPIO_Init
  .text.HAL_GPIO_ReadPin
-                0x000000000800108c       0x2e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
-                0x000000000800108c                HAL_GPIO_ReadPin
+                0x0000000008001080       0x2e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+                0x0000000008001080                HAL_GPIO_ReadPin
  .text.HAL_GPIO_WritePin
-                0x00000000080010ba       0x30 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
-                0x00000000080010ba                HAL_GPIO_WritePin
- *fill*         0x00000000080010ea        0x2 
+                0x00000000080010ae       0x30 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+                0x00000000080010ae                HAL_GPIO_WritePin
+ *fill*         0x00000000080010de        0x2 
  .text.HAL_I2C_Init
-                0x00000000080010ec      0x288 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
-                0x00000000080010ec                HAL_I2C_Init
+                0x00000000080010e0      0x288 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
+                0x00000000080010e0                HAL_I2C_Init
  .text.HAL_PCD_Init
-                0x0000000008001374      0x1bc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001374                HAL_PCD_Init
+                0x0000000008001368      0x1bc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001368                HAL_PCD_Init
  .text.HAL_PCD_Start
-                0x0000000008001530       0x4c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001530                HAL_PCD_Start
+                0x0000000008001524       0x4c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001524                HAL_PCD_Start
  .text.HAL_PCD_IRQHandler
-                0x000000000800157c      0x1ee ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x000000000800157c                HAL_PCD_IRQHandler
+                0x0000000008001570      0x1ee ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001570                HAL_PCD_IRQHandler
  .text.HAL_PCD_SetAddress
-                0x000000000800176a       0x4a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x000000000800176a                HAL_PCD_SetAddress
+                0x000000000800175e       0x4a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x000000000800175e                HAL_PCD_SetAddress
  .text.HAL_PCD_EP_Open
-                0x00000000080017b4       0xcc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x00000000080017b4                HAL_PCD_EP_Open
+                0x00000000080017a8       0xcc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x00000000080017a8                HAL_PCD_EP_Open
  .text.HAL_PCD_EP_Close
-                0x0000000008001880       0x90 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001880                HAL_PCD_EP_Close
+                0x0000000008001874       0x90 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001874                HAL_PCD_EP_Close
  .text.HAL_PCD_EP_Receive
-                0x0000000008001910       0x7a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001910                HAL_PCD_EP_Receive
+                0x0000000008001904       0x7a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001904                HAL_PCD_EP_Receive
  .text.HAL_PCD_EP_GetRxCount
-                0x000000000800198a       0x2e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x000000000800198a                HAL_PCD_EP_GetRxCount
+                0x000000000800197e       0x2e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x000000000800197e                HAL_PCD_EP_GetRxCount
  .text.HAL_PCD_EP_Transmit
-                0x00000000080019b8       0x86 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x00000000080019b8                HAL_PCD_EP_Transmit
+                0x00000000080019ac       0x86 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x00000000080019ac                HAL_PCD_EP_Transmit
  .text.HAL_PCD_EP_SetStall
-                0x0000000008001a3e       0xa4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001a3e                HAL_PCD_EP_SetStall
+                0x0000000008001a32       0xa4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001a32                HAL_PCD_EP_SetStall
  .text.HAL_PCD_EP_ClrStall
-                0x0000000008001ae2       0xa8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
-                0x0000000008001ae2                HAL_PCD_EP_ClrStall
+                0x0000000008001ad6       0xa8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001ad6                HAL_PCD_EP_ClrStall
  .text.PCD_EP_ISR_Handler
-                0x0000000008001b8a      0x600 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008001b7e      0x600 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
  .text.HAL_PCD_EP_DB_Receive
-                0x000000000800218a      0x21a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x000000000800217e      0x21a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
  .text.HAL_PCD_EP_DB_Transmit
-                0x00000000080023a4      0x7a4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+                0x0000000008002398      0x7a4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
  .text.HAL_PCDEx_PMAConfig
-                0x0000000008002b48       0x84 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
-                0x0000000008002b48                HAL_PCDEx_PMAConfig
+                0x0000000008002b3c       0x84 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
+                0x0000000008002b3c                HAL_PCDEx_PMAConfig
  .text.HAL_RCC_OscConfig
-                0x0000000008002bcc      0x660 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
-                0x0000000008002bcc                HAL_RCC_OscConfig
+                0x0000000008002bc0      0x660 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x0000000008002bc0                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x000000000800322c      0x268 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
-                0x000000000800322c                HAL_RCC_ClockConfig
+                0x0000000008003220      0x268 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x0000000008003220                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0000000008003494      0x1fc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
-                0x0000000008003494                HAL_RCC_GetSysClockFreq
+                0x0000000008003488      0x1fc ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x0000000008003488                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x0000000008003690       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
-                0x0000000008003690                HAL_RCC_GetHCLKFreq
+                0x0000000008003684       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x0000000008003684                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x00000000080036a4       0x28 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
-                0x00000000080036a4                HAL_RCC_GetPCLK1Freq
+                0x0000000008003698       0x28 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x0000000008003698                HAL_RCC_GetPCLK1Freq
  .text.RCC_SetFlashLatencyFromMSIRange
-                0x00000000080036cc       0xc0 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+                0x00000000080036c0       0xc0 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
  .text.HAL_SPI_Init
-                0x000000000800378c       0xf8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
-                0x000000000800378c                HAL_SPI_Init
+                0x0000000008003780       0xf8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+                0x0000000008003780                HAL_SPI_Init
  .text.HAL_SPI_Transmit
-                0x0000000008003884      0x278 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
-                0x0000000008003884                HAL_SPI_Transmit
+                0x0000000008003878      0x278 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+                0x0000000008003878                HAL_SPI_Transmit
  .text.SPI_WaitFlagStateUntilTimeout
-                0x0000000008003afc      0x110 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+                0x0000000008003af0      0x110 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
  .text.SPI_EndRxTxTransaction
-                0x0000000008003c0c       0x84 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+                0x0000000008003c00       0x84 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
  .text.USB_EnableGlobalInt
-                0x0000000008003c90       0x2c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008003c90                USB_EnableGlobalInt
+                0x0000000008003c84       0x2c ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008003c84                USB_EnableGlobalInt
  .text.USB_DisableGlobalInt
-                0x0000000008003cbc       0x34 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008003cbc                USB_DisableGlobalInt
+                0x0000000008003cb0       0x34 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008003cb0                USB_DisableGlobalInt
  .text.USB_DevInit
-                0x0000000008003cf0       0x40 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008003cf0                USB_DevInit
+                0x0000000008003ce4       0x40 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008003ce4                USB_DevInit
  .text.USB_ActivateEndpoint
-                0x0000000008003d30      0x6d4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008003d30                USB_ActivateEndpoint
+                0x0000000008003d24      0x6d4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008003d24                USB_ActivateEndpoint
  .text.USB_DeactivateEndpoint
-                0x0000000008004404      0x3d8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008004404                USB_DeactivateEndpoint
+                0x00000000080043f8      0x3d8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x00000000080043f8                USB_DeactivateEndpoint
  .text.USB_EPStartXfer
-                0x00000000080047dc     0x1c70 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x00000000080047dc                USB_EPStartXfer
+                0x00000000080047d0     0x1c70 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x00000000080047d0                USB_EPStartXfer
  .text.USB_EPSetStall
-                0x000000000800644c       0xa0 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x000000000800644c                USB_EPSetStall
+                0x0000000008006440       0xa0 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008006440                USB_EPSetStall
  .text.USB_EPClearStall
-                0x00000000080064ec      0x15a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x00000000080064ec                USB_EPClearStall
+                0x00000000080064e0      0x15a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x00000000080064e0                USB_EPClearStall
  .text.USB_SetDevAddress
-                0x0000000008006646       0x26 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008006646                USB_SetDevAddress
+                0x000000000800663a       0x26 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x000000000800663a                USB_SetDevAddress
  .text.USB_DevConnect
-                0x000000000800666c       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x000000000800666c                USB_DevConnect
+                0x0000000008006660       0x14 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008006660                USB_DevConnect
  .text.USB_ReadInterrupts
-                0x0000000008006680       0x1e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008006680                USB_ReadInterrupts
+                0x0000000008006674       0x1e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008006674                USB_ReadInterrupts
  .text.USB_WritePMA
-                0x000000000800669e       0x8a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x000000000800669e                USB_WritePMA
+                0x0000000008006692       0x8a ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x0000000008006692                USB_WritePMA
  .text.USB_ReadPMA
-                0x0000000008006728       0x9e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
-                0x0000000008006728                USB_ReadPMA
+                0x000000000800671c       0x9e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+                0x000000000800671c                USB_ReadPMA
  .text.USBD_CDC_Init
-                0x00000000080067c6       0xf4 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x00000000080067ba       0xf4 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_DeInit
-                0x00000000080068ba       0x6e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x00000000080068ae       0x6e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_Setup
-                0x0000000008006928      0x146 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x000000000800691c      0x146 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_DataIn
-                0x0000000008006a6e       0xa6 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006a62       0xa6 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_DataOut
-                0x0000000008006b14       0x56 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006b08       0x56 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_EP0_RxReady
-                0x0000000008006b6a       0x50 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- *fill*         0x0000000008006bba        0x2 
+                0x0000000008006b5e       0x50 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ *fill*         0x0000000008006bae        0x2 
  .text.USBD_CDC_GetFSCfgDesc
-                0x0000000008006bbc       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006bb0       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_GetHSCfgDesc
-                0x0000000008006bdc       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006bd0       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_GetOtherSpeedCfgDesc
-                0x0000000008006bfc       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006bf0       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
  .text.USBD_CDC_GetDeviceQualifierDescriptor
-                0x0000000008006c1c       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006c1c                USBD_CDC_GetDeviceQualifierDescriptor
+                0x0000000008006c10       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006c10                USBD_CDC_GetDeviceQualifierDescriptor
  .text.USBD_CDC_RegisterInterface
-                0x0000000008006c3c       0x2c ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006c3c                USBD_CDC_RegisterInterface
+                0x0000000008006c30       0x2c ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006c30                USBD_CDC_RegisterInterface
  .text.USBD_CDC_SetTxBuffer
-                0x0000000008006c68       0x32 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006c68                USBD_CDC_SetTxBuffer
+                0x0000000008006c5c       0x32 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006c5c                USBD_CDC_SetTxBuffer
  .text.USBD_CDC_SetRxBuffer
-                0x0000000008006c9a       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006c9a                USBD_CDC_SetRxBuffer
+                0x0000000008006c8e       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006c8e                USBD_CDC_SetRxBuffer
  .text.USBD_CDC_TransmitPacket
-                0x0000000008006cc0       0x5e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006cc0                USBD_CDC_TransmitPacket
+                0x0000000008006cb4       0x5e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006cb4                USBD_CDC_TransmitPacket
  .text.USBD_CDC_ReceivePacket
-                0x0000000008006d1e       0x54 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
-                0x0000000008006d1e                USBD_CDC_ReceivePacket
+                0x0000000008006d12       0x54 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+                0x0000000008006d12                USBD_CDC_ReceivePacket
  .text.USBD_Init
-                0x0000000008006d72       0x56 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006d72                USBD_Init
+                0x0000000008006d66       0x56 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006d66                USBD_Init
  .text.USBD_RegisterClass
-                0x0000000008006dc8       0x32 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006dc8                USBD_RegisterClass
+                0x0000000008006dbc       0x32 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006dbc                USBD_RegisterClass
  .text.USBD_Start
-                0x0000000008006dfa       0x18 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006dfa                USBD_Start
+                0x0000000008006dee       0x18 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006dee                USBD_Start
  .text.USBD_RunTestMode
-                0x0000000008006e12       0x14 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006e12                USBD_RunTestMode
+                0x0000000008006e06       0x14 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006e06                USBD_RunTestMode
  .text.USBD_SetClassConfig
-                0x0000000008006e26       0x3e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006e26                USBD_SetClassConfig
+                0x0000000008006e1a       0x3e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006e1a                USBD_SetClassConfig
  .text.USBD_ClrClassConfig
-                0x0000000008006e64       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006e64                USBD_ClrClassConfig
+                0x0000000008006e58       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006e58                USBD_ClrClassConfig
  .text.USBD_LL_SetupStage
-                0x0000000008006e8a       0x9a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006e8a                USBD_LL_SetupStage
+                0x0000000008006e7e       0x9a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006e7e                USBD_LL_SetupStage
  .text.USBD_LL_DataOutStage
-                0x0000000008006f24       0xe2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008006f24                USBD_LL_DataOutStage
+                0x0000000008006f18       0xe2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006f18                USBD_LL_DataOutStage
  .text.USBD_LL_DataInStage
-                0x0000000008007006      0x14a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008007006                USBD_LL_DataInStage
+                0x0000000008006ffa      0x14a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008006ffa                USBD_LL_DataInStage
  .text.USBD_LL_Reset
-                0x0000000008007150       0x82 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008007150                USBD_LL_Reset
+                0x0000000008007144       0x82 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x0000000008007144                USBD_LL_Reset
  .text.USBD_LL_SetSpeed
-                0x00000000080071d2       0x1e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x00000000080071d2                USBD_LL_SetSpeed
+                0x00000000080071c6       0x1e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x00000000080071c6                USBD_LL_SetSpeed
  .text.USBD_LL_Suspend
-                0x00000000080071f0       0x28 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x00000000080071f0                USBD_LL_Suspend
+                0x00000000080071e4       0x28 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x00000000080071e4                USBD_LL_Suspend
  .text.USBD_LL_Resume
-                0x0000000008007218       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008007218                USBD_LL_Resume
+                0x000000000800720c       0x20 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x000000000800720c                USBD_LL_Resume
  .text.USBD_LL_SOF
-                0x0000000008007238       0x34 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                0x0000000008007238                USBD_LL_SOF
+                0x000000000800722c       0x34 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                0x000000000800722c                USBD_LL_SOF
  .text.USBD_StdDevReq
-                0x000000000800726c       0xd4 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x000000000800726c                USBD_StdDevReq
+                0x0000000008007260       0xd4 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007260                USBD_StdDevReq
  .text.USBD_StdItfReq
-                0x0000000008007340       0x90 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x0000000008007340                USBD_StdItfReq
+                0x0000000008007334       0x90 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007334                USBD_StdItfReq
  .text.USBD_StdEPReq
-                0x00000000080073d0      0x2c2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x00000000080073d0                USBD_StdEPReq
- *fill*         0x0000000008007692        0x2 
+                0x00000000080073c4      0x2c2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x00000000080073c4                USBD_StdEPReq
+ *fill*         0x0000000008007686        0x2 
  .text.USBD_GetDescriptor
-                0x0000000008007694      0x1f4 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007688      0x1f4 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_SetAddress
-                0x0000000008007888       0x86 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- *fill*         0x000000000800790e        0x2 
+                0x000000000800787c       0x86 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ *fill*         0x0000000008007902        0x2 
  .text.USBD_SetConfig
-                0x0000000008007910      0x11c ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007904      0x11c ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_GetConfig
-                0x0000000008007a2c       0x6a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007a20       0x6a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_GetStatus
-                0x0000000008007a96       0x66 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007a8a       0x66 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_SetFeature
-                0x0000000008007afc       0x28 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007af0       0x28 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_ClrFeature
-                0x0000000008007b24       0x42 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007b18       0x42 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_ParseSetupRequest
-                0x0000000008007b66       0x78 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x0000000008007b66                USBD_ParseSetupRequest
+                0x0000000008007b5a       0x78 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007b5a                USBD_ParseSetupRequest
  .text.USBD_CtlError
-                0x0000000008007bde       0x22 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x0000000008007bde                USBD_CtlError
+                0x0000000008007bd2       0x22 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007bd2                USBD_CtlError
  .text.USBD_GetString
-                0x0000000008007c00       0x84 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                0x0000000008007c00                USBD_GetString
+                0x0000000008007bf4       0x84 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007bf4                USBD_GetString
  .text.USBD_GetLen
-                0x0000000008007c84       0x2e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                0x0000000008007c78       0x2e ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .text.USBD_CtlSendData
-                0x0000000008007cb2       0x38 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007cb2                USBD_CtlSendData
+                0x0000000008007ca6       0x38 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007ca6                USBD_CtlSendData
  .text.USBD_CtlContinueSendData
-                0x0000000008007cea       0x24 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007cea                USBD_CtlContinueSendData
+                0x0000000008007cde       0x24 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007cde                USBD_CtlContinueSendData
  .text.USBD_CtlPrepareRx
-                0x0000000008007d0e       0x3c ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007d0e                USBD_CtlPrepareRx
+                0x0000000008007d02       0x3c ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007d02                USBD_CtlPrepareRx
  .text.USBD_CtlContinueRx
-                0x0000000008007d4a       0x24 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007d4a                USBD_CtlContinueRx
+                0x0000000008007d3e       0x24 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007d3e                USBD_CtlContinueRx
  .text.USBD_CtlSendStatus
-                0x0000000008007d6e       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007d6e                USBD_CtlSendStatus
+                0x0000000008007d62       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007d62                USBD_CtlSendStatus
  .text.USBD_CtlReceiveStatus
-                0x0000000008007d94       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                0x0000000008007d94                USBD_CtlReceiveStatus
- *fill*         0x0000000008007dba        0x2 
+                0x0000000008007d88       0x26 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                0x0000000008007d88                USBD_CtlReceiveStatus
+ *fill*         0x0000000008007dae        0x2 
  .text.WaitWhileBusy
-                0x0000000008007dbc       0x44 ./MyDrivers/SX1262/Src/SX1262.o
- .text.WaitWhileTransmit
-                0x0000000008007e00       0x68 ./MyDrivers/SX1262/Src/SX1262.o
+                0x0000000008007db0       0x44 ./MyDrivers/SX1262/Src/SX1262.o
  .text.SPI_Send
-                0x0000000008007e68       0x6c ./MyDrivers/SX1262/Src/SX1262.o
+                0x0000000008007df4       0x6c ./MyDrivers/SX1262/Src/SX1262.o
  .text.LoRa_Init
-                0x0000000008007ed4      0x1a8 ./MyDrivers/SX1262/Src/SX1262.o
-                0x0000000008007ed4                LoRa_Init
- .text.LoRaTransmit
-                0x000000000800807c      0x110 ./MyDrivers/SX1262/Src/SX1262.o
-                0x000000000800807c                LoRaTransmit
+                0x0000000008007e60      0x1a8 ./MyDrivers/SX1262/Src/SX1262.o
+                0x0000000008007e60                LoRa_Init
  .text.MX_USB_DEVICE_Init
-                0x000000000800818c       0x60 ./USB_DEVICE/App/usb_device.o
-                0x000000000800818c                MX_USB_DEVICE_Init
+                0x0000000008008008       0x60 ./USB_DEVICE/App/usb_device.o
+                0x0000000008008008                MX_USB_DEVICE_Init
  .text.CDC_Init_FS
-                0x00000000080081ec       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
+                0x0000000008008068       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
  .text.CDC_DeInit_FS
-                0x0000000008008214        0xe ./USB_DEVICE/App/usbd_cdc_if.o
- *fill*         0x0000000008008222        0x2 
+                0x0000000008008090        0xe ./USB_DEVICE/App/usbd_cdc_if.o
+ *fill*         0x000000000800809e        0x2 
  .text.CDC_Control_FS
-                0x0000000008008224       0xbc ./USB_DEVICE/App/usbd_cdc_if.o
+                0x00000000080080a0       0xbc ./USB_DEVICE/App/usbd_cdc_if.o
  .text.CDC_Receive_FS
-                0x00000000080082e0       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
+                0x000000000800815c       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
  .text.CDC_Transmit_FS
-                0x0000000008008308       0x4c ./USB_DEVICE/App/usbd_cdc_if.o
-                0x0000000008008308                CDC_Transmit_FS
+                0x0000000008008184       0x4c ./USB_DEVICE/App/usbd_cdc_if.o
+                0x0000000008008184                CDC_Transmit_FS
  .text.USBD_FS_DeviceDescriptor
-                0x0000000008008354       0x24 ./USB_DEVICE/App/usbd_desc.o
-                0x0000000008008354                USBD_FS_DeviceDescriptor
+                0x00000000080081d0       0x24 ./USB_DEVICE/App/usbd_desc.o
+                0x00000000080081d0                USBD_FS_DeviceDescriptor
  .text.USBD_FS_LangIDStrDescriptor
-                0x0000000008008378       0x24 ./USB_DEVICE/App/usbd_desc.o
-                0x0000000008008378                USBD_FS_LangIDStrDescriptor
+                0x00000000080081f4       0x24 ./USB_DEVICE/App/usbd_desc.o
+                0x00000000080081f4                USBD_FS_LangIDStrDescriptor
  .text.USBD_FS_ProductStrDescriptor
-                0x000000000800839c       0x3c ./USB_DEVICE/App/usbd_desc.o
-                0x000000000800839c                USBD_FS_ProductStrDescriptor
+                0x0000000008008218       0x3c ./USB_DEVICE/App/usbd_desc.o
+                0x0000000008008218                USBD_FS_ProductStrDescriptor
  .text.USBD_FS_ManufacturerStrDescriptor
-                0x00000000080083d8       0x28 ./USB_DEVICE/App/usbd_desc.o
-                0x00000000080083d8                USBD_FS_ManufacturerStrDescriptor
+                0x0000000008008254       0x28 ./USB_DEVICE/App/usbd_desc.o
+                0x0000000008008254                USBD_FS_ManufacturerStrDescriptor
  .text.USBD_FS_SerialStrDescriptor
-                0x0000000008008400       0x24 ./USB_DEVICE/App/usbd_desc.o
-                0x0000000008008400                USBD_FS_SerialStrDescriptor
+                0x000000000800827c       0x24 ./USB_DEVICE/App/usbd_desc.o
+                0x000000000800827c                USBD_FS_SerialStrDescriptor
  .text.USBD_FS_ConfigStrDescriptor
-                0x0000000008008424       0x3c ./USB_DEVICE/App/usbd_desc.o
-                0x0000000008008424                USBD_FS_ConfigStrDescriptor
+                0x00000000080082a0       0x3c ./USB_DEVICE/App/usbd_desc.o
+                0x00000000080082a0                USBD_FS_ConfigStrDescriptor
  .text.USBD_FS_InterfaceStrDescriptor
-                0x0000000008008460       0x3c ./USB_DEVICE/App/usbd_desc.o
-                0x0000000008008460                USBD_FS_InterfaceStrDescriptor
+                0x00000000080082dc       0x3c ./USB_DEVICE/App/usbd_desc.o
+                0x00000000080082dc                USBD_FS_InterfaceStrDescriptor
  .text.Get_SerialNum
-                0x000000000800849c       0x58 ./USB_DEVICE/App/usbd_desc.o
+                0x0000000008008318       0x58 ./USB_DEVICE/App/usbd_desc.o
  .text.IntToUnicode
-                0x00000000080084f4       0x7c ./USB_DEVICE/App/usbd_desc.o
+                0x0000000008008370       0x7c ./USB_DEVICE/App/usbd_desc.o
  .text.HAL_PCDEx_SetConnectionState
-                0x0000000008008570       0x3c ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008570                HAL_PCDEx_SetConnectionState
+                0x00000000080083ec       0x3c ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080083ec                HAL_PCDEx_SetConnectionState
  .text.HAL_PCD_MspInit
-                0x00000000080085ac       0x4c ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080085ac                HAL_PCD_MspInit
+                0x0000000008008428       0x4c ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008428                HAL_PCD_MspInit
  .text.HAL_PCD_SetupStageCallback
-                0x00000000080085f8       0x24 ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080085f8                HAL_PCD_SetupStageCallback
+                0x0000000008008474       0x24 ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008474                HAL_PCD_SetupStageCallback
  .text.HAL_PCD_DataOutStageCallback
-                0x000000000800861c       0x36 ./USB_DEVICE/Target/usbd_conf.o
-                0x000000000800861c                HAL_PCD_DataOutStageCallback
+                0x0000000008008498       0x36 ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008498                HAL_PCD_DataOutStageCallback
  .text.HAL_PCD_DataInStageCallback
-                0x0000000008008652       0x34 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008652                HAL_PCD_DataInStageCallback
+                0x00000000080084ce       0x34 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080084ce                HAL_PCD_DataInStageCallback
  .text.HAL_PCD_SOFCallback
-                0x0000000008008686       0x1c ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008686                HAL_PCD_SOFCallback
+                0x0000000008008502       0x1c ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008502                HAL_PCD_SOFCallback
  .text.HAL_PCD_ResetCallback
-                0x00000000080086a2       0x3c ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080086a2                HAL_PCD_ResetCallback
- *fill*         0x00000000080086de        0x2 
+                0x000000000800851e       0x3c ./USB_DEVICE/Target/usbd_conf.o
+                0x000000000800851e                HAL_PCD_ResetCallback
+ *fill*         0x000000000800855a        0x2 
  .text.HAL_PCD_SuspendCallback
-                0x00000000080086e0       0x34 ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080086e0                HAL_PCD_SuspendCallback
+                0x000000000800855c       0x34 ./USB_DEVICE/Target/usbd_conf.o
+                0x000000000800855c                HAL_PCD_SuspendCallback
  .text.HAL_PCD_ResumeCallback
-                0x0000000008008714       0x1c ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008714                HAL_PCD_ResumeCallback
+                0x0000000008008590       0x1c ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008590                HAL_PCD_ResumeCallback
  .text.USBD_LL_Init
-                0x0000000008008730       0xb4 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008730                USBD_LL_Init
+                0x00000000080085ac       0xb4 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080085ac                USBD_LL_Init
  .text.USBD_LL_Start
-                0x00000000080087e4       0x36 ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080087e4                USBD_LL_Start
+                0x0000000008008660       0x36 ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008660                USBD_LL_Start
  .text.USBD_LL_OpenEP
-                0x000000000800881a       0x4c ./USB_DEVICE/Target/usbd_conf.o
-                0x000000000800881a                USBD_LL_OpenEP
+                0x0000000008008696       0x4c ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008696                USBD_LL_OpenEP
  .text.USBD_LL_CloseEP
-                0x0000000008008866       0x3e ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008866                USBD_LL_CloseEP
+                0x00000000080086e2       0x3e ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080086e2                USBD_LL_CloseEP
  .text.USBD_LL_StallEP
-                0x00000000080088a4       0x3e ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080088a4                USBD_LL_StallEP
+                0x0000000008008720       0x3e ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008720                USBD_LL_StallEP
  .text.USBD_LL_ClearStallEP
-                0x00000000080088e2       0x3e ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080088e2                USBD_LL_ClearStallEP
+                0x000000000800875e       0x3e ./USB_DEVICE/Target/usbd_conf.o
+                0x000000000800875e                USBD_LL_ClearStallEP
  .text.USBD_LL_IsStallEP
-                0x0000000008008920       0x58 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008920                USBD_LL_IsStallEP
+                0x000000000800879c       0x58 ./USB_DEVICE/Target/usbd_conf.o
+                0x000000000800879c                USBD_LL_IsStallEP
  .text.USBD_LL_SetUSBAddress
-                0x0000000008008978       0x3e ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008978                USBD_LL_SetUSBAddress
+                0x00000000080087f4       0x3e ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080087f4                USBD_LL_SetUSBAddress
  .text.USBD_LL_Transmit
-                0x00000000080089b6       0x46 ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080089b6                USBD_LL_Transmit
+                0x0000000008008832       0x46 ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008832                USBD_LL_Transmit
  .text.USBD_LL_PrepareReceive
-                0x00000000080089fc       0x46 ./USB_DEVICE/Target/usbd_conf.o
-                0x00000000080089fc                USBD_LL_PrepareReceive
+                0x0000000008008878       0x46 ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000008008878                USBD_LL_PrepareReceive
  .text.USBD_LL_GetRxDataSize
-                0x0000000008008a42       0x26 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008a42                USBD_LL_GetRxDataSize
+                0x00000000080088be       0x26 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080088be                USBD_LL_GetRxDataSize
  .text.USBD_static_malloc
-                0x0000000008008a68       0x18 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008a68                USBD_static_malloc
+                0x00000000080088e4       0x18 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080088e4                USBD_static_malloc
  .text.USBD_static_free
-                0x0000000008008a80       0x12 ./USB_DEVICE/Target/usbd_conf.o
-                0x0000000008008a80                USBD_static_free
- *fill*         0x0000000008008a92        0x2 
+                0x00000000080088fc       0x12 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000080088fc                USBD_static_free
+ *fill*         0x000000000800890e        0x2 
  .text.USBD_Get_USB_Status
-                0x0000000008008a94       0x58 ./USB_DEVICE/Target/usbd_conf.o
- .text.__errno  0x0000000008008aec        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-errno.o)
-                0x0000000008008aec                __errno
+                0x0000000008008910       0x58 ./USB_DEVICE/Target/usbd_conf.o
+ .text.__errno  0x0000000008008968        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-errno.o)
+                0x0000000008008968                __errno
  .text.__libc_init_array
-                0x0000000008008af8       0x48 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
-                0x0000000008008af8                __libc_init_array
- .text.memset   0x0000000008008b40       0x10 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
-                0x0000000008008b40                memset
- .text.sprintf  0x0000000008008b50       0x40 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sprintf.o)
-                0x0000000008008b50                siprintf
-                0x0000000008008b50                sprintf
+                0x0000000008008974       0x48 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x0000000008008974                __libc_init_array
+ .text.memset   0x00000000080089bc       0x10 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+                0x00000000080089bc                memset
+ .text.sprintf  0x00000000080089cc       0x40 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sprintf.o)
+                0x00000000080089cc                siprintf
+                0x00000000080089cc                sprintf
  .text.__ssputs_r
-                0x0000000008008b90       0xb6 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000008008b90                __ssputs_r
- *fill*         0x0000000008008c46        0x2 
+                0x0000000008008a0c       0xb6 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008008a0c                __ssputs_r
+ *fill*         0x0000000008008ac2        0x2 
  .text._svfprintf_r
-                0x0000000008008c48      0x200 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000008008c48                _svfiprintf_r
-                0x0000000008008c48                _svfprintf_r
+                0x0000000008008ac4      0x200 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008008ac4                _svfiprintf_r
+                0x0000000008008ac4                _svfprintf_r
  .text._printf_common
-                0x0000000008008e48       0xde c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008008e48                _printf_common
- *fill*         0x0000000008008f26        0x2 
+                0x0000000008008cc4       0xde c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008008cc4                _printf_common
+ *fill*         0x0000000008008da2        0x2 
  .text._printf_i
-                0x0000000008008f28      0x24c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008008f28                _printf_i
- .text.memchr   0x0000000008009174       0x1c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memchr-stub.o)
-                0x0000000008009174                memchr
- .text.memcpy   0x0000000008009190       0x1c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008009190                memcpy
- .text.memmove  0x00000000080091ac       0x34 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memmove.o)
-                0x00000000080091ac                memmove
- .text._free_r  0x00000000080091e0       0x90 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-freer.o)
-                0x00000000080091e0                _free_r
+                0x0000000008008da4      0x24c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008008da4                _printf_i
+ .text.memchr   0x0000000008008ff0       0x1c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memchr-stub.o)
+                0x0000000008008ff0                memchr
+ .text.memcpy   0x000000000800900c       0x1c c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
+                0x000000000800900c                memcpy
+ .text.memmove  0x0000000008009028       0x34 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memmove.o)
+                0x0000000008009028                memmove
+ .text._free_r  0x000000000800905c       0x90 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-freer.o)
+                0x000000000800905c                _free_r
  .text.sbrk_aligned
-                0x0000000008009270       0x40 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000000080090ec       0x40 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
  .text._malloc_r
-                0x00000000080092b0       0xe8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
-                0x00000000080092b0                _malloc_r
+                0x000000000800912c       0xe8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000000800912c                _malloc_r
  .text._realloc_r
-                0x0000000008009398       0x5e c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-reallocr.o)
-                0x0000000008009398                _realloc_r
- *fill*         0x00000000080093f6        0x2 
- .text._sbrk_r  0x00000000080093f8       0x20 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sbrkr.o)
-                0x00000000080093f8                _sbrk_r
+                0x0000000008009214       0x5e c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-reallocr.o)
+                0x0000000008009214                _realloc_r
+ *fill*         0x0000000008009272        0x2 
+ .text._sbrk_r  0x0000000008009274       0x20 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sbrkr.o)
+                0x0000000008009274                _sbrk_r
  .text.__malloc_lock
-                0x0000000008009418        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
-                0x0000000008009418                __malloc_lock
+                0x0000000008009294        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
+                0x0000000008009294                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008009424        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
-                0x0000000008009424                __malloc_unlock
+                0x00000000080092a0        0xc c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
+                0x00000000080092a0                __malloc_unlock
  .text._malloc_usable_size_r
-                0x0000000008009430       0x10 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-msizer.o)
-                0x0000000008009430                _malloc_usable_size_r
+                0x00000000080092ac       0x10 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-msizer.o)
+                0x00000000080092ac                _malloc_usable_size_r
  .text.__retarget_lock_acquire_recursive
-                0x0000000008009440        0x2 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-                0x0000000008009440                __retarget_lock_acquire_recursive
+                0x00000000080092bc        0x2 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
+                0x00000000080092bc                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000008009442        0x2 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-                0x0000000008009442                __retarget_lock_release_recursive
+                0x00000000080092be        0x2 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
+                0x00000000080092be                __retarget_lock_release_recursive
  *(.glue_7)
- .glue_7        0x0000000008009444        0x0 linker stubs
+ .glue_7        0x00000000080092c0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008009444        0x0 linker stubs
+ .glue_7t       0x00000000080092c0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008009444        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x00000000080092c0        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x0000000008009444        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
-                0x0000000008009444                _init
- .init          0x0000000008009448        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x00000000080092c0        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
+                0x00000000080092c0                _init
+ .init          0x00000000080092c4        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000008009450        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
-                0x0000000008009450                _fini
- .fini          0x0000000008009454        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
-                0x000000000800945c                . = ALIGN (0x4)
-                0x000000000800945c                _etext = .
+ .fini          0x00000000080092cc        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
+                0x00000000080092cc                _fini
+ .fini          0x00000000080092d0        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
+                0x00000000080092d8                . = ALIGN (0x4)
+                0x00000000080092d8                _etext = .
 
-.vfp11_veneer   0x000000000800945c        0x0
- .vfp11_veneer  0x000000000800945c        0x0 linker stubs
+.vfp11_veneer   0x00000000080092d8        0x0
+ .vfp11_veneer  0x00000000080092d8        0x0 linker stubs
 
-.v4_bx          0x000000000800945c        0x0
- .v4_bx         0x000000000800945c        0x0 linker stubs
+.v4_bx          0x00000000080092d8        0x0
+ .v4_bx         0x00000000080092d8        0x0 linker stubs
 
-.iplt           0x000000000800945c        0x0
- .iplt          0x000000000800945c        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x00000000080092d8        0x0
+ .iplt          0x00000000080092d8        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x000000000800945c       0xc8
-                0x000000000800945c                . = ALIGN (0x4)
+.rodata         0x00000000080092d8       0xc8
+                0x00000000080092d8                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800945c       0x27 ./Core/Src/main.o
- *fill*         0x0000000008009483        0x1 
- .rodata        0x0000000008009484       0x46 ./USB_DEVICE/App/usbd_desc.o
+ .rodata        0x00000000080092d8       0x27 ./Core/Src/main.o
+ *fill*         0x00000000080092ff        0x1 
+ .rodata        0x0000000008009300       0x46 ./USB_DEVICE/App/usbd_desc.o
  *(.rodata*)
- *fill*         0x00000000080094ca        0x2 
+ *fill*         0x0000000008009346        0x2 
  .rodata.PLLMulTable
-                0x00000000080094cc        0x9 ./Core/Src/system_stm32l1xx.o
-                0x00000000080094cc                PLLMulTable
- *fill*         0x00000000080094d5        0x3 
+                0x0000000008009348        0x9 ./Core/Src/system_stm32l1xx.o
+                0x0000000008009348                PLLMulTable
+ *fill*         0x0000000008009351        0x3 
  .rodata.AHBPrescTable
-                0x00000000080094d8       0x10 ./Core/Src/system_stm32l1xx.o
-                0x00000000080094d8                AHBPrescTable
+                0x0000000008009354       0x10 ./Core/Src/system_stm32l1xx.o
+                0x0000000008009354                AHBPrescTable
  .rodata.APBPrescTable
-                0x00000000080094e8        0x8 ./Core/Src/system_stm32l1xx.o
-                0x00000000080094e8                APBPrescTable
+                0x0000000008009364        0x8 ./Core/Src/system_stm32l1xx.o
+                0x0000000008009364                APBPrescTable
  .rodata._svfprintf_r.str1.1
-                0x00000000080094f0       0x11 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000800936c       0x11 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x0000000008009501       0x22 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008009524                . = ALIGN (0x4)
- *fill*         0x0000000008009523        0x1 
+                0x000000000800937d       0x22 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000000080093a0                . = ALIGN (0x4)
+ *fill*         0x000000000800939f        0x1 
 
-.ARM.extab      0x0000000008009524        0x0
-                0x0000000008009524                . = ALIGN (0x4)
+.ARM.extab      0x00000000080093a0        0x0
+                0x00000000080093a0                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008009524                . = ALIGN (0x4)
+                0x00000000080093a0                . = ALIGN (0x4)
 
-.ARM            0x0000000008009524        0x8
-                0x0000000008009524                . = ALIGN (0x4)
-                0x0000000008009524                __exidx_start = .
+.ARM            0x00000000080093a0        0x8
+                0x00000000080093a0                . = ALIGN (0x4)
+                0x00000000080093a0                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0000000008009524        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
-                0x000000000800952c                __exidx_end = .
-                0x000000000800952c                . = ALIGN (0x4)
+ .ARM.exidx     0x00000000080093a0        0x8 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+                0x00000000080093a8                __exidx_end = .
+                0x00000000080093a8                . = ALIGN (0x4)
 
-.rel.dyn        0x000000000800952c        0x0
- .rel.iplt      0x000000000800952c        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x00000000080093a8        0x0
+ .rel.iplt      0x00000000080093a8        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.preinit_array  0x000000000800952c        0x0
-                0x000000000800952c                . = ALIGN (0x4)
-                0x000000000800952c                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00000000080093a8        0x0
+                0x00000000080093a8                . = ALIGN (0x4)
+                0x00000000080093a8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000000800952c                PROVIDE (__preinit_array_end = .)
-                0x000000000800952c                . = ALIGN (0x4)
+                0x00000000080093a8                PROVIDE (__preinit_array_end = .)
+                0x00000000080093a8                . = ALIGN (0x4)
 
-.init_array     0x000000000800952c        0x4
-                0x000000000800952c                . = ALIGN (0x4)
-                0x000000000800952c                PROVIDE (__init_array_start = .)
+.init_array     0x00000000080093a8        0x4
+                0x00000000080093a8                . = ALIGN (0x4)
+                0x00000000080093a8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x000000000800952c        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x0000000008009530                PROVIDE (__init_array_end = .)
-                0x0000000008009530                . = ALIGN (0x4)
+ .init_array    0x00000000080093a8        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x00000000080093ac                PROVIDE (__init_array_end = .)
+                0x00000000080093ac                . = ALIGN (0x4)
 
-.fini_array     0x0000000008009530        0x4
-                0x0000000008009530                . = ALIGN (0x4)
+.fini_array     0x00000000080093ac        0x4
+                0x00000000080093ac                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008009530        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x00000000080093ac        0x4 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008009534                . = ALIGN (0x4)
-                0x0000000008009534                _sidata = LOADADDR (.data)
+                0x00000000080093b0                . = ALIGN (0x4)
+                0x00000000080093b0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x1e0 load address 0x0000000008009534
+.data           0x0000000020000000      0x1e0 load address 0x00000000080093b0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -4962,11 +4961,11 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x00000000200001e0                . = ALIGN (0x4)
                 0x00000000200001e0                _edata = .
 
-.igot.plt       0x00000000200001e0        0x0 load address 0x0000000008009714
+.igot.plt       0x00000000200001e0        0x0 load address 0x0000000008009590
  .igot.plt      0x00000000200001e0        0x0 c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x00000000200001e0                . = ALIGN (0x4)
 
-.bss            0x00000000200001e0     0x1290 load address 0x0000000008009714
+.bss            0x00000000200001e0     0x1290 load address 0x0000000008009590
                 0x00000000200001e0                _sbss = .
                 0x00000000200001e0                __bss_start__ = _sbss
  *(.bss)
@@ -5018,7 +5017,7 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000020001470                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020001470      0x600 load address 0x0000000008009714
+                0x0000000020001470      0x600 load address 0x0000000008009590
                 0x0000000020001470                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x0000000020001470                PROVIDE (_end = .)
@@ -5140,31 +5139,31 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x11d3f
- .debug_info    0x0000000000000000      0xf01 ./Core/Src/main.o
- .debug_info    0x0000000000000f01      0xbb5 ./Core/Src/stm32l1xx_hal_msp.o
- .debug_info    0x0000000000001ab6      0x652 ./Core/Src/stm32l1xx_it.o
- .debug_info    0x0000000000002108      0x171 ./Core/Src/sysmem.o
- .debug_info    0x0000000000002279      0x2a7 ./Core/Src/system_stm32l1xx.o
- .debug_info    0x0000000000002520       0x22 ./Core/Startup/startup_stm32l151c8tx.o
- .debug_info    0x0000000000002542      0x6e4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
- .debug_info    0x0000000000002c26      0xd43 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
- .debug_info    0x0000000000003969      0x627 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
- .debug_info    0x0000000000003f90     0x25a2 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
- .debug_info    0x0000000000006532     0x15b3 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
- .debug_info    0x0000000000007ae5      0x719 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
- .debug_info    0x00000000000081fe      0x991 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
- .debug_info    0x0000000000008b8f     0x1656 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
- .debug_info    0x000000000000a1e5     0x172e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
- .debug_info    0x000000000000b913     0x10e2 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_info    0x000000000000c9f5      0xb02 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_info    0x000000000000d4f7      0x9a6 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .debug_info    0x000000000000de9d      0x715 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
- .debug_info    0x000000000000e5b2      0xaac ./MyDrivers/SX1262/Src/SX1262.o
- .debug_info    0x000000000000f05e      0x679 ./USB_DEVICE/App/usb_device.o
- .debug_info    0x000000000000f6d7      0x828 ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_info    0x000000000000feff      0x484 ./USB_DEVICE/App/usbd_desc.o
- .debug_info    0x0000000000010383     0x19bc ./USB_DEVICE/Target/usbd_conf.o
+.debug_info     0x0000000000000000    0x11d24
+ .debug_info    0x0000000000000000      0xee6 ./Core/Src/main.o
+ .debug_info    0x0000000000000ee6      0xbb5 ./Core/Src/stm32l1xx_hal_msp.o
+ .debug_info    0x0000000000001a9b      0x652 ./Core/Src/stm32l1xx_it.o
+ .debug_info    0x00000000000020ed      0x171 ./Core/Src/sysmem.o
+ .debug_info    0x000000000000225e      0x2a7 ./Core/Src/system_stm32l1xx.o
+ .debug_info    0x0000000000002505       0x22 ./Core/Startup/startup_stm32l151c8tx.o
+ .debug_info    0x0000000000002527      0x6e4 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+ .debug_info    0x0000000000002c0b      0xd43 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+ .debug_info    0x000000000000394e      0x627 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+ .debug_info    0x0000000000003f75     0x25a2 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
+ .debug_info    0x0000000000006517     0x15b3 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+ .debug_info    0x0000000000007aca      0x719 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
+ .debug_info    0x00000000000081e3      0x991 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+ .debug_info    0x0000000000008b74     0x1656 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+ .debug_info    0x000000000000a1ca     0x172e ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+ .debug_info    0x000000000000b8f8     0x10e2 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_info    0x000000000000c9da      0xb02 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_info    0x000000000000d4dc      0x9a6 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_info    0x000000000000de82      0x715 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_info    0x000000000000e597      0xaac ./MyDrivers/SX1262/Src/SX1262.o
+ .debug_info    0x000000000000f043      0x679 ./USB_DEVICE/App/usb_device.o
+ .debug_info    0x000000000000f6bc      0x828 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_info    0x000000000000fee4      0x484 ./USB_DEVICE/App/usbd_desc.o
+ .debug_info    0x0000000000010368     0x19bc ./USB_DEVICE/Target/usbd_conf.o
 
 .debug_abbrev   0x0000000000000000     0x30de
  .debug_abbrev  0x0000000000000000      0x27d ./Core/Src/main.o
@@ -5378,72 +5377,72 @@ LOAD c:/st/stm32cubeide_1.12.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000000000166be       0x1c ./USB_DEVICE/App/usbd_desc.o
  .debug_macro   0x00000000000166da      0x3f2 ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_line     0x0000000000000000    0x143e8
- .debug_line    0x0000000000000000      0xc21 ./Core/Src/main.o
- .debug_line    0x0000000000000c21      0x771 ./Core/Src/stm32l1xx_hal_msp.o
- .debug_line    0x0000000000001392      0x7b0 ./Core/Src/stm32l1xx_it.o
- .debug_line    0x0000000000001b42      0x4f4 ./Core/Src/sysmem.o
- .debug_line    0x0000000000002036      0x776 ./Core/Src/system_stm32l1xx.o
- .debug_line    0x00000000000027ac       0x87 ./Core/Startup/startup_stm32l151c8tx.o
- .debug_line    0x0000000000002833      0x999 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
- .debug_line    0x00000000000031cc      0xc66 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
- .debug_line    0x0000000000003e32      0x9eb ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
- .debug_line    0x000000000000481d     0x3904 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
- .debug_line    0x0000000000008121     0x1287 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
- .debug_line    0x00000000000093a8      0x74f ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
- .debug_line    0x0000000000009af7      0xea2 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
- .debug_line    0x000000000000a999     0x1c2b ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
- .debug_line    0x000000000000c5c4      0xff5 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
- .debug_line    0x000000000000d5b9      0xd60 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_line    0x000000000000e319      0xdda ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_line    0x000000000000f0f3      0xf79 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .debug_line    0x000000000001006c      0xa78 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
- .debug_line    0x0000000000010ae4      0xb23 ./MyDrivers/SX1262/Src/SX1262.o
- .debug_line    0x0000000000011607      0xa38 ./USB_DEVICE/App/usb_device.o
- .debug_line    0x000000000001203f      0xa80 ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_line    0x0000000000012abf      0xb01 ./USB_DEVICE/App/usbd_desc.o
- .debug_line    0x00000000000135c0      0xe28 ./USB_DEVICE/Target/usbd_conf.o
+.debug_line     0x0000000000000000    0x143df
+ .debug_line    0x0000000000000000      0xc18 ./Core/Src/main.o
+ .debug_line    0x0000000000000c18      0x771 ./Core/Src/stm32l1xx_hal_msp.o
+ .debug_line    0x0000000000001389      0x7b0 ./Core/Src/stm32l1xx_it.o
+ .debug_line    0x0000000000001b39      0x4f4 ./Core/Src/sysmem.o
+ .debug_line    0x000000000000202d      0x776 ./Core/Src/system_stm32l1xx.o
+ .debug_line    0x00000000000027a3       0x87 ./Core/Startup/startup_stm32l151c8tx.o
+ .debug_line    0x000000000000282a      0x999 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+ .debug_line    0x00000000000031c3      0xc66 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+ .debug_line    0x0000000000003e29      0x9eb ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+ .debug_line    0x0000000000004814     0x3904 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
+ .debug_line    0x0000000000008118     0x1287 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+ .debug_line    0x000000000000939f      0x74f ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
+ .debug_line    0x0000000000009aee      0xea2 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+ .debug_line    0x000000000000a990     0x1c2b ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+ .debug_line    0x000000000000c5bb      0xff5 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+ .debug_line    0x000000000000d5b0      0xd60 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_line    0x000000000000e310      0xdda ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_line    0x000000000000f0ea      0xf79 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_line    0x0000000000010063      0xa78 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_line    0x0000000000010adb      0xb23 ./MyDrivers/SX1262/Src/SX1262.o
+ .debug_line    0x00000000000115fe      0xa38 ./USB_DEVICE/App/usb_device.o
+ .debug_line    0x0000000000012036      0xa80 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_line    0x0000000000012ab6      0xb01 ./USB_DEVICE/App/usbd_desc.o
+ .debug_line    0x00000000000135b7      0xe28 ./USB_DEVICE/Target/usbd_conf.o
 
 .debug_str      0x0000000000000000    0x7c497
- .debug_str     0x0000000000000000    0x7865b ./Core/Src/main.o
-                                      0x78a05 (size before relaxing)
- .debug_str     0x000000000007865b       0x8a ./Core/Src/stm32l1xx_hal_msp.o
+ .debug_str     0x0000000000000000    0x7864e ./Core/Src/main.o
+                                      0x789f8 (size before relaxing)
+ .debug_str     0x000000000007864e       0x8a ./Core/Src/stm32l1xx_hal_msp.o
                                       0x7390f (size before relaxing)
- .debug_str     0x00000000000786e5      0x3e9 ./Core/Src/stm32l1xx_it.o
+ .debug_str     0x00000000000786d8      0x3e9 ./Core/Src/stm32l1xx_it.o
                                       0x735d2 (size before relaxing)
- .debug_str     0x0000000000078ace      0x4da ./Core/Src/sysmem.o
+ .debug_str     0x0000000000078ac1      0x4da ./Core/Src/sysmem.o
                                        0x5da5 (size before relaxing)
- .debug_str     0x0000000000078fa8       0x99 ./Core/Src/system_stm32l1xx.o
+ .debug_str     0x0000000000078f9b       0x99 ./Core/Src/system_stm32l1xx.o
                                       0x73115 (size before relaxing)
- .debug_str     0x0000000000079041       0x36 ./Core/Startup/startup_stm32l151c8tx.o
+ .debug_str     0x0000000000079034       0x36 ./Core/Startup/startup_stm32l151c8tx.o
                                          0xa7 (size before relaxing)
- .debug_str     0x0000000000079077      0x5e3 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+ .debug_str     0x000000000007906a      0x5e3 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
                                       0x7379a (size before relaxing)
- .debug_str     0x000000000007965a      0x3a8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+ .debug_str     0x000000000007964d      0x3a8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
                                       0x73874 (size before relaxing)
- .debug_str     0x0000000000079a02      0x11b ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+ .debug_str     0x00000000000799f5      0x11b ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
                                       0x732a8 (size before relaxing)
- .debug_str     0x0000000000079b1d      0xae1 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
+ .debug_str     0x0000000000079b10      0xae1 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.o
                                       0x74133 (size before relaxing)
- .debug_str     0x000000000007a5fe      0x4f9 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
+ .debug_str     0x000000000007a5f1      0x4f9 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.o
                                       0x73938 (size before relaxing)
- .debug_str     0x000000000007aaf7      0x170 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
+ .debug_str     0x000000000007aaea      0x170 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.o
                                       0x7354e (size before relaxing)
- .debug_str     0x000000000007ac67      0x24f ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+ .debug_str     0x000000000007ac5a      0x24f ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
                                       0x735b6 (size before relaxing)
- .debug_str     0x000000000007aeb6      0x555 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
+ .debug_str     0x000000000007aea9      0x555 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o
                                       0x73a24 (size before relaxing)
- .debug_str     0x000000000007b40b       0xd8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
+ .debug_str     0x000000000007b3fe       0xd8 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o
                                       0x734b9 (size before relaxing)
- .debug_str     0x000000000007b4e3      0x63d ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_str     0x000000000007b4d6      0x63d ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
                                       0x78730 (size before relaxing)
- .debug_str     0x000000000007bb20      0x288 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_str     0x000000000007bb13      0x288 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
                                       0x7806b (size before relaxing)
- .debug_str     0x000000000007bda8      0x120 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_str     0x000000000007bd9b      0x120 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
                                       0x77f85 (size before relaxing)
- .debug_str     0x000000000007bec8       0x51 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_str     0x000000000007bebb       0x51 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
                                       0x77eb2 (size before relaxing)
- .debug_str     0x000000000007bf19      0x16b ./MyDrivers/SX1262/Src/SX1262.o
+ .debug_str     0x000000000007bf0c      0x178 ./MyDrivers/SX1262/Src/SX1262.o
                                       0x73afc (size before relaxing)
  .debug_str     0x000000000007c084       0xc6 ./USB_DEVICE/App/usb_device.o
                                       0x7823d (size before relaxing)

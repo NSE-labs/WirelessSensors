@@ -117,12 +117,11 @@ int main(void)
 	  count++;
 	  sprintf((char *)buffer, "Count = %d", count);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); /* Turn on the LED */
-//	  LoRaTransmit(buffer, strlen((char *)buffer));
-	  HAL_Delay(500);
+	  LoRaTransmit(buffer, strlen((char *)buffer));
 	  HAL_GPIO_WritePin (LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); /* Turn off the LED */
 //	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
 	  CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
-	  HAL_Delay(500);
+	  HAL_Delay(1000);
   }
     /* USER CODE END WHILE */
 
