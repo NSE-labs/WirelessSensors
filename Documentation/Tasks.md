@@ -11,8 +11,8 @@
 - [x] Design Rev B.2 CPU board
 - [x] Layout Rev B.2 CPU board
 - [x] Order Rev B.2 CPU board
-- [ ] Receive Rev B.2 CPU board
-- [ ] Test & Debug Rev B.2 CPU board
+- [x] Receive Rev B.2 CPU board
+- [x] Test & Debug Rev B.2 CPU board
 - [ ] Enclosure for LoRa Gateway
 - [ ] Range testing with Rev A.1 LoRa board and LoRa Gateway
 - [ ] Design combined sensor board
