@@ -84,10 +84,9 @@
               </children>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_6CPKygkfEe6API8tY2Kc-w" containerData="7500" selectedElement="_6CPKywkfEe6API8tY2Kc-w">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_6CPKywkfEe6API8tY2Kc-w" containerData="7500" selectedElement="_6CPKzQkfEe6API8tY2Kc-w" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_6CPKywkfEe6API8tY2Kc-w" containerData="7500" selectedElement="_6CPKzAkfEe6API8tY2Kc-w" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_6CPKzAkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_6CVSIwkfEe6API8tY2Kc-w"/>
                 <children xsi:type="basic:PartStack" xmi:id="_6CPKzQkfEe6API8tY2Kc-w" elementId="topRight" containerData="2500" selectedElement="_6CPK0AkfEe6API8tY2Kc-w">
-                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_6CPKzgkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.views.ContentOutline" ref="_6CVS5AkfEe6API8tY2Kc-w" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:General</tags>
@@ -404,9 +403,10 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_6CVSIwkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.editorss" selectedElement="_6CVSJAkfEe6API8tY2Kc-w">
-      <children xsi:type="basic:PartStack" xmi:id="_6CVSJAkfEe6API8tY2Kc-w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_ISNowAkmEe6HfcdwxsxxBg">
+      <children xsi:type="basic:PartStack" xmi:id="_6CVSJAkfEe6API8tY2Kc-w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_wMDTYArNEe6a38VxV4LykA">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_ISNowAkmEe6HfcdwxsxxBg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;main.c&quot; partName=&quot;main.c&quot; title=&quot;main.c&quot; tooltip=&quot;Wireless Sensors/Core/Src/main.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/Core/Src/main.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3090&quot; selectionTopPixel=&quot;1260&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -414,10 +414,12 @@
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_wMDTYArNEe6a38VxV4LykA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SX1262.c" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; partName=&quot;SX1262.c&quot; title=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2247&quot; selectionTopPixel=&quot;1230&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.c&quot; partName=&quot;SX1262.c&quot; title=&quot;SX1262.c&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Src/SX1262.c&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2247&quot; selectionTopPixel=&quot;5970&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Gmx0AArOEe6a38VxV4LykA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SX1262.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SX1262.h&quot; partName=&quot;SX1262.h&quot; title=&quot;SX1262.h&quot; tooltip=&quot;Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Wireless Sensors/MyDrivers/SX1262/Inc/SX1262.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;23&quot; selectionOffset=&quot;1376&quot; selectionTopPixel=&quot;136&quot;/>&#xD;&#xA;&lt;/editor>"/>
@@ -529,8 +531,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view horizontalPosition=&quot;0&quot; verticalPosition=&quot;0&quot;>&#xD;&#xA;&lt;selection>&#xD;&#xA;&lt;container path=&quot;/Wireless Sensors&quot;/>&#xD;&#xA;&lt;/selection>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Make</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_6CVS_AkfEe6API8tY2Kc-w" elementId="org.eclipse.cdt.make.ui.views.MakeView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -779,7 +779,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVT6gkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BKvK8B0KEe6mv4kx0CGcyA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_6CVa-QkfEe6API8tY2Kc-w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ypMaYB_5Ee6BM8PVlTk5Jg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_6CVa-QkfEe6API8tY2Kc-w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVT-gkfEe6API8tY2Kc-w" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -792,7 +792,7 @@
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_6CVUBQkfEe6API8tY2Kc-w" elementId="additions" toBeRendered="false"/>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_6CVUNAkfEe6API8tY2Kc-w" elementId="org.eclipse.cdt.ui.CElementCreationActionSet" visible="false">
+      <children xsi:type="menu:ToolBar" xmi:id="_6CVUNAkfEe6API8tY2Kc-w" elementId="org.eclipse.cdt.ui.CElementCreationActionSet">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVUOgkfEe6API8tY2Kc-w" elementId="org.eclipse.debug.ui.launchActionSet">
@@ -810,7 +810,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVUTgkfEe6API8tY2Kc-w" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BKyOQB0KEe6mv4kx0CGcyA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_6CVangkfEe6API8tY2Kc-w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ypQEwB_5Ee6BM8PVlTk5Jg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_6CVangkfEe6API8tY2Kc-w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6CVUXAkfEe6API8tY2Kc-w" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
