@@ -533,7 +533,7 @@ LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 	{
 		return(LoRa_ERROR);
 	}
-//	RxStatus = SPIbuffer[0];
+	RxStatus = SPIbuffer[0];
 	RxPayloadLength = SPIbuffer[1];
 	RxStartBufferPointer = SPIbuffer[2];
 

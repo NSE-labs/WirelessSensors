@@ -1,5 +1,5 @@
-Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.o: \
- ../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_usb.c \
+Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o: \
+ ../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h \
  ../Core/Inc/stm32l1xx_hal_conf.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h \
