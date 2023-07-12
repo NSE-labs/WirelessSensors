@@ -48,7 +48,7 @@ A connector that supports all of these would minimally have the following electr
 
 We may want to include some extra GPIO pins as well for future expansion.
 
-Note that these interfaces are not designed for long cable lengths so the sensor subsystem would need to be close to or attached directly to the central subsystem. ButIn any case the sensor subsystem should have its own separable enclosure. The enclosure may be different depending on sensor type, but all sensor types should use the same interface to the central subsystem.
+Note that these interfaces are not designed for long cable lengths so the sensor subsystem would need to be close to or attached directly to the central subsystem. But in any case the sensor subsystem should have its own separable enclosure. The enclosure may be different depending on sensor type, but all sensor types should use the same interface to the central subsystem.
 
 We also need a way for the central subsystem to determine which type of sensor is attached. There are several ways we could do this.
 
