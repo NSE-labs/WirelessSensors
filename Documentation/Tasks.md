@@ -18,6 +18,10 @@
 - [ ] Design combined sensor board
     - [ ] Combined CPU and LoRa transceiver
     - [ ] Interface to various sensors
+        - [ ] Verify one wire interface using 18B20 temperature sensor
+        - [ ] Verify I2C interface using DHT22 temperature and humidity sensor
+        - [x] SPI interface already verified with LoRa board
+        - [ ] Define sensor interface connector/cable/functionality/form factor
     - [ ] Flexible power supply (Battery, Solar)
 - [ ] Layout combined sensor board
 - [ ] Order combined sensor board
