@@ -15,6 +15,8 @@
 
  [Range Testing](./Documentation/Range%20testing.md)
 
+ [Sensor Module Architecture](./Documentation/Sensor%20module%20architecture.md)
+
  [CPU Board Rev B.2](./Documentation/CPU%20board%20rev%20B.2.md)
 
  
