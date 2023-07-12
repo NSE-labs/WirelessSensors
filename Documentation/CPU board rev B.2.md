@@ -15,6 +15,8 @@ And here's the DFM analysis from JLCPCB (board manufacturer). No errors were fou
 
 ![DFM analysis](Images/CPU%20board%20revB.2%20DFM%20Analysis.png)
 
+The board was received and went through the same debugging process as the Rev A.1 board. Everything checked out and worked as expected. The 14-pin debug connector adds hardware reset which improves interaction with the CubeIDE debugger.
+
 [Back to project outline](../README.md)
 
 
