@@ -1,0 +1,72 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 819f9f2e-5083-42df-b63a-6cdcb84600f5)
+
+  (paper "USLetter")
+
+  (title_block
+    (title "Combined Wireless Sensor Boards Master Sheet")
+    (date "2023-07-13")
+    (rev "A.1")
+    (company "NSE Labs")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 195.58 72.39) (size 45.72 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 0c64a068-0944-4527-8a78-19113e5af5d7)
+    (property "Sheetname" "Sensor Subsystem" (at 195.58 71.6784 0) (show_name)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Sensor Subsystem.kicad_sch" (at 195.58 102.1846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Combined Boards"
+        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 119.38 72.39) (size 48.26 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 1dc5bc9e-b621-49d0-a745-1efaf62549e2)
+    (property "Sheetname" "Central Subsystem" (at 119.38 71.6784 0) (show_name)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Central Subsystem.kicad_sch" (at 119.38 102.1846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Combined Boards"
+        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 34.29 71.12) (size 48.26 30.48) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid f7d938fe-a9e3-47ad-82ab-29dd717a03fc)
+    (property "Sheetname" "Power Subsystem" (at 34.29 70.4084 0) (show_name)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Power Subsystem.kicad_sch" (at 34.29 102.1846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Combined Boards"
+        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5" (page "3"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

@@ -1,0 +1,17 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 40ab5d9e-90e6-439b-88ec-d134b59f838a)
+
+  (paper "USLetter")
+
+  (title_block
+    (title "Central Subsystem")
+    (date "2023-07-13")
+    (rev "A.1")
+    (company "NSE Labs")
+  )
+
+  (lib_symbols
+  )
+
+)
