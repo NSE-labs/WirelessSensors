@@ -58,7 +58,7 @@ We could simply add some GPIO pins to the connector and tie them low or high to 
 
 Requires: 3 or 4 GPIO pins.
 
-### ID method 2 - 74HC165 shift register
+### ID method 2 - Shift register
 
 We could tie 3 GPIO pins to a 74HC165 shift register on the sensor subsystem (the three pins would be for Load, Clock, and Data). This would allow us to read an 8-bit value from the shift register, allowing 256 different sensor types.
 
@@ -66,9 +66,11 @@ A 74HC165 shift register costs 16 cents and is a basic part (JCLPCB pricing).
 
 Requires: 3 GPIO pins and a 16 cent part.
 
-UPDATE: It should be possible to use two of the SPI signals, SCLK and MISO, to read the 74HC165 as if it were a SPI device. Two additional signals are needed, a parallel load signal (ID PL) and a chip select signal (ID CS). The shift register output also needs to go through a tri-state buffer so it can share the SPI bus. A 74LVC1G125 tri-state buffer can be used for this purpose.
+UPDATE: It should be possible to use two of the SPI signals, SCLK and MISO, to read the 74HC165 as if it were a SPI device. Two GPIO signals are needed, a parallel load signal (ID PL) and a chip select signal (ID CS). The shift register output also needs to go through a tri-state buffer so it can share the SPI bus. A 74LVC1G125 tri-state buffer can be used for this purpose.
 
 Requires: 2 GPIO pins, a 16 cent basic part (74HC165), and a 7 cent extended part (74LVC1G125).
+
+As an alternative, a 74HC589A shift register could be used. This device has a tri-state output on chip, and is an extended part that costs 32 cents. It also has a more complex latching mechanism with a separate latch clock that may require an extra GPIO line.
 
 ### ID method 3 - I2C EEPROM
 
