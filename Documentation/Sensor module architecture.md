@@ -66,6 +66,10 @@ A 74HC165 shift register costs 16 cents and is a basic part (JCLPCB pricing).
 
 Requires: 3 GPIO pins and a 16 cent part.
 
+UPDATE: It should be possible to use two of the SPI signals, SCLK and MISO, to read the 74HC165 as if it were a SPI device. Two additional signals are needed, a parallel load signal (ID PL) and a chip select signal (ID CS). The shift register output also needs to go through a tri-state buffer so it can share the SPI bus. A 74LVC1G125 tri-state buffer can be used for this purpose.
+
+Requires: 2 GPIO pins, a 16 cent basic part (74HC165), and a 7 cent extended part (74LVC1G125).
+
 ### ID method 3 - I2C EEPROM
 
 Since we already have an I2C interface we could add an I2C EEPROM to the sensor subsytem. A 2Kbit M24C02-WMN6TP EEPROM costs 8 cents and is a basic part. It will store 256 bytes of data so in theory we could have up to 5 x 10<sup>154</sup> sensor types. :smiley:
