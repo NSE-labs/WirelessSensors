@@ -25,7 +25,6 @@ MyDrivers/SX1262/Src/SX1262.o: ../MyDrivers/SX1262/Src/SX1262.c \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h \
- ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
@@ -57,7 +56,6 @@ D:/My\ Home\ Directory/Documents/Projects/Wireless\ Sensors/WirelessSensors/Soft
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h:
-../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h:

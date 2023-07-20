@@ -66,7 +66,7 @@ A 74HC165 shift register costs 16 cents and is a basic part (JCLPCB pricing).
 
 Requires: 3 GPIO pins and a 16 cent part.
 
-UPDATE: It should be possible to use two of the SPI signals, SCLK and MISO, to read the 74HC165 as if it were a SPI device. Two GPIO signals are needed, a parallel load signal (ID PL) and a chip select signal (ID CS). The shift register output also needs to go through a tri-state buffer so it can share the SPI bus. A 74LVC1G125 tri-state buffer can be used for this purpose.
+UPDATE: It should be possible to use two of the SPI signals, SCLK and MISO, to read the 74HC165 as if it were a SPI device. Two GPIO signals are needed, a parallel load signal (ID PL) and a chip select signal (ID CS). If the sensor subsystem uses the SPI bus to talk to the sensor, the shift register output also needs to go through a tri-state buffer so it can share the SPI bus. A 74LVC1G125 tri-state buffer can be used for this purpose. If the sensor uses the I2C or One Wire interface and does not connect to the SPI bus, no tri-state buffer is needed.
 
 Requires: 2 GPIO pins, a 16 cent basic part (74HC165), and a 7 cent extended part (74LVC1G125).
 
@@ -89,6 +89,32 @@ Requires: A 43 cent extended part and no GPIO pins.
 Adding a microcontroller to the sensor subsystem looks great from an architecture perspective. The interface between the central subsystem and sensor subsystem could be reduced to a simple two-wire serial interface, and all of the I2C, SPI, or One Wire interfacing would happen within the sensor subsystem. The ID function would also be accomplished over the serial interface.
 
 This approach is challenged from the cost, and more importantly, the power consumption perspective. A small microcontroller could be found for under a dollar, but these low cost microcontrollers tend to be power hungry, at least when compared to the low power STM32 processor variants. We could use another STM32 but this would cost $2-3 and essentially double our current power consumption.
+
+### ID method conclusion
+
+ID method 2 was selected. Here's the circuit including the tri-state buffer.
+
+![Module ID circuit](./Images/Module%20ID%20circuit.JPG)
+
+This circuit was first tested without the tri-state buffer. This circuit was found to work well and the ID could be read through the SPI interface, however the SPI interface does need to be set up with clock high when inactive (CPOL = 1) and data valid on clock leading edge (CPHA = 0). The code to do this is part of the hspi structure passed to the HAL_SPI_Init() function.
+
+```
+hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
+hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+```
+
+After that the following code will read the ID into the buffer variable.
+
+```
+HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low to prepare to load the shift register */
+HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
+HAL_SPI_Receive(&hspi1, buffer, 1, 100);
+```
+If a tri-state buffer is used, the ID_CS_Pin will need to be pulled low to gate the signal onto the SPI bus before doing the HAL_SPI_Receive() call. After that it would be polite to take the ID_CS_Pin high again to free up the SPI bus for other uses.
+
+Here's the logic analyzer signals as an ID of A5 hex was read from the shift register.
+
+![ID circuit signals](./Images/ID%20circuit%20timing.JPG)
 
 
 

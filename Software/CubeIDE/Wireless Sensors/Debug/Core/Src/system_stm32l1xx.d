@@ -24,7 +24,6 @@ Core/Src/system_stm32l1xx.o: ../Core/Src/system_stm32l1xx.c \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h \
- ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h \
@@ -54,7 +53,6 @@ Core/Src/system_stm32l1xx.o: ../Core/Src/system_stm32l1xx.c \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_spi.h:
-../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_ll_usb.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pcd_ex.h:

@@ -73,6 +73,10 @@ void Error_Handler(void);
 #define OneWire_GPIO_Port GPIOB
 #define LoRa_BUSY_Pin GPIO_PIN_8
 #define LoRa_BUSY_GPIO_Port GPIOA
+#define ID_PL_Pin GPIO_PIN_9
+#define ID_PL_GPIO_Port GPIOA
+#define ID_CS_Pin GPIO_PIN_10
+#define ID_CS_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
