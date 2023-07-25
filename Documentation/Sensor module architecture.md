@@ -110,13 +110,37 @@ HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low
 HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
 HAL_SPI_Receive(&hspi1, buffer, 1, 100);
 ```
-If a tri-state buffer is used, the ID_CS_Pin will need to be pulled low to gate the signal onto the SPI bus before doing the HAL_SPI_Receive() call. After that it would be polite to take the ID_CS_Pin high again to free up the SPI bus for other uses.
 
 Here's the logic analyzer signals as an ID of A5 hex was read from the shift register.
 
 ![ID circuit signals](./Images/ID%20circuit%20timing.JPG)
 
+Once the tri-state buffer parts arrived the circuit was tested with the buffer in the circuit. This was a challenge to breadboard since this part is only available in a surface mount package.
 
+![Buffer IC](./Images/74LVC1G125DBVR.JPG)
+
+It took two soldering attempts to successfully adapt this IC for breadboard work. It wasn't pretty, but it works.
+
+![Buffer on breadboard](./Images/Tri-state%20buffer%20test.JPG)
+
+In the end it all worked very well. Here's the code and resulting timing of the signals.
+
+```
+uint8_t ReadModuleID(void)
+{
+	uint8_t id;
+
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* this read is just to initialize everything */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low to prepare to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_RESET); /* Pull CS signal low to gate signal onto SPI bus */
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* read module ID */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_SET); /* Pull CS signal high to release SPI bus */
+	return(id);
+}
+```
+
+![Timing with buffer](./Images/ID%20circuit%20timing%20with%20buffer.JPG)
 
 
 
