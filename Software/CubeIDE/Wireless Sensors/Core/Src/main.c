@@ -63,6 +63,19 @@ static void MX_SPI1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t ReadModuleID(void)
+{
+	uint8_t id;
+
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* this read is just to initialize everything */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low to prepare to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_RESET); /* Pull CS signal low to gate signal onto SPI bus */
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* read module ID */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_SET); /* Pull CS signal high to release SPI bus */
+	return(id);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -101,14 +114,13 @@ int main(void)
   /* initialize the LoRa chip */
  // LoRa_Init(&hspi1);
 
-  HAL_GPIO_WritePin(GPIOA, ID_PL_Pin, GPIO_PIN_SET); /* Set ID load signal high */
-
   /* Send a status message to USB port */
   uint8_t buffer[256];
   sprintf((char *)buffer, "Entering transmit loop\r\n");
   CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
 
   int count = 0;
+  uint8_t moduleID;
 
   /* USER CODE END 2 */
 
@@ -120,9 +132,7 @@ int main(void)
 	  sprintf((char *)buffer, "Count = %d", count);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); /* Turn on the LED */
 //	  LoRaTransmit(buffer, strlen((char *)buffer));
-	  HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low to prepare to load the shift register */
-	  HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
-	  HAL_SPI_Receive(&hspi1, buffer, 1, 100);
+	  moduleID = ReadModuleID();
 	  HAL_Delay(500);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); /* Turn off the LED */
 //	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
