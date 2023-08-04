@@ -91,7 +91,7 @@ static LoRa_Status WaitWhileTransmit(uint16_t timeout)
 static LoRa_Status WaitWhileReceive(void)
 {
 	/* wait for DIO1 to go high */
-	while(HAL_GPIO_ReadPin(LoRa_DIO2_GPIO_Port, LoRa_DIO2_Pin) == GPIO_PIN_RESET);
+	while(HAL_GPIO_ReadPin(LoRa_DIO1_GPIO_Port, LoRa_DIO1_Pin) == GPIO_PIN_RESET);
 
 	return(LoRa_OK);
 }
@@ -474,36 +474,37 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
  */
 LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 {
-	uint8_t xmitBuffer[10];
+	uint8_t SPIbuffer[10];
+	uint8_t RxPayloadLength, RxStartBufferPointer;
 
 	/* Set base address of transmit and receive buffer */
-	xmitBuffer[0] = LORA_SET_BUFFER_BASE_ADDRESS_OPCODE;
-	xmitBuffer[1] = 0; /* Transmit buffer start address */
-	xmitBuffer[2] = 0; /* Receive buffer start address */
-	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	SPIbuffer[0] = LORA_SET_BUFFER_BASE_ADDRESS_OPCODE;
+	SPIbuffer[1] = 0; /* Transmit buffer start address */
+	SPIbuffer[2] = 0; /* Receive buffer start address */
+	if(SPI_Send(SPIbuffer, 3, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
 
 	/* Set LoRa packet parameters */
-	xmitBuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
-	xmitBuffer[1] = 0;
-	xmitBuffer[2] = 0x08;		/* Preamble length (2 bytes) */
-	xmitBuffer[3] = 0;			/* Variable length packet */
-	xmitBuffer[4] = 128; 		/* Max size of message */
-	xmitBuffer[5] = 0;			/* CRC off */
-	xmitBuffer[6] = 0;			/* Standard IQ setup */
-	if(SPI_Send(xmitBuffer, 7, false) != LoRa_OK)
+	SPIbuffer[0] = LORA_SET_PACKET_PARAMS_OPCODE;
+	SPIbuffer[1] = 0;
+	SPIbuffer[2] = 0x08;		/* Preamble length (2 bytes) */
+	SPIbuffer[3] = 0;			/* Variable length packet */
+	SPIbuffer[4] = 128; 		/* Max size of message */
+	SPIbuffer[5] = 0;			/* CRC off */
+	SPIbuffer[6] = 0;			/* Standard IQ setup */
+	if(SPI_Send(SPIbuffer, 7, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
 
 	/* Put the chip in receive mode */
-	xmitBuffer[0] = LORA_SET_RX_OPCODE;
-	xmitBuffer[1] = (timeout & 0xFF0000) >> 16;
-	xmitBuffer[2] = (timeout & 0xFF00) >> 8;
-	xmitBuffer[3] = timeout & 0xFF;
-	if(SPI_Send(xmitBuffer, 4, false) != LoRa_OK)
+	SPIbuffer[0] = LORA_SET_RX_OPCODE;
+	SPIbuffer[1] = (timeout & 0xFF0000) >> 16;
+	SPIbuffer[2] = (timeout & 0xFF00) >> 8;
+	SPIbuffer[3] = timeout & 0xFF;
+	if(SPI_Send(SPIbuffer, 4, false) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -514,10 +515,40 @@ LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 	}
 
 	/* Clear IRQ status */
-	xmitBuffer[0] = LORA_CLEAR_IRQ_STATUS_OPCODE;
-	xmitBuffer[1] = 0x02; /* Clear timeout interrupt */
-	xmitBuffer[2] = 0x02; /* Clear RX done interrupt */
-	if(SPI_Send(xmitBuffer, 3, false) != LoRa_OK)
+	SPIbuffer[0] = LORA_CLEAR_IRQ_STATUS_OPCODE;
+	SPIbuffer[1] = 0x02; /* Clear timeout interrupt */
+	SPIbuffer[2] = 0x02; /* Clear RX done interrupt */
+	if(SPI_Send(SPIbuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+
+	/* Get the receive buffer status */
+	SPIbuffer[0] = LORA_GET_RX_BUFFER_STATUS_OPCODE;
+	if(SPI_Send(SPIbuffer, 1, true) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+	if(SPI_Receive(SPIbuffer, 3, false) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+//	RxStatus = SPIbuffer[0];
+	RxPayloadLength = SPIbuffer[1];
+	RxStartBufferPointer = SPIbuffer[2];
+
+	/* Read the packet data */
+	SPIbuffer[0] = LORA_READ_BUFFER_OPCODE;
+	SPIbuffer[1] = RxStartBufferPointer;
+	if(SPI_Send(SPIbuffer, 2, true) != LoRa_OK)
+	{
+		return(LoRa_ERROR);
+	}
+	if(SPI_Receive(SPIbuffer, 1, true) != LoRa_OK) /* get the status byte */
+	{
+		return(LoRa_ERROR);
+	}
+	if(SPI_Receive(msg, RxPayloadLength, false) != LoRa_OK) /* get the packet message */
 	{
 		return(LoRa_ERROR);
 	}

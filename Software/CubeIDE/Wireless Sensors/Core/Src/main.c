@@ -63,6 +63,19 @@ static void MX_SPI1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t ReadModuleID(void)
+{
+	uint8_t id;
+
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* this read is just to initialize everything */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_RESET); /* Pull ID load signal low to prepare to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_PL_Pin, GPIO_PIN_SET);   /* Pull ID load signal high to load the shift register */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_RESET); /* Pull CS signal low to gate signal onto SPI bus */
+	HAL_SPI_Receive(&hspi1, &id, 1, 100);				/* read module ID */
+	HAL_GPIO_WritePin (GPIOA, ID_CS_Pin, GPIO_PIN_SET); /* Pull CS signal high to release SPI bus */
+	return(id);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -99,7 +112,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* initialize the LoRa chip */
-  LoRa_Init(&hspi1);
+ // LoRa_Init(&hspi1);
 
   /* Send a status message to USB port */
   uint8_t buffer[256];
@@ -107,6 +120,7 @@ int main(void)
   CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
 
   int count = 0;
+  uint8_t moduleID;
 
   /* USER CODE END 2 */
 
@@ -117,10 +131,13 @@ int main(void)
 	  count++;
 	  sprintf((char *)buffer, "Count = %d", count);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); /* Turn on the LED */
-	  LoRaTransmit(buffer, strlen((char *)buffer));
-	  HAL_GPIO_WritePin (LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); /* Turn off the LED */
-	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
-	  HAL_Delay (1000);   /* Delay 1 second */
+//	  LoRaTransmit(buffer, strlen((char *)buffer));
+	  moduleID = ReadModuleID();
+	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); /* Turn off the LED */
+//	  LoRaReceive(buffer, 0); /* go to receive mode with timeout = 0 (wait forever for one message) */
+	  CDC_Transmit_FS(buffer, strlen((char *)buffer)); /* Send the message on USB */
+	  HAL_Delay(500);
   }
     /* USER CODE END WHILE */
 
@@ -226,7 +243,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.Mode = SPI_MODE_MASTER;
   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
@@ -264,7 +281,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LoRa_NRST_Pin|LoRa_NSS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LoRa_NRST_Pin|LoRa_NSS_Pin|ID_PL_Pin|ID_CS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(OneWire_GPIO_Port, OneWire_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : LED_Pin */
   GPIO_InitStruct.Pin = LED_Pin;
@@ -273,8 +293,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LoRa_NRST_Pin LoRa_NSS_Pin */
-  GPIO_InitStruct.Pin = LoRa_NRST_Pin|LoRa_NSS_Pin;
+  /*Configure GPIO pins : LoRa_NRST_Pin LoRa_NSS_Pin ID_PL_Pin ID_CS_Pin */
+  GPIO_InitStruct.Pin = LoRa_NRST_Pin|LoRa_NSS_Pin|ID_PL_Pin|ID_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -285,6 +305,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : OneWire_Pin */
+  GPIO_InitStruct.Pin = OneWire_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(OneWire_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

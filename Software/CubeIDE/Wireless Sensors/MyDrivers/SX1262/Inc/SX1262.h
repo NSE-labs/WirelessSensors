@@ -53,6 +53,10 @@ typedef enum
 
 #define LORA_CLEAR_IRQ_STATUS_OPCODE			0X02;
 
+#define LORA_GET_RX_BUFFER_STATUS_OPCODE		0x13;
+
+#define LORA_READ_BUFFER_OPCODE					0x1E;
+
 
 /* Function definitions */
 LoRa_Status LoRa_Init(SPI_HandleTypeDef *);

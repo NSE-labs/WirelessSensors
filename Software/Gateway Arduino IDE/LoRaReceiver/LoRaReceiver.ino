@@ -98,6 +98,7 @@ void loop()
 void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
 {
     char buffer[80];
+    int signalStrength;
     
     rssi=rssi;
     rxSize=size;
@@ -105,7 +106,10 @@ void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
     rxpacket[size]='\0';
     Radio.Sleep( );
     Serial.printf("\r\nreceived packet \"%s\" with rssi %d , length %d\r\n",rxpacket,rssi,rxSize);
-    sprintf(buffer,"Received packet\n \"%s\" \nrssi %d\nlength %d",rxpacket,rssi,rxSize);
+    sprintf(buffer,"\"%s\" \nrssi %d",rxpacket,rssi);
     displayString(buffer, 0, 0);
+    signalStrength = map(rssi, -120, -30, 0, 100);
+    oled.drawProgressBar(0, 32, 120, 10, signalStrength);
+    oled.display();
     lora_idle = true;
 }
