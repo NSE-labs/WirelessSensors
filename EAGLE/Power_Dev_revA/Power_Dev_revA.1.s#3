@@ -227,7 +227,7 @@ Tyco Electronics</description>
 <package name="HEADER_2PIN">
 <pad name="P$1" x="-1.27" y="0" drill="1.143" diameter="1.9304"/>
 <pad name="P$2" x="1.27" y="0" drill="1.143" diameter="1.9304"/>
-<text x="0" y="-3.81" size="1.27" layer="21" align="center">&gt;NAME</text>
+<text x="0" y="-3.81" size="1.27" layer="21" font="vector" align="center">&gt;NAME</text>
 </package>
 <package name="SMA(DO-214AC)">
 <description>&lt;b&gt;SMA CASE 403D-02 ISSUE G&lt;/b&gt;&lt;br&gt;
@@ -252,8 +252,8 @@ Tyco Electronics</description>
 </description>
 <smd name="1" x="-2.5" y="0" dx="3.2" dy="1.6" layer="1"/>
 <smd name="2" x="2.5" y="0" dx="3.2" dy="1.6" layer="1"/>
-<text x="0" y="4.5" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-4.5" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<text x="0" y="4.5" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4.5" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
 <wire x1="-5.75" y1="4.3" x2="4.9" y2="4.3" width="0.05" layer="51"/>
 <wire x1="4.9" y1="4.3" x2="4.9" y2="-4.3" width="0.05" layer="51"/>
 <wire x1="4.9" y1="-4.3" x2="-5.75" y2="-4.3" width="0.05" layer="51"/>
@@ -278,8 +278,8 @@ Tyco Electronics</description>
 <package name="1206">
 <smd name="1" x="-1.5" y="0" dx="1.8" dy="1.05" layer="1" rot="R90"/>
 <smd name="2" x="1.5" y="0" dx="1.8" dy="1.05" layer="1" rot="R90"/>
-<text x="0" y="1.778" size="0.889" layer="25" rot="R180" align="center">&gt;NAME</text>
-<text x="0" y="-1.778" size="0.889" layer="27" rot="R180" align="center">&gt;VALUE</text>
+<text x="0" y="1.778" size="0.889" layer="25" font="vector" rot="R180" align="center">&gt;NAME</text>
+<text x="0" y="-1.778" size="0.889" layer="27" font="vector" rot="R180" align="center">&gt;VALUE</text>
 <wire x1="-2.275" y1="1.15" x2="2.275" y2="1.15" width="0.05" layer="51"/>
 <wire x1="2.275" y1="1.15" x2="2.275" y2="-1.15" width="0.05" layer="51"/>
 <wire x1="2.275" y1="-1.15" x2="-2.275" y2="-1.15" width="0.05" layer="51"/>
@@ -293,8 +293,8 @@ Tyco Electronics</description>
 <package name="0805">
 <smd name="1" x="-0.8" y="0" dx="1.47" dy="1.02" layer="1" rot="R90"/>
 <smd name="2" x="0.8" y="0" dx="1.47" dy="1.02" layer="1" rot="R90"/>
-<text x="0" y="1.905" size="0.889" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-1.905" size="0.889" layer="27" align="center">&gt;VALUE</text>
+<text x="0" y="1.905" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.905" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
 <wire x1="-1.46" y1="0.89" x2="1.46" y2="0.89" width="0.05" layer="51"/>
 <wire x1="1.46" y1="0.89" x2="1.46" y2="-0.89" width="0.05" layer="51"/>
 <wire x1="1.46" y1="-0.89" x2="-1.46" y2="-0.89" width="0.05" layer="51"/>
@@ -324,14 +324,14 @@ Tyco Electronics</description>
 <package name="L_SMD,7X7.8MM">
 <smd name="P$1" x="-2.5" y="0" dx="7.5" dy="3" layer="1" rot="R90"/>
 <smd name="P$2" x="2.5" y="0" dx="7.5" dy="3" layer="1" rot="R90"/>
-<text x="0" y="5" size="1.27" layer="21" font="vector" align="center">&gt;NAME</text>
-<text x="0" y="-5" size="1.27" layer="21" font="vector" align="center">&gt;VALUE</text>
+<text x="0" y="5" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-5" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
 </package>
 <package name="0402">
 <smd name="1" x="-0.55" y="0" dx="0.75" dy="0.6" layer="1"/>
 <smd name="2" x="0.55" y="0" dx="0.75" dy="0.6" layer="1"/>
-<text x="0" y="1.27" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-1.27" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<text x="0" y="1.27" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.27" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
 <wire x1="-1.175" y1="0.55" x2="1.175" y2="0.55" width="0.05" layer="51"/>
 <wire x1="1.175" y1="0.55" x2="1.175" y2="-0.55" width="0.05" layer="51"/>
 <wire x1="1.175" y1="-0.55" x2="-1.175" y2="-0.55" width="0.05" layer="51"/>
@@ -380,8 +380,8 @@ Tyco Electronics</description>
 <wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
 <smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
 <smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
-<text x="0" y="1.905" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="-1.905" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<text x="0" y="1.905" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.905" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
 <rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
@@ -1019,8 +1019,8 @@ Source: &lt;a href="http://acoptex.com/uploads/DW01A.pdf"&gt; Datasheet &lt;/a&g
 <devices>
 <device name="" package="SOT-89-3">
 <connects>
-<connect gate="G$1" pin="GND" pad="1 4"/>
-<connect gate="G$1" pin="VI" pad="2"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="VI" pad="2 4"/>
 <connect gate="G$1" pin="VO" pad="3"/>
 </connects>
 <technologies>
@@ -1122,7 +1122,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C7" library="NSE LABS" deviceset="C_0805" device="" value="470nF"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VDC"/>
 <part name="Q1" library="NSE LABS" deviceset="MOSFET_P_SOT23" device="" value="SI2301CDS-T1-GE3"/>
 <part name="D1" library="NSE LABS" deviceset="DIODE_SCHOTTKY_SMA" device="" value="SS54"/>
 <part name="D2" library="NSE LABS" deviceset="DIODE_SCHOTTKY_SMA" device="" value="SS54"/>
@@ -1142,17 +1142,17 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="U1" library="NSE LABS" deviceset="CN3791" device="" value="CN3791"/>
-<part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VDC"/>
 <part name="R1" library="NSE LABS" deviceset="R_0805" device="" value="120R"/>
 <part name="C2" library="NSE LABS" deviceset="C_0603" device="" value="220nF"/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="J2" library="NSE LABS" deviceset="HEADER_2PIN" device=""/>
 <part name="C1" library="NSE LABS" deviceset="C_0402" device="" value="100nF"/>
-<part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VDC"/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R3" library="NSE LABS" deviceset="RESISTOR_TH" device=""/>
 <part name="R4" library="NSE LABS" deviceset="RESISTOR_TH" device=""/>
-<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VDC"/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="U4" library="NSE LABS" deviceset="FS8205A" device=""/>
 <part name="U2" library="NSE LABS" deviceset="DW01A-G" device=""/>
@@ -1356,7 +1356,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="208.28" y1="38.1" x2="208.28" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VDC" class="0">
 <segment>
 <pinref part="D5" gate="G$1" pin="C"/>
 <pinref part="D4" gate="G$1" pin="C"/>

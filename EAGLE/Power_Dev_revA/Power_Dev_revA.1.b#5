@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.125" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -175,6 +175,14 @@
 <wire x1="63.5" y1="0" x2="63.5" y2="31.75" width="0" layer="20"/>
 <wire x1="63.5" y1="31.75" x2="0" y2="31.75" width="0" layer="20"/>
 <wire x1="0" y1="31.75" x2="0" y2="0" width="0" layer="20"/>
+<text x="41.91" y="5.08" size="1.27" layer="21" font="vector" align="center">+</text>
+<text x="24.13" y="5.08" size="1.27" layer="21" font="vector" align="center">+</text>
+<text x="59.69" y="5.08" size="1.27" layer="21" font="vector" align="center">+</text>
+<text x="21.59" y="5.08" size="1.27" layer="21" font="vector" align="center">-</text>
+<text x="39.37" y="5.08" size="1.27" layer="21" font="vector" align="center">-</text>
+<text x="57.15" y="5.08" size="1.27" layer="21" font="vector" align="center">-</text>
+<text x="31.75" y="8.89" size="1.27" layer="21" font="vector" align="center">POWER DEVELOPMENT BOARD
+revA.1</text>
 </plain>
 <libraries>
 <library name="NSE LABS">
@@ -686,8 +694,8 @@ design rules under a new name.</description>
 <attribute name="PARTNO" value="" x="3.81" y="25.4" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="3.51" y="20.2" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
-<element name="J1" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="22.86" y="2.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.86" y="4.699" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
+<element name="SOLAR" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="22.86" y="2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="22.86" y="6.35" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
 </element>
 <element name="D5" library="NSE LABS" package="SMA(DO-214AC)" value="SS54" x="12.065" y="25.4" smashed="yes" rot="R270">
 <attribute name="NAME" x="12.065" y="29.972" size="1.016" layer="25" font="vector" align="center"/>
@@ -742,7 +750,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="15.875" y="13.97" size="0.889" layer="27" font="vector" ratio="10" rot="R270" align="center"/>
 </element>
 <element name="R5" library="NSE LABS" package="0402" value="10K" x="48.26" y="13.97" smashed="yes" rot="R270">
-<attribute name="NAME" x="48.26" y="16.002" size="1.016" layer="25" font="vector" align="center"/>
+<attribute name="NAME" x="48.26" y="15.875" size="1.016" layer="25" font="vector" align="center"/>
 <attribute name="VALUE" x="46.99" y="13.97" size="1.27" layer="27" font="vector" rot="R270" align="center"/>
 </element>
 <element name="D3" library="NSE LABS" package="SMA(DO-214AC)" value="SS54" x="44.45" y="15.875" smashed="yes" rot="R270">
@@ -750,7 +758,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="41.91" y="15.875" size="1.27" layer="27" font="vector" rot="R270" align="center"/>
 </element>
 <element name="C10" library="NSE LABS" package="0402" value="100nF" x="48.26" y="17.78" smashed="yes" rot="R270">
-<attribute name="NAME" x="48.26" y="19.812" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="NAME" x="48.26" y="19.685" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="46.99" y="17.78" size="1.27" layer="27" font="vector" rot="R270" align="center"/>
 </element>
 <element name="C8" library="NSE LABS" package="6MM_SMD_ECAP" value="10uF" x="38.1" y="15.875" smashed="yes" rot="R270">
@@ -777,8 +785,8 @@ design rules under a new name.</description>
 <attribute name="NAME" x="2.54" y="16.129" size="1.016" layer="25" font="vector" align="center"/>
 <attribute name="VALUE" x="0.635" y="13.97" size="1.27" layer="27" font="vector" rot="R270" align="center"/>
 </element>
-<element name="J2" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="5.08" y="2.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="5.08" y="4.572" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
+<element name="STATUS" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="5.08" y="2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="5.08" y="5.08" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
 </element>
 <element name="C1" library="NSE LABS" package="0402" value="100nF" x="3.81" y="17.78" smashed="yes" rot="R270">
 <attribute name="NAME" x="3.81" y="19.558" size="1.016" layer="25" font="vector" align="center"/>
@@ -817,7 +825,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="50.8" y="22.86" size="1.27" layer="27" font="vector" align="center"/>
 </element>
 <element name="R7" library="NSE LABS" package="0402" value="1K" x="50.8" y="17.78" smashed="yes" rot="R90">
-<attribute name="NAME" x="50.8" y="19.558" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="NAME" x="50.8" y="19.685" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="52.07" y="17.78" size="1.27" layer="27" font="vector" rot="R90" align="center"/>
 </element>
 <element name="C12" library="NSE LABS" package="0402" value="100nF" x="54.61" y="25.4" smashed="yes" rot="R270">
@@ -828,8 +836,8 @@ design rules under a new name.</description>
 <attribute name="NAME" x="57.15" y="27.178" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="58.42" y="25.4" size="1.27" layer="27" font="vector" rot="R90" align="center"/>
 </element>
-<element name="J4" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="40.64" y="2.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="40.767" y="4.699" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
+<element name="BATTERY" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="40.64" y="2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.64" y="6.35" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
 </element>
 <element name="U3" library="NSE LABS" package="SOT-89-3" value="" x="49.53" y="8.255" smashed="yes" rot="R90">
 <attribute name="NAME" x="49.53" y="11.43" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
@@ -840,11 +848,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="52.65" y="15.875" size="1.27" layer="27" font="vector" rot="R270" align="center"/>
 </element>
 <element name="C11" library="NSE LABS" package="0402" value="100nF" x="50.8" y="13.97" smashed="yes" rot="R90">
-<attribute name="NAME" x="50.8" y="15.748" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="NAME" x="50.8" y="15.875" size="1.016" layer="25" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="52.07" y="13.97" size="1.27" layer="27" font="vector" rot="R90" align="center"/>
 </element>
-<element name="J3" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="58.42" y="2.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="58.293" y="4.191" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
+<element name="OUTPUT" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="58.42" y="2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="58.42" y="6.35" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
 </element>
 </elements>
 <signals>
@@ -857,7 +865,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$2">
 <contactref element="D5" pad="2"/>
-<contactref element="J1" pad="P$1"/>
+<contactref element="SOLAR" pad="P$1"/>
 <wire x1="12.065" y1="23.25" x2="12.065" y2="20.955" width="0.254" layer="1"/>
 <via x="12.065" y="20.955" extent="1-16" drill="0.35"/>
 <wire x1="12.065" y1="20.955" x2="12.065" y2="17.399" width="0.254" layer="16"/>
@@ -866,7 +874,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="GND">
 <contactref element="J5" pad="5"/>
-<contactref element="J1" pad="P$2"/>
+<contactref element="SOLAR" pad="P$2"/>
 <contactref element="C5" pad="2"/>
 <contactref element="C6" pad="2"/>
 <contactref element="C7" pad="2"/>
@@ -884,7 +892,7 @@ design rules under a new name.</description>
 <contactref element="U3" pad="1"/>
 <contactref element="C9" pad="2"/>
 <contactref element="C11" pad="2"/>
-<contactref element="J3" pad="P$2"/>
+<contactref element="OUTPUT" pad="P$2"/>
 <polygon width="0.254" layer="1" isolate="0.254">
 <vertex x="0" y="0"/>
 <vertex x="63.5" y="0"/>
@@ -926,7 +934,6 @@ design rules under a new name.</description>
 <wire x1="48.26" y1="13.42" x2="46.609" y2="13.42" width="0.254" layer="1"/>
 <wire x1="46.609" y1="13.42" x2="44.755" y2="13.42" width="0.254" layer="1"/>
 <wire x1="44.755" y1="13.42" x2="44.45" y2="13.725" width="0.254" layer="1"/>
-<wire x1="6.93" y1="10.16" x2="2.54" y2="10.16" width="0.254" layer="1"/>
 <wire x1="2.54" y1="10.16" x2="1.143" y2="11.557" width="0.254" layer="1"/>
 <wire x1="3.09" y1="18.33" x2="3.81" y2="18.33" width="0.254" layer="1"/>
 <wire x1="1.143" y1="11.557" x2="1.143" y2="16.383" width="0.254" layer="1"/>
@@ -944,6 +951,7 @@ design rules under a new name.</description>
 <wire x1="23.787" y1="29.845" x2="21.717" y2="27.775" width="0.254" layer="16"/>
 <via x="21.717" y="27.775" extent="1-16" drill="0.35"/>
 <wire x1="49.53" y1="29.845" x2="23.787" y2="29.845" width="0.254" layer="16"/>
+<wire x1="2.54" y1="10.16" x2="6.93" y2="10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="D1" pad="2"/>
@@ -1023,7 +1031,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$11">
 <contactref element="U1" pad="3"/>
-<contactref element="J2" pad="P$1"/>
+<contactref element="STATUS" pad="P$1"/>
 <wire x1="6.35" y1="2.54" x2="8.382" y2="2.54" width="0.254" layer="1"/>
 <wire x1="11.43" y1="5.588" x2="11.43" y2="14.859" width="0.254" layer="1"/>
 <wire x1="11.43" y1="14.859" x2="10.414" y2="15.875" width="0.254" layer="1"/>
@@ -1032,7 +1040,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$12">
 <contactref element="U1" pad="4"/>
-<contactref element="J2" pad="P$2"/>
+<contactref element="STATUS" pad="P$2"/>
 <wire x1="8.718" y1="14.875" x2="10.017" y2="14.875" width="0.254" layer="1"/>
 <wire x1="10.017" y1="14.875" x2="10.541" y2="14.351" width="0.254" layer="1"/>
 <wire x1="10.541" y1="14.351" x2="10.541" y2="6.096" width="0.254" layer="1"/>
@@ -1051,9 +1059,9 @@ design rules under a new name.</description>
 <contactref element="R3" pad="P$1"/>
 <contactref element="R4" pad="P$2"/>
 <contactref element="U1" pad="6"/>
+<wire x1="15.93" y1="6.985" x2="15.93" y2="10.16" width="0.254" layer="1"/>
 <wire x1="14.142" y1="13.875" x2="14.142" y2="11.948" width="0.254" layer="1"/>
 <wire x1="14.142" y1="11.948" x2="15.93" y2="10.16" width="0.254" layer="1"/>
-<wire x1="15.93" y1="10.16" x2="15.93" y2="6.985" width="0.254" layer="1"/>
 </signal>
 <signal name="N$15">
 <contactref element="U2" pad="2"/>
@@ -1076,7 +1084,7 @@ design rules under a new name.</description>
 <contactref element="U4" pad="1"/>
 <contactref element="U2" pad="6"/>
 <contactref element="C12" pad="1"/>
-<contactref element="J4" pad="P$2"/>
+<contactref element="BATTERY" pad="P$2"/>
 <wire x1="52.05" y1="26.35" x2="53.533" y2="26.35" width="0.254" layer="1"/>
 <wire x1="53.933" y1="25.95" x2="54.61" y2="25.95" width="0.254" layer="1"/>
 <wire x1="53.533" y1="26.35" x2="53.933" y2="25.95" width="0.254" layer="1"/>
@@ -1100,7 +1108,7 @@ design rules under a new name.</description>
 <wire x1="54.61" y1="24.85" x2="57.15" y2="24.85" width="0.254" layer="1"/>
 </signal>
 <signal name="N$20">
-<contactref element="J4" pad="P$1"/>
+<contactref element="BATTERY" pad="P$1"/>
 <contactref element="R6" pad="2"/>
 <contactref element="R2" pad="2"/>
 <contactref element="C3" pad="1"/>
@@ -1135,7 +1143,7 @@ design rules under a new name.</description>
 <contactref element="C9" pad="1"/>
 <contactref element="U3" pad="3"/>
 <contactref element="C11" pad="1"/>
-<contactref element="J3" pad="P$1"/>
+<contactref element="OUTPUT" pad="P$1"/>
 <wire x1="50.8" y1="13.42" x2="50.8" y2="9.885" width="0.254" layer="1"/>
 <wire x1="50.8" y1="9.885" x2="50.93" y2="9.755" width="0.508" layer="1"/>
 <wire x1="50.8" y1="13.42" x2="51.393" y2="13.42" width="0.254" layer="1"/>
@@ -1156,6 +1164,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
 assets (packages, symbols, and devices). The URNs of those assets
