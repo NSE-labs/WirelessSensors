@@ -489,6 +489,33 @@ Tyco Electronics</description>
 <wire x1="-2.25" y1="1.25" x2="-1.202" y2="1.25" width="0.2" layer="21"/>
 <wire x1="2.25" y1="1.25" x2="1.202" y2="1.25" width="0.2" layer="21"/>
 </package>
+<package name="532610271">
+<description>&lt;b&gt;53261-0271-4&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP1" x="3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<smd name="MP2" x="-3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<text x="0" y="3.235" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4.385" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="3.625" y1="2.3" x2="-3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="2.3" x2="-3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="-1.9" x2="3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="3.625" y1="-1.9" x2="3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="5.225" y1="3.3" x2="-5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="3.3" x2="-5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="-4.45" x2="5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="5.225" y1="-4.45" x2="5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="0.6" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.6" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="0.7" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.7" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="3.625" y1="-1.2" x2="3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="3.625" y1="-1.9" x2="1.4" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-1.4" y1="-1.9" x2="-3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-3.625" y1="-1.9" x2="-3.625" y2="-1.2" width="0.1" layer="21"/>
+<wire x1="1.8" y1="2.3" x2="-1.8" y2="2.3" width="0.1" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1981584-1" urn="urn:adsk.eagle:package:970926/2" locally_modified="yes" type="model">
@@ -859,6 +886,16 @@ design rules under a new name.</description>
 <element name="OUTPUT" library="NSE LABS" package="HEADER_2PIN" value="HEADER_2PIN" x="58.42" y="2.54" smashed="yes" rot="R180">
 <attribute name="NAME" x="58.42" y="5.08" size="1.016" layer="21" font="vector" rot="R180" align="center"/>
 </element>
+<element name="J1" library="NSE LABS" package="532610271" value="53261-0271" x="31.75" y="0" rot="R180">
+<attribute name="ARROW_PART_NUMBER" value="53261-0271" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/53261-0271/molex?region=nac" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DESCRIPTION" value="1.25mm Pitch, PicoBlade PCB Header, Single Row, Right-Angle, Surface Mount, Tin (Sn) Plating, Friction Lock,  Circuits, Tape and Reel" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="HEIGHT" value="3.65mm" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Molex" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="53261-0271" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="538-53261-0271" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Molex/53261-0271?qs=%252B72YyncTwW%252B8%252BBjraxGf3A%3D%3D" x="31.75" y="0" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="N$1">
@@ -1103,6 +1140,8 @@ design rules under a new name.</description>
 <wire x1="39.37" y1="17.399" x2="49.53" y2="27.559" width="0.254" layer="16"/>
 <via x="49.53" y="27.559" extent="1-16" drill="0.35"/>
 <wire x1="39.37" y1="2.54" x2="39.37" y2="3.81" width="0.254" layer="16"/>
+<contactref element="J1" pad="2"/>
+<wire x1="32.375" y1="2.3" x2="39.37" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$19">
 <contactref element="U3" pad="5"/>
@@ -1143,6 +1182,8 @@ design rules under a new name.</description>
 <wire x1="14.748" y1="14.875" x2="15.412" y2="14.875" width="0.254" layer="1"/>
 <wire x1="13.716" y1="7.747" x2="13.716" y2="13.843" width="0.254" layer="1"/>
 <wire x1="13.716" y1="13.843" x2="14.748" y2="14.875" width="0.254" layer="1"/>
+<contactref element="J1" pad="1"/>
+<wire x1="31.125" y1="2.3" x2="16.002" y2="5.461" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="C9" pad="1"/>

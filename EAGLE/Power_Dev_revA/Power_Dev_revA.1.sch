@@ -470,6 +470,33 @@ Tyco Electronics</description>
 <wire x1="-2.25" y1="1.25" x2="-1.202" y2="1.25" width="0.2" layer="21"/>
 <wire x1="2.25" y1="1.25" x2="1.202" y2="1.25" width="0.2" layer="21"/>
 </package>
+<package name="532610271">
+<description>&lt;b&gt;53261-0271-4&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP1" x="3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<smd name="MP2" x="-3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<text x="0" y="3.235" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4.385" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="3.625" y1="2.3" x2="-3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="2.3" x2="-3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="-1.9" x2="3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="3.625" y1="-1.9" x2="3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="5.225" y1="3.3" x2="-5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="3.3" x2="-5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="-4.45" x2="5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="5.225" y1="-4.45" x2="5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="0.6" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.6" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="0.7" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.7" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="3.625" y1="-1.2" x2="3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="3.625" y1="-1.9" x2="1.4" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-1.4" y1="-1.9" x2="-3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-3.625" y1="-1.9" x2="-3.625" y2="-1.2" width="0.1" layer="21"/>
+<wire x1="1.8" y1="2.3" x2="-1.8" y2="2.3" width="0.1" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1981584-1" urn="urn:adsk.eagle:package:970926/2" locally_modified="yes" type="model">
@@ -672,6 +699,18 @@ Switches electrical signals</description>
 <pin name="VO" x="10.16" y="0" length="short" rot="R180"/>
 <text x="5.08" y="-7.62" size="1.27" layer="96" align="center">&gt;VALUE</text>
 <text x="-5.08" y="-7.62" size="1.27" layer="95" align="center">&gt;NAME</text>
+</symbol>
+<symbol name="53261-0271">
+<wire x1="5.08" y1="2.54" x2="17.78" y2="2.54" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-5.08" x2="17.78" y2="2.54" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<text x="19.05" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="19.05" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="-2.54" length="middle"/>
+<pin name="2" x="0" y="0" length="middle"/>
+<pin name="MP1" x="22.86" y="-2.54" length="middle" rot="R180"/>
+<pin name="MP2" x="22.86" y="0" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1029,6 +1068,35 @@ Source: &lt;a href="http://acoptex.com/uploads/DW01A.pdf"&gt; Datasheet &lt;/a&g
 </device>
 </devices>
 </deviceset>
+<deviceset name="53261-0271" prefix="J">
+<description>&lt;b&gt;1.25mm Pitch, PicoBlade PCB Header, Single Row, Right-Angle, Surface Mount, Tin (Sn) Plating, Friction Lock,  Circuits, Tape and Reel&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.molex.com/pdm_docs/sd/532610271_sd.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="53261-0271" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="532610271">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="MP1" pad="MP1"/>
+<connect gate="G$1" pin="MP2" pad="MP2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="ARROW_PART_NUMBER" value="53261-0271" constant="no"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/53261-0271/molex?region=nac" constant="no"/>
+<attribute name="DESCRIPTION" value="1.25mm Pitch, PicoBlade PCB Header, Single Row, Right-Angle, Surface Mount, Tin (Sn) Plating, Friction Lock,  Circuits, Tape and Reel" constant="no"/>
+<attribute name="HEIGHT" value="3.65mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Molex" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="53261-0271" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="538-53261-0271" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Molex/53261-0271?qs=%252B72YyncTwW%252B8%252BBjraxGf3A%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="supply2" urn="urn:adsk.eagle:library:372">
@@ -1170,6 +1238,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="OUTPUT" library="NSE LABS" deviceset="HEADER_2PIN" device=""/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="J1" library="NSE LABS" deviceset="53261-0271" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1240,6 +1309,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="OUTPUT" gate="-1" x="208.28" y="45.72" rot="R180"/>
 <instance part="OUTPUT" gate="-2" x="208.28" y="38.1" rot="R180"/>
 <instance part="SUPPLY20" gate="GND" x="208.28" y="30.48"/>
+<instance part="J1" gate="G$1" x="243.84" y="17.78"/>
 </instances>
 <busses>
 </busses>
@@ -1547,6 +1617,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="BATTERY" gate="-2" pin="P$1"/>
 <wire x1="233.68" y1="22.86" x2="213.36" y2="22.86" width="0.1524" layer="91"/>
 <junction x="213.36" y="22.86"/>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="243.84" y1="17.78" x2="243.84" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="22.86" x2="233.68" y2="22.86" width="0.1524" layer="91"/>
+<junction x="233.68" y="22.86"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -1585,6 +1659,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="99.06" y1="-25.4" x2="48.26" y2="-25.4" width="0.1524" layer="91"/>
 <junction x="99.06" y="15.24"/>
 <wire x1="124.46" y1="15.24" x2="114.3" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="15.24" x2="243.84" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="10.16" x2="233.68" y2="10.16" width="0.1524" layer="91"/>
+<junction x="233.68" y="10.16"/>
 </segment>
 </net>
 <net name="N$6" class="0">
