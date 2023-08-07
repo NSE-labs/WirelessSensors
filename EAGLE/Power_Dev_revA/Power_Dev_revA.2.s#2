@@ -473,27 +473,29 @@ Tyco Electronics</description>
 <package name="532610271">
 <description>&lt;b&gt;53261-0271-4&lt;/b&gt;&lt;br&gt;
 </description>
-<smd name="1" x="0.625" y="-1.538" dx="1.6" dy="0.8" layer="1" rot="R90"/>
-<smd name="2" x="-0.625" y="-1.538" dx="1.6" dy="0.8" layer="1" rot="R90"/>
-<smd name="MP1" x="3.175" y="1.362" dx="3" dy="2.1" layer="1" rot="R90"/>
-<smd name="MP2" x="-3.175" y="1.362" dx="3" dy="2.1" layer="1" rot="R90"/>
-<text x="0" y="3.997" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
-<text x="0" y="-3.623" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
-<wire x1="3.625" y1="3.062" x2="-3.625" y2="3.062" width="0.2" layer="51"/>
-<wire x1="-3.625" y1="3.062" x2="-3.625" y2="-1.138" width="0.2" layer="51"/>
-<wire x1="-3.625" y1="-1.138" x2="3.625" y2="-1.138" width="0.2" layer="51"/>
-<wire x1="3.625" y1="-1.138" x2="3.625" y2="3.062" width="0.2" layer="51"/>
-<wire x1="5.225" y1="4.062" x2="-5.225" y2="4.062" width="0.1" layer="51"/>
-<wire x1="-5.225" y1="4.062" x2="-5.225" y2="-3.688" width="0.1" layer="51"/>
-<wire x1="-5.225" y1="-3.688" x2="5.225" y2="-3.688" width="0.1" layer="51"/>
-<wire x1="5.225" y1="-3.688" x2="5.225" y2="4.062" width="0.1" layer="51"/>
-<wire x1="0.6" y1="-2.638" x2="0.7" y2="-2.638" width="0.1" layer="21" curve="180"/>
-<wire x1="0.7" y1="-2.638" x2="0.6" y2="-2.638" width="0.1" layer="21" curve="180"/>
-<wire x1="3.625" y1="-0.438" x2="3.625" y2="-1.138" width="0.1" layer="21"/>
-<wire x1="3.625" y1="-1.138" x2="1.4" y2="-1.138" width="0.1" layer="21"/>
-<wire x1="-1.4" y1="-1.138" x2="-3.625" y2="-1.138" width="0.1" layer="21"/>
-<wire x1="-3.625" y1="-1.138" x2="-3.625" y2="-0.438" width="0.1" layer="21"/>
-<wire x1="1.8" y1="3.062" x2="-1.8" y2="3.062" width="0.1" layer="21"/>
+<smd name="1" x="0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-0.625" y="-2.3" dx="1.6" dy="0.8" layer="1" rot="R90"/>
+<smd name="MP1" x="3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<smd name="MP2" x="-3.175" y="0.6" dx="3" dy="2.1" layer="1" rot="R90"/>
+<text x="0" y="3.235" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4.385" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="3.625" y1="2.3" x2="-3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="2.3" x2="-3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="-3.625" y1="-1.9" x2="3.625" y2="-1.9" width="0.2" layer="51"/>
+<wire x1="3.625" y1="-1.9" x2="3.625" y2="2.3" width="0.2" layer="51"/>
+<wire x1="5.225" y1="3.3" x2="-5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="3.3" x2="-5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="-5.225" y1="-4.45" x2="5.225" y2="-4.45" width="0.1" layer="51"/>
+<wire x1="5.225" y1="-4.45" x2="5.225" y2="3.3" width="0.1" layer="51"/>
+<wire x1="0.6" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.6" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="0.7" y1="-3.4" x2="0.7" y2="-3.4" width="0.1" layer="21"/>
+<wire x1="0.7" y1="-3.4" x2="0.6" y2="-3.4" width="0.1" layer="21" curve="180"/>
+<wire x1="3.625" y1="-1.2" x2="3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="3.625" y1="-1.9" x2="1.4" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-1.4" y1="-1.9" x2="-3.625" y2="-1.9" width="0.1" layer="21"/>
+<wire x1="-3.625" y1="-1.9" x2="-3.625" y2="-1.2" width="0.1" layer="21"/>
+<wire x1="1.8" y1="2.3" x2="-1.8" y2="2.3" width="0.1" layer="21"/>
 </package>
 </packages>
 <packages3d>
@@ -828,9 +830,9 @@ Tyco Electronics</description>
 <devices>
 <device name="" package="SOT-23">
 <connects>
-<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="D" pad="2"/>
 <connect gate="G$1" pin="G" pad="1"/>
-<connect gate="G$1" pin="S" pad="2"/>
+<connect gate="G$1" pin="S" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
