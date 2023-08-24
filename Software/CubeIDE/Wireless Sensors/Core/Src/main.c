@@ -129,7 +129,7 @@ int main(void)
   while (1)
   {
 	  count++;
-	  sprintf((char *)buffer, "Count = %d", count);
+	  sprintf((char *)buffer, "Count = %d\r\n", count);
 	  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); /* Turn on the LED */
 //	  LoRaTransmit(buffer, strlen((char *)buffer));
 	  moduleID = ReadModuleID();
