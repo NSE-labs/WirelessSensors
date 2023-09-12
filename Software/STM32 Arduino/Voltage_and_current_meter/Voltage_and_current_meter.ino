@@ -12,37 +12,48 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // Declaration for the INA219 voltage and current sensor
-Adafruit_INA219 ina219;
+Adafruit_INA219 batteryMonitor(0x40);
+Adafruit_INA219 panelMonitor(0x41);
 
 
 void setup(void) 
 {
   Serial.begin(115200);
-    
-  Serial.println("Hello!");
 
-   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
+  // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for(;;); // Don't proceed, loop forever
+    while(1)
+    {
+      Serial.println("Screen allocation failed");
+      delay(1000);
+    }
   }
 
   display.clearDisplay();
   display.display();
   
-  // Initialize the INA219.
+  // Initialize the INA219s.
   // By default the initialization will use the largest range (32V, 2A).  However
   // you can call a setCalibration function to change this range (see comments).
-  if (! ina219.begin()) {
-    Serial.println("Failed to find INA219 chip");
-    while (1) { delay(10); }
+  if (! batteryMonitor.begin()) {
+    while(1)
+    {
+      Serial.println("Failed to find battery INA219 chip");
+      delay(1000);
+    }
+  }
+  if (! panelMonitor.begin()) {
+    while(1)
+    {
+      Serial.println("Failed to find panel INA219 chip");
+      delay(1000);
+    }
   }
   // To use a slightly lower 32V, 1A range (higher precision on amps):
   //ina219.setCalibration_32V_1A();
   // Or to use a lower 16V, 400mA range (higher precision on volts and amps):
-  ina219.setCalibration_16V_400mA();
-
-  Serial.println("Measuring voltage and current with INA219 ...");
+  batteryMonitor.setCalibration_16V_400mA();
+  panelMonitor.setCalibration_16V_400mA();
 }
 
 void loop(void) 
@@ -52,27 +63,39 @@ void loop(void)
   float current_mA = 0;
   float loadvoltage = 0;
   float power_mW = 0;
+  float panelVoltage = 0;
+  float panelCurrent = 0;
+  float panelPower = 0;
 
-  shuntvoltage = ina219.getShuntVoltage_mV();
-  busvoltage = ina219.getBusVoltage_V();
-  current_mA = ina219.getCurrent_mA();
-  power_mW = ina219.getPower_mW();
-  loadvoltage = busvoltage + (shuntvoltage / 1000);
+  shuntvoltage = batteryMonitor.getShuntVoltage_mV();
+  busvoltage = batteryMonitor.getBusVoltage_V();
+  current_mA = batteryMonitor.getCurrent_mA();
+  power_mW = batteryMonitor.getPower_mW();
+  panelVoltage = panelMonitor.getBusVoltage_V();
+  panelCurrent = panelMonitor.getCurrent_mA();
+  panelPower = panelMonitor.getPower_mW();
   
   display.clearDisplay();
   display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);
+  display.println(F("Battery    Panel"));
   display.print(busvoltage); display.println(F(" V"));
   display.print(current_mA); display.println(F(" mA"));
   display.print(power_mW); display.println(F(" mW"));
+  display.setCursor(64,8); 
+  display.print(panelVoltage); display.println(F(" V"));
+  display.setCursor(64,16);
+  display.print(panelCurrent); display.println(F(" mA"));
+  display.setCursor(64,24);
+  display.print(panelPower); display.println(F(" mW"));
   display.display();
   
-  Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
-  Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
-  Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
-  Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
-  Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
+  Serial.print("Bus Voltage:    "); Serial.print(busvoltage); Serial.println(" V");
+  Serial.print("Shunt Voltage:  "); Serial.print(shuntvoltage); Serial.println(" mV");
+  Serial.print("Battery Voltage:"); Serial.print(loadvoltage); Serial.println(" V");
+  Serial.print("Battery Current:"); Serial.print(current_mA); Serial.println(" mA");
+  Serial.print("Battery Power:  "); Serial.print(power_mW); Serial.println(" mW");
   Serial.println("");
 
   delay(2000);
