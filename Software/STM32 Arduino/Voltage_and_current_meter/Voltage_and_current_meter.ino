@@ -74,6 +74,10 @@ void setup(void)
   {
     Serial.println("SD card initialized.");
   }
+  pinMode(PA0, OUTPUT); /* Charging LED */
+  pinMode(PA1, OUTPUT); /* Done LED */
+  pinMode(PA10, INPUT_PULLUP); /* Charging input */
+  pinMode(PA15, INPUT_PULLUP); /* Done input */
 }
 
 void loop(void) 
@@ -88,6 +92,8 @@ void loop(void)
   float panelPower = 0;
   float Vcc = 0;
   String dataString = "";
+  int chargeStatus = LOW;
+  int doneStatus = LOW;
 
   Vcc = ((float)__LL_ADC_CALC_VREFANALOG_VOLTAGE(analogRead(AVREF), LL_ADC_RESOLUTION))/1000;
   
@@ -136,5 +142,27 @@ void loop(void)
     dataFile.close();
   }
 
+  // Light up LEDs to reflect charging status */
+  if (digitalRead(PA10) == HIGH) /* Charging status */
+  {
+    chargeStatus = LOW;
+  }
+  else
+  {
+    chargeStatus = HIGH;
+  }
+
+  if (digitalRead(PA15) == HIGH) /* Done status */
+  {
+    doneStatus = LOW;
+  }
+  else
+  {
+    doneStatus = HIGH;
+  }
+
+  digitalWrite(PA0, chargeStatus);
+  digitalWrite(PA1, doneStatus);
+  
   delay(2000);
 }
