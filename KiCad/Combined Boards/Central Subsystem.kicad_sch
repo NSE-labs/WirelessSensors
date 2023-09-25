@@ -2636,10 +2636,6 @@
     (stroke (width 0) (type default))
     (uuid ca2ec07e-c7e6-4344-8000-362e135084a3)
   )
-  (wire (pts (xy 177.8 34.29) (xy 189.23 34.29))
-    (stroke (width 0) (type default))
-    (uuid cb61a49a-b097-49c7-8bfd-bc43333c2ea6)
-  )
   (wire (pts (xy 161.29 55.88) (xy 161.29 54.61))
     (stroke (width 0) (type default))
     (uuid cbbe9892-7353-4643-9f86-3356c2ad2d6e)
@@ -2692,10 +2688,6 @@
     (stroke (width 0) (type default))
     (uuid d705fa41-1f0f-4e01-bcd4-366d5fe3a20e)
   )
-  (wire (pts (xy 177.8 40.64) (xy 177.8 41.91))
-    (stroke (width 0) (type default))
-    (uuid d7fc4271-6a6d-4b3c-8991-c1954b5fa86c)
-  )
   (wire (pts (xy 219.71 68.58) (xy 223.52 68.58))
     (stroke (width 0) (type default))
     (uuid dc16b454-2260-4fee-9f14-8d9fbc25f54b)
@@ -2727,10 +2719,6 @@
   (wire (pts (xy 106.68 166.37) (xy 110.49 166.37))
     (stroke (width 0) (type default))
     (uuid e86debcb-7f90-4912-aa2b-b80477f78459)
-  )
-  (wire (pts (xy 177.8 35.56) (xy 177.8 34.29))
-    (stroke (width 0) (type default))
-    (uuid e8ed8324-69ce-4bf3-b1da-e1ce918e53e4)
   )
   (wire (pts (xy 189.23 29.21) (xy 189.23 34.29))
     (stroke (width 0) (type default))
@@ -3297,7 +3285,7 @@
   (symbol (lib_id "power:GND") (at 133.35 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 066df816-4619-4bbe-bcc5-fa20f4ee37c6)
-    (property "Reference" "#PWR019" (at 133.35 105.41 0)
+    (property "Reference" "#PWR021" (at 133.35 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 133.35 104.14 0)
@@ -3313,7 +3301,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -3520,7 +3508,7 @@
   (symbol (lib_id "power:GND") (at 151.13 82.55 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 18618ae7-cb1d-4220-b5df-2a876d33632d)
-    (property "Reference" "#PWR022" (at 151.13 88.9 0)
+    (property "Reference" "#PWR024" (at 151.13 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 151.13 87.63 0)
@@ -3536,7 +3524,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -3718,7 +3706,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x04") (at 49.53 158.75 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2910a807-5144-44a4-9d23-46d7924e3587)
-    (property "Reference" "J7" (at 49.53 168.91 0)
+    (property "Reference" "J2" (at 49.53 168.91 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "STEMMA QT" (at 49.53 166.37 0)
@@ -3737,7 +3725,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "J7") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -3776,7 +3764,7 @@
   (symbol (lib_id "power:GND") (at 257.81 162.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2d74200b-ab9d-4b7d-b259-1b94de4b446d)
-    (property "Reference" "#PWR09" (at 257.81 168.91 0)
+    (property "Reference" "#PWR034" (at 257.81 168.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 257.81 167.64 0)
@@ -3792,7 +3780,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR034") (unit 1)
         )
       )
     )
@@ -3801,7 +3789,7 @@
   (symbol (lib_id "power:GND") (at 120.65 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 300e265c-7e8c-409a-87c8-700991c63d75)
-    (property "Reference" "#PWR015" (at 120.65 59.69 0)
+    (property "Reference" "#PWR017" (at 120.65 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 120.65 58.42 0)
@@ -3817,7 +3805,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR017") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -3831,7 +3819,7 @@
   (symbol (lib_id "power:GND") (at 67.31 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 31a10d4e-0ffb-47b1-b638-ad273d2c5c43)
-    (property "Reference" "#PWR08" (at 67.31 119.38 0)
+    (property "Reference" "#PWR09" (at 67.31 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 67.31 118.11 0)
@@ -3847,7 +3835,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -3923,7 +3911,7 @@
   (symbol (lib_id "power:GND") (at 194.31 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 33983770-0b1d-4681-ac16-0328a116d20d)
-    (property "Reference" "#PWR026" (at 194.31 46.99 0)
+    (property "Reference" "#PWR029" (at 194.31 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 194.31 45.72 0)
@@ -3939,7 +3927,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -4076,7 +4064,7 @@
   (symbol (lib_id "power:GND") (at 115.57 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 43173fa3-73a5-4716-9c64-921093b26bc9)
-    (property "Reference" "#PWR056" (at 115.57 38.1 0)
+    (property "Reference" "#PWR016" (at 115.57 38.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 115.57 36.83 0)
@@ -4092,7 +4080,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR056") (unit 1)
+          (reference "#PWR016") (unit 1)
         )
       )
     )
@@ -4163,7 +4151,7 @@
   (symbol (lib_id "power:GND") (at 160.02 39.37 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4a8088e7-2f6b-4a03-a679-bf47dd2aa410)
-    (property "Reference" "#PWR023" (at 160.02 45.72 0)
+    (property "Reference" "#PWR025" (at 160.02 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 160.02 44.45 0)
@@ -4179,7 +4167,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -4193,7 +4181,7 @@
   (symbol (lib_id "power:GND") (at 238.76 44.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4b9c61ad-cb3a-4939-9df0-b16efb2bfdda)
-    (property "Reference" "#PWR029" (at 238.76 50.8 0)
+    (property "Reference" "#PWR033" (at 238.76 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 242.57 46.99 0)
@@ -4209,7 +4197,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR033") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4254,7 +4242,7 @@
   (symbol (lib_id "power:GND") (at 132.08 110.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 576b869b-f78b-4932-a6ac-d237311c1f58)
-    (property "Reference" "#PWR018" (at 132.08 116.84 0)
+    (property "Reference" "#PWR020" (at 132.08 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 132.08 115.57 0)
@@ -4270,7 +4258,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR018") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -4374,7 +4362,7 @@
   (symbol (lib_id "power:GND") (at 129.54 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 68f403e2-9798-46cf-bea7-3ec4efb89903)
-    (property "Reference" "#PWR017" (at 129.54 62.23 0)
+    (property "Reference" "#PWR019" (at 129.54 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 129.54 60.96 0)
@@ -4390,7 +4378,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR017") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4497,7 +4485,7 @@
   (symbol (lib_id "power:GND") (at 199.39 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 73050559-76f2-4c77-ba63-b3c206d7a32b)
-    (property "Reference" "#PWR027" (at 199.39 142.24 0)
+    (property "Reference" "#PWR030" (at 199.39 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 199.39 140.97 0)
@@ -4513,7 +4501,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -4558,7 +4546,7 @@
   (symbol (lib_id "power:GND") (at 50.8 44.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 75048fd4-bb30-4168-8aee-038220f81f94)
-    (property "Reference" "#PWR05" (at 50.8 50.8 0)
+    (property "Reference" "#PWR04" (at 50.8 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 50.8 49.53 0)
@@ -4574,7 +4562,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4619,7 +4607,7 @@
   (symbol (lib_id "power:+3.3V") (at 189.23 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 80bca802-421a-40d1-80af-a5897530e0be)
-    (property "Reference" "#PWR025" (at 189.23 33.02 0)
+    (property "Reference" "#PWR028" (at 189.23 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 189.23 25.4 0)
@@ -4635,7 +4623,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )
@@ -4644,7 +4632,7 @@
   (symbol (lib_id "power:GND") (at 207.01 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 80e39237-cbd7-46c9-bd47-c554af545cd1)
-    (property "Reference" "#PWR028" (at 207.01 46.99 0)
+    (property "Reference" "#PWR031" (at 207.01 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 207.01 45.72 0)
@@ -4660,7 +4648,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -4674,7 +4662,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Pin") (at 124.46 26.67 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 81d802c3-e3bc-4a80-b900-95a821cff1d1)
-    (property "Reference" "J9" (at 125.73 28.575 0)
+    (property "Reference" "J5" (at 125.73 28.575 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Power" (at 125.73 26.035 0)
@@ -4691,7 +4679,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "J9") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
@@ -4700,7 +4688,7 @@
   (symbol (lib_id "power:GND") (at 173.99 100.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 878cf432-1d1c-443b-8498-8409dd9a5f29)
-    (property "Reference" "#PWR057" (at 173.99 106.68 0)
+    (property "Reference" "#PWR026" (at 173.99 106.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 173.99 105.41 0)
@@ -4716,7 +4704,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR057") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4730,7 +4718,7 @@
   (symbol (lib_id "power:GND") (at 120.65 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8b78d27a-5d02-4e17-a076-b10af055fd9a)
-    (property "Reference" "#PWR016" (at 120.65 73.66 0)
+    (property "Reference" "#PWR018" (at 120.65 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 120.65 72.39 0)
@@ -4746,7 +4734,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR016") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4821,7 +4809,7 @@
   (symbol (lib_id "power:GND") (at 142.24 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 97661452-ffe6-4dc6-ab7b-e5c479d5ab40)
-    (property "Reference" "#PWR020" (at 142.24 62.23 0)
+    (property "Reference" "#PWR022" (at 142.24 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 142.24 60.96 0)
@@ -4837,7 +4825,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
       (project "CPU Development Board"
@@ -4971,7 +4959,7 @@
   (symbol (lib_id "power:GND") (at 58.42 156.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ac0821a4-1629-4558-96da-a8caf73a9514)
-    (property "Reference" "#PWR055" (at 58.42 162.56 0)
+    (property "Reference" "#PWR05" (at 58.42 162.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 58.42 161.29 0)
@@ -4987,7 +4975,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR055") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -4996,7 +4984,7 @@
   (symbol (lib_id "power:+3.3V") (at 218.44 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid af9cf61a-98f1-4567-98c5-41088e01b9db)
-    (property "Reference" "#PWR054" (at 218.44 157.48 0)
+    (property "Reference" "#PWR032" (at 218.44 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 218.44 149.86 0)
@@ -5012,7 +5000,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -5137,40 +5125,10 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 177.8 41.91 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid bfbcc285-5727-4b6f-8751-9a159dc14594)
-    (property "Reference" "#PWR024" (at 177.8 48.26 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 177.8 46.99 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "" (at 177.8 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 177.8 41.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 4f624f7d-8dac-41eb-8de1-3ca5c449a72f))
-    (instances
-      (project "Combined Boards"
-        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR024") (unit 1)
-        )
-      )
-      (project "LoRa Development Board"
-        (path "/81d1aadf-85d2-4fd0-839e-05ac66879581"
-          (reference "#PWR011") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:+3.3V") (at 66.04 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c12f3a05-a211-4490-b299-31e6aaa1cab7)
-    (property "Reference" "#PWR07" (at 66.04 83.82 0)
+    (property "Reference" "#PWR08" (at 66.04 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 66.04 76.2 0)
@@ -5186,7 +5144,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -5200,7 +5158,7 @@
   (symbol (lib_id "power:+3.3V") (at 62.23 137.16 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c1625561-eed0-4643-a8db-c2c171be4239)
-    (property "Reference" "#PWR03" (at 62.23 140.97 0)
+    (property "Reference" "#PWR07" (at 62.23 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 62.23 133.35 0)
@@ -5216,7 +5174,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -5225,7 +5183,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x10_Odd_Even") (at 240.03 152.4 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c3a42fd6-4769-4401-81de-e29c45db5f46)
-    (property "Reference" "J2" (at 227.33 150.495 90)
+    (property "Reference" "J6" (at 227.33 150.495 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "GPIO" (at 227.33 153.035 90)
@@ -5260,7 +5218,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "J2") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -5269,7 +5227,7 @@
   (symbol (lib_id "power:GND") (at 41.91 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c7782c87-470e-4d74-ac08-ef17146014fe)
-    (property "Reference" "#PWR04" (at 41.91 105.41 0)
+    (property "Reference" "#PWR03" (at 41.91 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 41.91 104.14 0)
@@ -5285,7 +5243,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -5403,7 +5361,7 @@
   (symbol (lib_id "power:+3.3V") (at 115.57 22.86 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid db6ca10e-7018-4c7f-bcff-047762dd9c96)
-    (property "Reference" "#PWR053" (at 115.57 26.67 0)
+    (property "Reference" "#PWR015" (at 115.57 26.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 115.57 19.05 0)
@@ -5419,7 +5377,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -5490,7 +5448,7 @@
   (symbol (lib_id "power:GND") (at 146.05 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e4c28673-1dfe-4ffb-8a58-4598649fc55e)
-    (property "Reference" "#PWR021" (at 146.05 105.41 0)
+    (property "Reference" "#PWR023" (at 146.05 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 146.05 104.14 0)
@@ -5506,7 +5464,7 @@
     (instances
       (project "Combined Boards"
         (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
       (project "LoRa Development Board"
@@ -5573,37 +5531,6 @@
       (project "LoRa Development Board"
         (path "/81d1aadf-85d2-4fd0-839e-05ac66879581"
           (reference "R1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Device:C_Small") (at 177.8 38.1 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid e82c35e9-7f10-4e5e-8024-81d321f125c8)
-    (property "Reference" "C18" (at 180.34 37.4713 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "4.7 uF" (at 180.34 40.0113 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (at 177.8 38.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 177.8 38.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 2137a944-b5be-45b8-ab84-39be465b5672))
-    (pin "2" (uuid 52676ad8-4939-4d2e-997d-117abd424baa))
-    (instances
-      (project "Combined Boards"
-        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5/1dc5bc9e-b621-49d0-a745-1efaf62549e2"
-          (reference "C18") (unit 1)
-        )
-      )
-      (project "LoRa Development Board"
-        (path "/81d1aadf-85d2-4fd0-839e-05ac66879581"
-          (reference "C3") (unit 1)
         )
       )
     )
