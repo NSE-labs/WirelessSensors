@@ -15,13 +15,19 @@
 - [x] Test & Debug Rev B.2 CPU board
 - [x] Temporary enclosure for LoRa Gateway
 - [x] Range testing with Rev A.1 LoRa board and LoRa Gateway
-- [ ] Design combined sensor board
+- [x] Design power development board
+- [x] Order power development board
+- [x] Receive power development board
+- [x] Develop test fixture for power development board
+- [x] Test power development board
+- [x] Adjust power development design to rev A.3 based on test results
+- [x] Order revised power development board
+- [ ] Receive revised power development board
+- [ ] Test revised power development board
+- [ ] Design combined sensor and power board
     - [ ] Combined CPU and LoRa transceiver
     - [ ] Interface to various sensors
-        - [ ] Verify one wire interface using 18B20 temperature sensor
-        - [ ] Verify I2C interface using DHT22 temperature and humidity sensor
-        - [x] SPI interface already verified with LoRa board
-        - [ ] Define sensor interface connector/cable/functionality/form factor
+        - [x] Define sensor interface connector/cable/functionality
     - [ ] Flexible power supply (Battery, Solar)
 - [ ] Layout combined sensor board
 - [ ] Order combined sensor board

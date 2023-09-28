@@ -6,7 +6,7 @@
 
   (title_block
     (title "Combined Wireless Sensor Boards Master Sheet")
-    (date "2023-08-01")
+    (date "2023-09-21")
     (rev "A.1")
     (company "NSE Labs")
   )
@@ -14,23 +14,6 @@
   (lib_symbols
   )
 
-
-  (sheet (at 195.58 72.39) (size 45.72 29.21) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 0c64a068-0944-4527-8a78-19113e5af5d7)
-    (property "Sheetname" "Sensor Subsystem" (at 195.58 71.6784 0) (show_name)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Sensor Subsystem.kicad_sch" (at 195.58 102.1846 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Combined Boards"
-        (path "/819f9f2e-5083-42df-b63a-6cdcb84600f5" (page "4"))
-      )
-    )
-  )
 
   (sheet (at 119.38 72.39) (size 48.26 29.21) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
