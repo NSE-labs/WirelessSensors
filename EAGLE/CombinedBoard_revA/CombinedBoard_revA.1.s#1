@@ -1990,8 +1990,8 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <part name="D1" library="NSE LABS" deviceset="DIODE_SCHOTTKY_SMA" device="" value="SS54"/>
 <part name="J2" library="NSE LABS" deviceset="HEADER_5PIN" device=""/>
 <part name="J11" library="NSE LABS" deviceset="HEADER_3PIN" device=""/>
-<part name="R9" library="NSE LABS" deviceset="R_0402" device=""/>
-<part name="R10" library="NSE LABS" deviceset="R_0402" device=""/>
+<part name="R9" library="NSE LABS" deviceset="R_0402" device="" value="10K"/>
+<part name="R10" library="NSE LABS" deviceset="R_0402" device="" value="10K"/>
 <part name="+3V13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
@@ -2207,7 +2207,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <instance part="J11" gate="-2" x="175.26" y="40.64"/>
 <instance part="J11" gate="-3" x="175.26" y="35.56"/>
 <instance part="R9" gate="G$1" x="215.9" y="58.42"/>
-<instance part="R10" gate="G$1" x="215.9" y="53.34"/>
+<instance part="R10" gate="G$1" x="215.9" y="50.8"/>
 <instance part="+3V13" gate="G$1" x="220.98" y="66.04"/>
 </instances>
 <busses>
@@ -2796,7 +2796,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <segment>
 <pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="220.98" y1="53.34" x2="220.98" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="50.8" x2="220.98" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="+3V13" gate="G$1" pin="+3V3"/>
 <wire x1="220.98" y1="63.5" x2="220.98" y2="58.42" width="0.1524" layer="91"/>
 <junction x="220.98" y="58.42"/>
@@ -3137,8 +3137,8 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="210.82" y1="53.34" x2="208.28" y2="53.34" width="0.1524" layer="91"/>
-<label x="208.28" y="53.34" size="1.778" layer="95" rot="R180" align="center-left"/>
+<wire x1="210.82" y1="50.8" x2="208.28" y2="50.8" width="0.1524" layer="91"/>
+<label x="208.28" y="50.8" size="1.778" layer="95" rot="R180" align="center-left"/>
 </segment>
 </net>
 <net name="SPI_MISO" class="0">

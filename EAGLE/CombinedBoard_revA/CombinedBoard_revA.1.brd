@@ -623,24 +623,24 @@
 <package name="SM04B-SRSS-TB(LFSN)">
 <description>&lt;b&gt;SM04B-SRSS-TB(LFSN)&lt;/b&gt;&lt;br&gt;
 </description>
-<smd name="1" x="1.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="2" x="2.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="3" x="3.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="4" x="4.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="5" x="0.2" y="0.786" dx="1.8" dy="1.2" layer="1" rot="R90"/>
-<smd name="6" x="5.8" y="0.786" dx="1.8" dy="1.2" layer="1" rot="R90"/>
-<text x="2.822" y="6.636" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
-<text x="2.822" y="-1.101" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
-<wire x1="0" y1="4.85" x2="6" y2="4.85" width="0.254" layer="51"/>
-<wire x1="6" y1="4.85" x2="6" y2="0" width="0.254" layer="51"/>
-<wire x1="6" y1="0" x2="0" y2="0" width="0.254" layer="51"/>
-<wire x1="0" y1="0" x2="0" y2="4.85" width="0.254" layer="51"/>
-<wire x1="0" y1="4.85" x2="0" y2="1.87" width="0.254" layer="21"/>
-<wire x1="6" y1="4.85" x2="6" y2="1.87" width="0.254" layer="21"/>
-<wire x1="0" y1="4.85" x2="1.029" y2="4.85" width="0.254" layer="21"/>
-<wire x1="6" y1="4.85" x2="4.937" y2="4.85" width="0.254" layer="21"/>
-<circle x="0.702" y="5.642" radius="0.06036875" width="0.254" layer="25"/>
-<wire x1="1.094" y1="0" x2="4.903" y2="0" width="0.254" layer="21"/>
+<smd name="1" x="-1.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="2" x="-0.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="3" x="0.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="4" x="1.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="5" x="-2.8" y="-1.714" dx="1.8" dy="1.2" layer="1" rot="R90"/>
+<smd name="6" x="2.8" y="-1.714" dx="1.8" dy="1.2" layer="1" rot="R90"/>
+<text x="-0.178" y="4.136" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="-0.178" y="-3.601" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="-3" y1="2.35" x2="3" y2="2.35" width="0.254" layer="51"/>
+<wire x1="3" y1="2.35" x2="3" y2="-2.5" width="0.254" layer="51"/>
+<wire x1="3" y1="-2.5" x2="-3" y2="-2.5" width="0.254" layer="51"/>
+<wire x1="-3" y1="-2.5" x2="-3" y2="2.35" width="0.254" layer="51"/>
+<wire x1="-3" y1="2.35" x2="-3" y2="-0.63" width="0.254" layer="21"/>
+<wire x1="3" y1="2.35" x2="3" y2="-0.63" width="0.254" layer="21"/>
+<wire x1="-3" y1="2.35" x2="-1.971" y2="2.35" width="0.254" layer="21"/>
+<wire x1="3" y1="2.35" x2="1.937" y2="2.35" width="0.254" layer="21"/>
+<circle x="-2.298" y="3.142" radius="0.06036875" width="0.254" layer="25"/>
+<wire x1="-1.906" y1="-2.5" x2="1.903" y2="-2.5" width="0.254" layer="21"/>
 </package>
 <package name="HEADER_10PIN">
 <pad name="P$1" x="-11.43" y="0" drill="1.143" diameter="1.9304"/>
@@ -1222,17 +1222,17 @@ design rules under a new name.</description>
 <element name="J3" library="NSE LABS" package="HEADER_DEBUG_SMD" value="DEBUG" x="12.954" y="43.18" smashed="yes" rot="R180">
 <attribute name="NAME" x="18.669" y="43.18" size="0.889" layer="21" font="vector" align="center"/>
 </element>
-<element name="J7" library="NSE LABS" package="SM04B-SRSS-TB(LFSN)" value="SM04B-SRSS-TB_LF__SN_" x="40.005" y="1.143" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/sm04b-srss-tb-lf-sn/jst-manufacturing?region=europe" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="JST (JAPAN SOLDERLESS TERMINALS) - SM04B-SRSS-TB(LF)(SN) - CONNECTOR, HEADER, SMT, R/A, 1MM, 4WAY" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="mm" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="JST (JAPAN SOLDERLESS TERMINALS)" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="" x="40.005" y="1.143" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="43.025" y="7.715" size="0.889" layer="25" font="vector" rot="R180" align="center"/>
-<attribute name="VALUE" x="42.827" y="0.042" size="0.889" layer="27" font="vector" align="center"/>
+<element name="J7" library="NSE LABS" package="SM04B-SRSS-TB(LFSN)" value="SM04B-SRSS-TB_LF__SN_" x="42.418" y="3.683" smashed="yes">
+<attribute name="ARROW_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/sm04b-srss-tb-lf-sn/jst-manufacturing?region=europe" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="JST (JAPAN SOLDERLESS TERMINALS) - SM04B-SRSS-TB(LF)(SN) - CONNECTOR, HEADER, SMT, R/A, 1MM, 4WAY" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="mm" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="JST (JAPAN SOLDERLESS TERMINALS)" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="" x="42.418" y="3.683" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="42.418" y="7.62" size="0.889" layer="25" font="vector" rot="R180" align="center"/>
+<attribute name="VALUE" x="45.24" y="2.582" size="0.889" layer="27" font="vector" align="center"/>
 </element>
 <element name="J2A" library="NSE LABS" package="HEADER_10PIN" value="HEADER_10PIN" x="47.117" y="22.86" smashed="yes" rot="R90"/>
 <element name="J2B" library="NSE LABS" package="HEADER_10PIN" value="HEADER_10PIN" x="6.477" y="22.86" smashed="yes" rot="R90"/>
@@ -1248,17 +1248,17 @@ design rules under a new name.</description>
 <attribute name="NAME" x="22.479" y="56.388" size="0.889" layer="25" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="25.019" y="53.34" size="1.27" layer="27" rot="R90" align="center"/>
 </element>
-<element name="J10" library="NSE LABS" package="SM04B-SRSS-TB(LFSN)" value="SM04B-SRSS-TB_LF__SN_" x="32.258" y="1.143" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/sm04b-srss-tb-lf-sn/jst-manufacturing?region=europe" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="JST (JAPAN SOLDERLESS TERMINALS) - SM04B-SRSS-TB(LF)(SN) - CONNECTOR, HEADER, SMT, R/A, 1MM, 4WAY" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="HEIGHT" value="mm" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="JST (JAPAN SOLDERLESS TERMINALS)" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="" x="32.258" y="1.143" size="0.889" layer="27" display="off"/>
-<attribute name="NAME" x="35.08" y="7.779" size="0.889" layer="25" font="vector" align="center"/>
-<attribute name="VALUE" x="35.08" y="0.042" size="0.889" layer="27" font="vector" align="center"/>
+<element name="J10" library="NSE LABS" package="SM04B-SRSS-TB(LFSN)" value="SM04B-SRSS-TB_LF__SN_" x="34.798" y="3.683" smashed="yes">
+<attribute name="ARROW_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/sm04b-srss-tb-lf-sn/jst-manufacturing?region=europe" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="JST (JAPAN SOLDERLESS TERMINALS) - SM04B-SRSS-TB(LF)(SN) - CONNECTOR, HEADER, SMT, R/A, 1MM, 4WAY" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="HEIGHT" value="mm" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="JST (JAPAN SOLDERLESS TERMINALS)" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="SM04B-SRSS-TB(LF)(SN)" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="" x="34.798" y="3.683" size="0.889" layer="27" display="off"/>
+<attribute name="NAME" x="34.798" y="7.62" size="0.889" layer="25" font="vector" align="center"/>
+<attribute name="VALUE" x="37.62" y="2.582" size="0.889" layer="27" font="vector" align="center"/>
 </element>
 <element name="J6" library="NSE LABS" package="S2BPHSM4TBLFSN" value="S2B-PH-SM4-TB_LF__SN_" x="45.466" y="70.866" smashed="yes">
 <attribute name="ARROW_PART_NUMBER" value="S2B-PH-SM4-TB(LF)(SN)" x="45.466" y="70.866" size="0.889" layer="27" display="off"/>
@@ -1354,9 +1354,7 @@ design rules under a new name.</description>
 <wire x1="10.115" y1="54.34" x2="6.493" y2="54.34" width="0.254" layer="1"/>
 <wire x1="6.493" y1="54.34" x2="6.477" y2="54.356" width="0.254" layer="1"/>
 <via x="6.477" y="54.356" extent="1-16" drill="0.35"/>
-<wire x1="41.505" y1="5.804" x2="41.505" y2="7.136" width="0.254" layer="1"/>
-<wire x1="41.505" y1="7.136" x2="40.767" y2="7.874" width="0.254" layer="1"/>
-<via x="40.767" y="7.874" extent="1-16" drill="0.35"/>
+<via x="40.132" y="7.747" extent="1-16" drill="0.35"/>
 <contactref element="J2A" pad="P$2"/>
 <contactref element="J2A" pad="P$3"/>
 <wire x1="27.047" y1="25.76" x2="27.047" y2="28.829" width="0.254" layer="1"/>
@@ -1379,6 +1377,8 @@ design rules under a new name.</description>
 <via x="30.607" y="57.531" extent="1-16" drill="0.35"/>
 <via x="38.1" y="66.929" extent="1-16" drill="0.35"/>
 <contactref element="J11" pad="P$3"/>
+<wire x1="40.918" y1="5.844" x2="40.918" y2="6.961" width="0.254" layer="1"/>
+<wire x1="40.918" y1="6.961" x2="40.132" y2="7.747" width="0.254" layer="1"/>
 </signal>
 <signal name="VDC">
 <contactref element="U3" pad="9"/>
@@ -1767,7 +1767,6 @@ design rules under a new name.</description>
 <contactref element="L6" pad="1"/>
 <contactref element="U2" pad="45"/>
 <contactref element="U2" pad="29"/>
-<wire x1="21.717" y1="43.98" x2="21.933" y2="43.853" width="0.254" layer="1"/>
 <wire x1="30.247" y1="28.46" x2="32.397" y2="28.46" width="0.254" layer="1"/>
 <wire x1="32.397" y1="28.46" x2="33.147" y2="29.21" width="0.254" layer="1"/>
 <via x="33.147" y="29.21" extent="1-16" drill="0.35"/>
@@ -1945,19 +1944,12 @@ design rules under a new name.</description>
 <contactref element="U2" pad="5"/>
 <contactref element="J7" pad="3"/>
 <contactref element="J10" pad="3"/>
-<wire x1="35.758" y1="5.804" x2="35.758" y2="6.929" width="0.254" layer="1"/>
-<wire x1="35.758" y1="6.929" x2="36.068" y2="7.239" width="0.254" layer="1"/>
-<wire x1="36.068" y1="7.239" x2="37.592" y2="7.239" width="0.254" layer="1"/>
-<wire x1="43.505" y1="4.77" x2="43.505" y2="5.804" width="0.254" layer="1"/>
-<wire x1="37.592" y1="7.239" x2="40.64" y2="4.191" width="0.254" layer="1"/>
-<wire x1="40.64" y1="4.191" x2="42.926" y2="4.191" width="0.254" layer="1"/>
-<wire x1="42.926" y1="4.191" x2="43.505" y2="4.77" width="0.254" layer="1"/>
+<wire x1="37.465" y1="7.239" x2="40.513" y2="4.191" width="0.254" layer="1"/>
+<wire x1="42.164" y1="4.191" x2="40.513" y2="4.191" width="0.254" layer="1"/>
 <contactref element="J2B" pad="P$6"/>
 <wire x1="23.347" y1="29.96" x2="12.307" y2="29.96" width="0.254" layer="1"/>
 <wire x1="12.307" y1="29.96" x2="6.477" y2="24.13" width="0.254" layer="1"/>
-<wire x1="31.75" y1="3.683" x2="34.925" y2="3.683" width="0.2032" layer="1"/>
-<wire x1="34.925" y1="3.683" x2="35.758" y2="4.516" width="0.2032" layer="1"/>
-<wire x1="35.758" y1="4.516" x2="35.758" y2="5.804" width="0.2032" layer="1"/>
+<wire x1="34.163" y1="3.683" x2="31.75" y2="3.683" width="0.2032" layer="1"/>
 <wire x1="31.75" y1="3.683" x2="29.1846" y2="1.1176" width="0.2032" layer="1"/>
 <contactref element="J11" pad="P$1"/>
 <wire x1="15.24" y1="11.43" x2="15.113" y2="15.494" width="0.254" layer="16"/>
@@ -1967,44 +1959,50 @@ design rules under a new name.</description>
 <wire x1="24.2824" y1="1.1176" x2="15.24" y2="10.16" width="0.2032" layer="1"/>
 <contactref element="R9" pad="1"/>
 <wire x1="38.227" y1="10.88" x2="38.227" y2="10.287" width="0.254" layer="1"/>
-<wire x1="38.227" y1="10.287" x2="39.2684" y2="9.2456" width="0.254" layer="1"/>
-<wire x1="43.505" y1="7.422" x2="43.505" y2="5.804" width="0.254" layer="1"/>
-<wire x1="39.2684" y1="9.2456" x2="41.6814" y2="9.2456" width="0.254" layer="1"/>
-<wire x1="41.6814" y1="9.2456" x2="43.505" y2="7.422" width="0.254" layer="1"/>
+<wire x1="38.227" y1="10.287" x2="39.1414" y2="9.3726" width="0.254" layer="1"/>
+<wire x1="40.7924" y1="9.3726" x2="39.1414" y2="9.3726" width="0.254" layer="1"/>
+<wire x1="35.298" y1="5.844" x2="35.298" y2="6.723" width="0.254" layer="1"/>
+<wire x1="35.814" y1="7.239" x2="37.465" y2="7.239" width="0.254" layer="1"/>
+<wire x1="35.298" y1="6.723" x2="35.814" y2="7.239" width="0.254" layer="1"/>
+<wire x1="42.918" y1="5.844" x2="42.918" y2="4.945" width="0.254" layer="1"/>
+<wire x1="42.918" y1="4.945" x2="42.164" y2="4.191" width="0.254" layer="1"/>
+<wire x1="42.918" y1="5.844" x2="42.918" y2="7.247" width="0.254" layer="1"/>
+<wire x1="42.918" y1="7.247" x2="40.7924" y2="9.3726" width="0.254" layer="1"/>
+<wire x1="35.298" y1="5.844" x2="35.298" y2="4.818" width="0.2032" layer="1"/>
+<wire x1="35.298" y1="4.818" x2="34.163" y2="3.683" width="0.2032" layer="1"/>
 </signal>
 <signal name="I2C_SCK">
 <contactref element="U2" pad="4"/>
 <contactref element="J7" pad="4"/>
 <contactref element="J10" pad="4"/>
-<wire x1="36.758" y1="5.804" x2="37.884" y2="5.804" width="0.254" layer="1"/>
-<wire x1="44.505" y1="4.754" x2="44.505" y2="5.804" width="0.254" layer="1"/>
-<wire x1="37.884" y1="5.804" x2="39.116" y2="4.572" width="0.254" layer="1"/>
-<wire x1="39.116" y1="4.572" x2="40.132" y2="3.556" width="0.254" layer="1"/>
-<wire x1="40.132" y1="3.556" x2="43.307" y2="3.556" width="0.254" layer="1"/>
-<wire x1="43.307" y1="3.556" x2="44.505" y2="4.754" width="0.254" layer="1"/>
+<wire x1="38.608" y1="4.445" x2="39.497" y2="3.556" width="0.254" layer="1"/>
+<wire x1="42.545" y1="3.556" x2="39.497" y2="3.556" width="0.254" layer="1"/>
 <contactref element="J2B" pad="P$7"/>
 <wire x1="23.347" y1="30.46" x2="12.045" y2="30.46" width="0.254" layer="1"/>
 <wire x1="12.045" y1="30.46" x2="8.255" y2="26.67" width="0.254" layer="1"/>
 <wire x1="8.255" y1="26.67" x2="6.477" y2="26.67" width="0.254" layer="1"/>
-<wire x1="39.116" y1="3.6576" x2="36.576" y2="1.1176" width="0.2032" layer="16"/>
-<wire x1="39.116" y1="3.6576" x2="39.116" y2="4.572" width="0.2032" layer="16"/>
-<via x="39.116" y="4.572" extent="1-16" drill="0.35"/>
+<wire x1="38.608" y1="3.9116" x2="35.814" y2="1.1176" width="0.2032" layer="16"/>
+<wire x1="38.608" y1="3.9116" x2="38.608" y2="4.445" width="0.2032" layer="16"/>
+<via x="38.608" y="4.445" extent="1-16" drill="0.35"/>
 <contactref element="J11" pad="P$2"/>
 <wire x1="6.477" y1="26.67" x2="17.737665625" y2="15.409334375" width="0.254" layer="16"/>
 <wire x1="17.737665625" y1="15.409334375" x2="17.737665625" y2="11.472334375" width="0.254" layer="16"/>
 <wire x1="17.737665625" y1="11.472334375" x2="17.78" y2="11.43" width="0.254" layer="16"/>
-<wire x1="36.576" y1="1.1176" x2="9.0424" y2="1.1176" width="0.2032" layer="16"/>
+<wire x1="35.814" y1="1.1176" x2="9.0424" y2="1.1176" width="0.2032" layer="16"/>
 <wire x1="9.0424" y1="1.1176" x2="8.382" y2="1.778" width="0.2032" layer="16"/>
 <wire x1="8.382" y1="1.778" x2="8.382" y2="3.048" width="0.2032" layer="16"/>
 <wire x1="8.382" y1="3.048" x2="9.398" y2="4.064" width="0.2032" layer="16"/>
 <wire x1="10.414" y1="4.064" x2="17.78" y2="11.43" width="0.2032" layer="16"/>
 <wire x1="9.398" y1="4.064" x2="10.414" y2="4.064" width="0.2032" layer="16"/>
 <contactref element="R10" pad="1"/>
-<wire x1="44.505" y1="5.804" x2="44.505" y2="7.311" width="0.254" layer="1"/>
-<wire x1="44.505" y1="7.311" x2="41.91" y2="9.906" width="0.254" layer="1"/>
-<wire x1="41.91" y1="9.906" x2="41.148" y2="9.906" width="0.254" layer="1"/>
 <wire x1="40.767" y1="10.287" x2="40.767" y2="10.88" width="0.254" layer="1"/>
 <wire x1="41.148" y1="9.906" x2="40.767" y2="10.287" width="0.254" layer="1"/>
+<wire x1="43.918" y1="5.844" x2="43.918" y2="4.929" width="0.254" layer="1"/>
+<wire x1="43.918" y1="4.929" x2="42.545" y2="3.556" width="0.254" layer="1"/>
+<wire x1="36.298" y1="5.844" x2="37.209" y2="5.844" width="0.254" layer="1"/>
+<wire x1="37.209" y1="5.844" x2="38.608" y2="4.445" width="0.254" layer="1"/>
+<wire x1="43.918" y1="5.844" x2="43.918" y2="7.136" width="0.254" layer="1"/>
+<wire x1="43.918" y1="7.136" x2="41.148" y2="9.906" width="0.254" layer="1"/>
 </signal>
 <signal name="SPI_MISO">
 <contactref element="U2" pad="2"/>
@@ -2249,7 +2247,6 @@ design rules under a new name.</description>
 <contactref element="U5" pad="3"/>
 <contactref element="C34" pad="1"/>
 <contactref element="S1" pad="P$1"/>
-<wire x1="41.279" y1="44.68" x2="40.767" y2="44.93" width="0.254" layer="1"/>
 <wire x1="28.067" y1="72.39" x2="29.972" y2="74.295" width="0.254" layer="16"/>
 <wire x1="29.972" y1="74.295" x2="46.482" y2="74.295" width="0.254" layer="16"/>
 <wire x1="46.482" y1="74.295" x2="48.895" y2="71.882" width="0.254" layer="16"/>
@@ -2267,13 +2264,12 @@ design rules under a new name.</description>
 <contactref element="Q1" pad="2"/>
 <contactref element="J7" pad="2"/>
 <contactref element="J10" pad="2"/>
-<wire x1="42.505" y1="5.804" x2="42.505" y2="7.66" width="0.254" layer="1"/>
-<wire x1="42.505" y1="7.66" x2="41.529" y2="8.636" width="0.254" layer="1"/>
-<wire x1="34.758" y1="8.636" x2="34.758" y2="9.017" width="0.254" layer="1"/>
-<wire x1="34.758" y1="9.017" x2="34.758" y2="10.454" width="0.254" layer="1"/>
-<wire x1="34.758" y1="10.454" x2="34.671" y2="10.541" width="0.254" layer="1"/>
-<wire x1="41.529" y1="8.636" x2="34.758" y2="8.636" width="0.254" layer="1"/>
-<wire x1="34.758" y1="5.804" x2="34.758" y2="8.636" width="0.254" layer="1"/>
+<wire x1="41.918" y1="5.844" x2="41.918" y2="7.231" width="0.254" layer="1"/>
+<wire x1="41.918" y1="7.231" x2="40.386" y2="8.763" width="0.254" layer="1"/>
+<wire x1="34.298" y1="10.168" x2="34.671" y2="10.541" width="0.254" layer="1"/>
+<wire x1="34.298" y1="5.844" x2="34.298" y2="8.763" width="0.254" layer="1"/>
+<wire x1="34.298" y1="8.763" x2="34.298" y2="10.168" width="0.254" layer="1"/>
+<wire x1="40.386" y1="8.763" x2="34.298" y2="8.763" width="0.254" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="R7" pad="2"/>
