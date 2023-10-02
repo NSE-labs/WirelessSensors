@@ -522,25 +522,23 @@
 <wire x1="-3.5" y1="3" x2="-3" y2="3.5" width="0.1" layer="51"/>
 <circle x="-3.875" y="3.5" radius="0.125" width="0.25" layer="25"/>
 </package>
-<package name="SMD3225-4P">
-<smd name="1" x="-1.1" y="-0.85" dx="1.4" dy="1.2" layer="1"/>
-<smd name="2" x="1.1" y="-0.85" dx="1.4" dy="1.2" layer="1"/>
-<smd name="3" x="1.1" y="0.85" dx="1.4" dy="1.2" layer="1"/>
-<smd name="4" x="-1.1" y="0.85" dx="1.4" dy="1.2" layer="1"/>
+<package name="SMD2016-4P">
+<smd name="1" x="-0.725" y="-0.575" dx="0.95" dy="0.85" layer="1"/>
+<smd name="2" x="0.725" y="-0.575" dx="0.95" dy="0.85" layer="1"/>
+<smd name="3" x="0.725" y="0.575" dx="0.95" dy="0.85" layer="1"/>
+<smd name="4" x="-0.725" y="0.575" dx="0.95" dy="0.85" layer="1"/>
 <text x="-0.4" y="2.54" size="1.27" layer="25" align="center">&gt;NAME</text>
 <text x="-0.4" y="-2.54" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-1.6" y1="1.25" x2="1.6" y2="1.25" width="0.2" layer="51"/>
-<wire x1="1.6" y1="1.25" x2="1.6" y2="-1.25" width="0.2" layer="51"/>
-<wire x1="1.6" y1="-1.25" x2="-1.6" y2="-1.25" width="0.2" layer="51"/>
-<wire x1="-1.6" y1="-1.25" x2="-1.6" y2="1.25" width="0.2" layer="51"/>
-<wire x1="-3.6" y1="2.45" x2="2.8" y2="2.45" width="0.1" layer="51"/>
-<wire x1="2.8" y1="2.45" x2="2.8" y2="-2.45" width="0.1" layer="51"/>
-<wire x1="2.8" y1="-2.45" x2="-3.6" y2="-2.45" width="0.1" layer="51"/>
-<wire x1="-3.6" y1="-2.45" x2="-3.6" y2="2.45" width="0.1" layer="51"/>
-<wire x1="-2.6" y1="-1" x2="-2.6" y2="-1" width="0.2" layer="21"/>
-<wire x1="-2.6" y1="-1" x2="-2.4" y2="-1" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.4" y1="-1" x2="-2.4" y2="-1" width="0.2" layer="21"/>
-<wire x1="-2.4" y1="-1" x2="-2.6" y2="-1" width="0.2" layer="21" curve="180"/>
+<wire x1="-1" y1="0.8" x2="1" y2="0.8" width="0.2" layer="51"/>
+<wire x1="1" y1="0.8" x2="1" y2="-0.8" width="0.2" layer="51"/>
+<wire x1="1" y1="-0.8" x2="-1" y2="-0.8" width="0.2" layer="51"/>
+<wire x1="-1" y1="-0.8" x2="-1" y2="0.8" width="0.2" layer="51"/>
+<wire x1="-2.35" y1="1.7" x2="2.3" y2="1.7" width="0.1" layer="51"/>
+<wire x1="2.3" y1="1.7" x2="2.3" y2="-1.7" width="0.1" layer="51"/>
+<wire x1="2.3" y1="-1.7" x2="-2.35" y2="-1.7" width="0.1" layer="51"/>
+<wire x1="-2.35" y1="-1.7" x2="-2.35" y2="1.7" width="0.1" layer="51"/>
+<wire x1="-1.85" y1="-1" x2="-1.65" y2="-1" width="0.2" layer="21" curve="180"/>
+<wire x1="-1.65" y1="-1" x2="-1.85" y2="-1" width="0.2" layer="21" curve="180"/>
 </package>
 <package name="HEADER_DEBUG_SMD">
 <smd name="08" x="0" y="1.9558" dx="0.7366" dy="2.413" layer="1"/>
@@ -1509,12 +1507,12 @@ Source: &lt;a href="https://www.mouser.ch/datasheet/2/389/stm32wle5c8-1903151.pd
 </device>
 </devices>
 </deviceset>
-<deviceset name="XTAL_SMD3225-4P" prefix="Y" uservalue="yes">
+<deviceset name="XTAL_SMD2016-4P" prefix="Y" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="CRYSTAL-GND" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SMD3225-4P">
+<device name="" package="SMD2016-4P">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="3"/>
@@ -1944,7 +1942,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C17" library="NSE LABS" deviceset="C_0402" device="" value="100nF"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="Y1" library="NSE LABS" deviceset="XTAL_SMD3225-4P" device="" value="32MHz"/>
+<part name="Y1" library="NSE LABS" deviceset="XTAL_SMD2016-4P" device="" value="32MHz"/>
 <part name="C10" library="NSE LABS" deviceset="C_0402" device="" value="10pF"/>
 <part name="C11" library="NSE LABS" deviceset="C_0402" device="" value="10pF"/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>

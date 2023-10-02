@@ -567,24 +567,24 @@
 <package name="SM04B-SRSS-TB(LFSN)">
 <description>&lt;b&gt;SM04B-SRSS-TB(LFSN)&lt;/b&gt;&lt;br&gt;
 </description>
-<smd name="1" x="1.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="2" x="2.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="3" x="3.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="4" x="4.5" y="4.661" dx="1.55" dy="0.6" layer="1" rot="R90"/>
-<smd name="5" x="0.2" y="0.786" dx="1.8" dy="1.2" layer="1" rot="R90"/>
-<smd name="6" x="5.8" y="0.786" dx="1.8" dy="1.2" layer="1" rot="R90"/>
-<text x="2.822" y="6.636" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
-<text x="2.822" y="-1.101" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
-<wire x1="0" y1="4.85" x2="6" y2="4.85" width="0.254" layer="51"/>
-<wire x1="6" y1="4.85" x2="6" y2="0" width="0.254" layer="51"/>
-<wire x1="6" y1="0" x2="0" y2="0" width="0.254" layer="51"/>
-<wire x1="0" y1="0" x2="0" y2="4.85" width="0.254" layer="51"/>
-<wire x1="0" y1="4.85" x2="0" y2="1.87" width="0.254" layer="21"/>
-<wire x1="6" y1="4.85" x2="6" y2="1.87" width="0.254" layer="21"/>
-<wire x1="0" y1="4.85" x2="1.029" y2="4.85" width="0.254" layer="21"/>
-<wire x1="6" y1="4.85" x2="4.937" y2="4.85" width="0.254" layer="21"/>
-<circle x="0.702" y="5.642" radius="0.06036875" width="0.254" layer="25"/>
-<wire x1="1.094" y1="0" x2="4.903" y2="0" width="0.254" layer="21"/>
+<smd name="1" x="-1.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="2" x="-0.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="3" x="0.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="4" x="1.5" y="2.161" dx="1.55" dy="0.6" layer="1" rot="R90"/>
+<smd name="5" x="-2.8" y="-1.714" dx="1.8" dy="1.2" layer="1" rot="R90"/>
+<smd name="6" x="2.8" y="-1.714" dx="1.8" dy="1.2" layer="1" rot="R90"/>
+<text x="-0.178" y="4.136" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="-0.178" y="-3.601" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="-3" y1="2.35" x2="3" y2="2.35" width="0.254" layer="51"/>
+<wire x1="3" y1="2.35" x2="3" y2="-2.5" width="0.254" layer="51"/>
+<wire x1="3" y1="-2.5" x2="-3" y2="-2.5" width="0.254" layer="51"/>
+<wire x1="-3" y1="-2.5" x2="-3" y2="2.35" width="0.254" layer="51"/>
+<wire x1="-3" y1="2.35" x2="-3" y2="-0.63" width="0.254" layer="21"/>
+<wire x1="3" y1="2.35" x2="3" y2="-0.63" width="0.254" layer="21"/>
+<wire x1="-3" y1="2.35" x2="-1.971" y2="2.35" width="0.254" layer="21"/>
+<wire x1="3" y1="2.35" x2="1.937" y2="2.35" width="0.254" layer="21"/>
+<circle x="-2.298" y="3.142" radius="0.06036875" width="0.254" layer="25"/>
+<wire x1="-1.906" y1="-2.5" x2="1.903" y2="-2.5" width="0.254" layer="21"/>
 </package>
 <package name="HEADER_10PIN">
 <pad name="P$1" x="-11.43" y="0" drill="1.143" diameter="1.9304"/>

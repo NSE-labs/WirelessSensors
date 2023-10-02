@@ -1973,6 +1973,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <part name="D6" library="MARA MACHINES" deviceset="1N4148W" device="" value="1N4148"/>
 <part name="J10" library="NSE LABS" deviceset="SM04B-SRSS-TB_LF__SN_" device=""/>
 <part name="J6" library="NSE LABS" deviceset="S2B-PH-SM4-TB_LF__SN_" device=""/>
+<part name="D1" library="NSE LABS" deviceset="DIODE_SCHOTTKY_SMA" device="" value="SS54"/>
 </parts>
 <sheets>
 <sheet>
@@ -2186,6 +2187,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <instance part="D6" gate="G$1" x="111.76" y="139.7" rot="R90"/>
 <instance part="J10" gate="G$1" x="375.92" y="-25.4" rot="MR0"/>
 <instance part="J6" gate="G$1" x="259.08" y="116.84" rot="MR180"/>
+<instance part="D1" gate="G$1" x="25.4" y="114.3"/>
 </instances>
 <busses>
 </busses>
@@ -2482,8 +2484,8 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <junction x="66.04" y="114.3"/>
 <pinref part="D6" gate="G$1" pin="A"/>
 <junction x="111.76" y="144.78"/>
-<pinref part="J5" gate="-1" pin="P$1"/>
-<wire x1="17.78" y1="114.3" x2="33.02" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="27.94" y1="114.3" x2="33.02" y2="114.3" width="0.1524" layer="91"/>
 <junction x="33.02" y="114.3"/>
 </segment>
 </net>
@@ -3366,6 +3368,13 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <wire x1="121.92" y1="137.16" x2="111.76" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="D6" gate="G$1" pin="K"/>
 <junction x="111.76" y="137.16"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="J5" gate="-1" pin="P$1"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="17.78" y1="114.3" x2="22.86" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

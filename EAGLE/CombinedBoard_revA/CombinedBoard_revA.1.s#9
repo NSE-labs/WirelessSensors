@@ -1983,14 +1983,12 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="C18" library="NSE LABS" deviceset="C_0402" device="" value="4.7uF"/>
 <part name="C19" library="NSE LABS" deviceset="C_0402" device="" value="100nF"/>
 <part name="C20" library="NSE LABS" deviceset="C_0402" device="" value="100nF"/>
 <part name="L7" library="NSE LABS" deviceset="L_0603" device="" value="68nH"/>
 <part name="C21" library="NSE LABS" deviceset="C_0402" device="" value="1uF"/>
 <part name="C22" library="NSE LABS" deviceset="C_0402" device="" value="10nF"/>
 <part name="+3V10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -2163,14 +2161,12 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <instance part="+3V9" gate="G$1" x="223.52" y="27.94" smashed="yes">
 <attribute name="VALUE" x="223.52" y="27.94" size="1.778" layer="96" rot="R90" align="center-left"/>
 </instance>
-<instance part="C18" gate="G$1" x="220.98" y="55.88"/>
 <instance part="C19" gate="G$1" x="231.14" y="55.88"/>
 <instance part="C20" gate="G$1" x="241.3" y="55.88"/>
 <instance part="L7" gate="G$1" x="256.54" y="60.96" rot="R90"/>
 <instance part="C21" gate="G$1" x="266.7" y="55.88"/>
 <instance part="C22" gate="G$1" x="276.86" y="55.88"/>
-<instance part="+3V10" gate="G$1" x="220.98" y="66.04"/>
-<instance part="SUPPLY6" gate="GND" x="220.98" y="48.26"/>
+<instance part="+3V10" gate="G$1" x="231.14" y="66.04"/>
 <instance part="SUPPLY7" gate="GND" x="231.14" y="48.26"/>
 <instance part="SUPPLY8" gate="GND" x="241.3" y="48.26"/>
 <instance part="SUPPLY9" gate="GND" x="266.7" y="48.26"/>
@@ -2430,11 +2426,6 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <wire x1="276.86" y1="15.24" x2="279.4" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="15.24" x2="279.4" y2="17.78" width="0.1524" layer="91"/>
 <junction x="276.86" y="15.24"/>
-</segment>
-<segment>
-<pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<pinref part="C18" gate="G$1" pin="2"/>
-<wire x1="220.98" y1="50.8" x2="220.98" y2="52.07" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
@@ -2786,11 +2777,8 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 </segment>
 <segment>
 <pinref part="L7" gate="G$1" pin="1"/>
-<pinref part="C18" gate="G$1" pin="1"/>
 <wire x1="251.46" y1="60.96" x2="241.3" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="60.96" x2="231.14" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="60.96" x2="220.98" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="60.96" x2="220.98" y2="59.69" width="0.1524" layer="91"/>
 <pinref part="C20" gate="G$1" pin="1"/>
 <wire x1="241.3" y1="59.69" x2="241.3" y2="60.96" width="0.1524" layer="91"/>
 <junction x="241.3" y="60.96"/>
@@ -2798,8 +2786,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <wire x1="231.14" y1="59.69" x2="231.14" y2="60.96" width="0.1524" layer="91"/>
 <junction x="231.14" y="60.96"/>
 <pinref part="+3V10" gate="G$1" pin="+3V3"/>
-<wire x1="220.98" y1="63.5" x2="220.98" y2="60.96" width="0.1524" layer="91"/>
-<junction x="220.98" y="60.96"/>
+<wire x1="231.14" y1="63.5" x2="231.14" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="S1" gate="-2" pin="P$1"/>
@@ -3356,7 +3343,7 @@ Source: &lt;a href="http://www.vishay.com/docs/85748/1n4148w.pdf"&gt; Datasheet 
 <wire x1="299.72" y1="-10.16" x2="299.72" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$11" class="0">
+<net name="VDDA" class="0">
 <segment>
 <pinref part="L7" gate="G$1" pin="2"/>
 <pinref part="C22" gate="G$1" pin="1"/>
