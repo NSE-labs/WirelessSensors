@@ -22,16 +22,16 @@
 - [x] Test power development board
 - [x] Adjust power development design to rev A.3 based on test results
 - [x] Order revised power development board
-- [ ] Receive revised power development board
-- [ ] Test revised power development board
-- [ ] Design combined sensor and power board
-    - [ ] Combined CPU and LoRa transceiver
-    - [ ] Interface to various sensors
+- [x] Receive revised power development board
+- [x] Test revised power development board
+- [x] Design combined sensor and power board
+    - [x] Combined CPU and LoRa transceiver
+    - [x]] Interface to various sensors
         - [x] Define sensor interface connector/cable/functionality
-    - [ ] Flexible power supply (Battery, Solar)
-- [ ] Layout combined sensor board
-- [ ] Order combined sensor board
-- [ ] Receive combined sensor board
+    - [x] Flexible power supply (Battery, Solar)
+- [x] Layout combined sensor board
+- [x] Order combined sensor board
+- [x] Receive combined sensor board
 - [ ] Test and debug combined sensor board
 - [ ] Design, print, and verify enclosure for combined sensor board
 - [ ] Finalize software for combined sensor board
