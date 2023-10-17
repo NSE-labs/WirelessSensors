@@ -1,10 +1,10 @@
-11:21:56 **** Incremental Build of configuration Debug for project Debugging combined board ****
+11:34:53 **** Incremental Build of configuration Debug for project Debugging combined board ****
 make -j8 all 
 arm-none-eabi-size   Debugging\ combined\ board.elf 
    text	   data	    bss	    dec	    hex	filename
-   9564	     20	   1668	  11252	   2bf4	Debugging combined board.elf
+  10464	     20	   1668	  12152	   2f78	Debugging combined board.elf
 Finished building: default.size.stdout
  
 
-11:21:56 Build Finished. 0 errors, 0 warnings. (took 260ms)
+11:34:54 Build Finished. 0 errors, 0 warnings. (took 260ms)
 

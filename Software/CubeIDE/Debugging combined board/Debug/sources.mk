@@ -25,4 +25,5 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32WLxx_HAL_Driver/Src \
+Drivers/SX1262/Src \
 

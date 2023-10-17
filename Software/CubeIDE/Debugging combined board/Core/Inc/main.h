@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define RF_SWITCH_Pin GPIO_PIN_13
+#define RF_SWITCH_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

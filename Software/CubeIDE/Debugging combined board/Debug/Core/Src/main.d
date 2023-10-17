@@ -33,7 +33,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_exti.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_subghz.h \
  ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_spi.h \
- ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h
+ ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h \
+ D:/My\ Home\ Directory/Documents/Projects/Wireless\ Sensors/WirelessSensors/Software/CubeIDE/Debugging\ combined\ board/Drivers/SX1262/Inc/SX1262.h
 ../Core/Inc/main.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal.h:
 ../Core/Inc/stm32wlxx_hal_conf.h:
@@ -70,3 +71,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_hal_subghz.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_spi.h:
 ../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_system.h:
+D:/My\ Home\ Directory/Documents/Projects/Wireless\ Sensors/WirelessSensors/Software/CubeIDE/Debugging\ combined\ board/Drivers/SX1262/Inc/SX1262.h:

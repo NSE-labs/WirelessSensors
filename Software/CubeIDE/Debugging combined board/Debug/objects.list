@@ -22,3 +22,4 @@
 "./Drivers/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_subghz.o"
 "./Drivers/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_tim.o"
 "./Drivers/STM32WLxx_HAL_Driver/Src/stm32wlxx_hal_tim_ex.o"
+"./Drivers/SX1262/Src/SX1262.o"
