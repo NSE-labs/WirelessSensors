@@ -30,7 +30,7 @@ SUBGHZ_HandleTypeDef *hspi;
  *  LoRa_OK for success
  *  LoRa_TIMEOUT for timeout
  */
-static LoRa_Status WaitWhileBusy(void)
+static LoRa_Status WaitWhileBusy(uint16_t timeout)
 {
 	HAL_StatusTypeDef retval;
 
@@ -51,6 +51,38 @@ static LoRa_Status WaitWhileBusy(void)
 
 
 /*
+ * WaitWhileTransmit
+ * wait for the DIO2 line on the SX1262 to go high then low indicating done transmitting
+ * Arguments
+ *  timeout in milliseconds (maximum time to wait for line to go low)
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_TIMEOUT for timeout
+ */
+static LoRa_Status WaitWhileTransmit(uint16_t timeout)
+{
+
+	SUBGHZ_WaitOnBusy(hspi);
+
+	return(LoRa_OK);
+}
+
+/*
+ * WaitWhileReceive
+ * wait for the DIO1 line on the SX1262 to go high indicating received packet
+ * Arguments
+ *  None
+ * Return Value
+ *  LoRa_OK for success
+ */
+static LoRa_Status WaitWhileReceive(void)
+{
+	SUBGHZ_WaitOnBusy(hspi);
+
+	return(LoRa_OK);
+}
+
+/*
  * SPI_Send
  * Send bytes to the SX1262 via SPI
  * Arguments
@@ -69,7 +101,7 @@ static LoRa_Status SPI_Send(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
 	int x;
 
 	/* make sure chip isn't busy */
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileBusy(10) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -99,7 +131,7 @@ static LoRa_Status SPI_Receive(uint8_t* buffer, uint16_t numBytes, bool moreToCo
 {
 
 	/* make sure chip isn't busy */
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileBusy(10) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -390,7 +422,7 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 		return(LoRa_ERROR);
 	}
 
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileTransmit(500) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -445,7 +477,7 @@ LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 		return(LoRa_ERROR);
 	}
 
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileReceive() != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}

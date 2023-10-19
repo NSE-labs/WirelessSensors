@@ -93,7 +93,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SUBGHZ_Init();
   /* USER CODE BEGIN 2 */
-  LoRa_Init(&hsubghz);
+  LoRaGetStatus();
 
   /* USER CODE END 2 */
 

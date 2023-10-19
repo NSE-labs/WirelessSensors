@@ -30,25 +30,46 @@ SUBGHZ_HandleTypeDef *hspi;
  *  LoRa_OK for success
  *  LoRa_TIMEOUT for timeout
  */
-static LoRa_Status WaitWhileBusy(void)
+static LoRa_Status WaitWhileBusy(uint16_t timeout)
 {
-	HAL_StatusTypeDef retval;
 
-	retval = SUBGHZ_WaitOnBusy(hspi);
-	if(retval == HAL_OK)
-	{
-		return(LoRa_OK);
-	}
-	else if (retval == HAL_TIMEOUT)
-	{
-		return(LoRa_TIMEOUT);
-	}
-	else
-	{
-		return(LoRa_ERROR);
-	}
+	SUBGHZ_WaitOnBusy(hspi);
+
+	return(LoRa_OK);
 }
 
+
+/*
+ * WaitWhileTransmit
+ * wait for the DIO2 line on the SX1262 to go high then low indicating done transmitting
+ * Arguments
+ *  timeout in milliseconds (maximum time to wait for line to go low)
+ * Return Value
+ *  LoRa_OK for success
+ *  LoRa_TIMEOUT for timeout
+ */
+static LoRa_Status WaitWhileTransmit(uint16_t timeout)
+{
+
+	SUBGHZ_WaitOnBusy(hspi);
+
+	return(LoRa_OK);
+}
+
+/*
+ * WaitWhileReceive
+ * wait for the DIO1 line on the SX1262 to go high indicating received packet
+ * Arguments
+ *  None
+ * Return Value
+ *  LoRa_OK for success
+ */
+static LoRa_Status WaitWhileReceive(void)
+{
+	SUBGHZ_WaitOnBusy(hspi);
+
+	return(LoRa_OK);
+}
 
 /*
  * SPI_Send
@@ -69,7 +90,7 @@ static LoRa_Status SPI_Send(uint8_t* buffer, uint16_t numBytes, bool moreToCome)
 	int x;
 
 	/* make sure chip isn't busy */
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileBusy(10) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -99,7 +120,7 @@ static LoRa_Status SPI_Receive(uint8_t* buffer, uint16_t numBytes, bool moreToCo
 {
 
 	/* make sure chip isn't busy */
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileBusy(10) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -125,14 +146,14 @@ LoRa_Status LoRa_Init(SUBGHZ_HandleTypeDef *hspiPtr)
   /* store the hspi pointer for future use */
   hspi = hspiPtr;
 
-
-  /* Set NSS active */
-  LL_PWR_SelectSUBGHZSPI_NSS();
+#ifdef NO
+  /* Set NSS high */
+  HAL_GPIO_WritePin(LoRa_NSS_GPIO_Port, LoRa_NSS_Pin, GPIO_PIN_SET);
 
   /* Reset SX1262 chip */
-  LL_RCC_RF_EnableReset();
+  HAL_GPIO_WritePin(LoRa_NRST_GPIO_Port, LoRa_NRST_Pin, GPIO_PIN_RESET); 	/* Pull NRST low */
   HAL_Delay(1); 															/* delay 1mS */
-  LL_RCC_RF_DisableReset();
+  HAL_GPIO_WritePin(LoRa_NRST_GPIO_Port, LoRa_NRST_Pin, GPIO_PIN_SET);		/* Set NRST high */
 
 
   /* Set the chip to Standby mode and using the internal oscillator */
@@ -143,6 +164,7 @@ LoRa_Status LoRa_Init(SUBGHZ_HandleTypeDef *hspiPtr)
 	  return(LoRa_ERROR);
   }
 
+#endif
 
   /* Set the packet type to LoRa */
   xmitBuffer[0] = LORA_SET_PACKET_TYPE_OPCODE;
@@ -390,7 +412,7 @@ LoRa_Status LoRaTransmit(uint8_t *msg, uint8_t numBytes)
 		return(LoRa_ERROR);
 	}
 
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileTransmit(500) != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
@@ -445,7 +467,7 @@ LoRa_Status LoRaReceive(uint8_t *msg, uint32_t timeout)
 		return(LoRa_ERROR);
 	}
 
-	if(WaitWhileBusy() != LoRa_OK)
+	if(WaitWhileReceive() != LoRa_OK)
 	{
 		return(LoRa_ERROR);
 	}
