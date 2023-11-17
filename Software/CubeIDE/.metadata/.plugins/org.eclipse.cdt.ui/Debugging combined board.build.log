@@ -1,17 +1,10 @@
-10:48:01 **** Incremental Build of configuration Debug for project Debugging combined board ****
+10:51:46 **** Incremental Build of configuration Debug for project Debugging combined board ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/SX1262/Src/SX1262.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DCORE_CM4 -DUSE_HAL_DRIVER -DSTM32WLE5xx -c -I../Core/Inc -I../Drivers/STM32WLxx_HAL_Driver/Inc -I../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WLxx/Include -I../Drivers/CMSIS/Include -I"D:/My Home Directory/Documents/Projects/Wireless Sensors/WirelessSensors/Software/CubeIDE/Debugging combined board/Drivers/SX1262/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/SX1262/Src/SX1262.d" -MT"Drivers/SX1262/Src/SX1262.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SX1262/Src/SX1262.o"
-arm-none-eabi-gcc -o "Debugging combined board.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\My Home Directory\Documents\Projects\Wireless Sensors\WirelessSensors\Software\CubeIDE\Debugging combined board\STM32WLE5CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Debugging combined board.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Debugging combined board.elf
- 
 arm-none-eabi-size   Debugging\ combined\ board.elf 
-arm-none-eabi-objdump -h -S  Debugging\ combined\ board.elf  > "Debugging combined board.list"
    text	   data	    bss	    dec	    hex	filename
   10756	     20	   1668	  12444	   309c	Debugging combined board.elf
 Finished building: default.size.stdout
  
-Finished building: Debugging combined board.list
- 
 
-10:48:03 Build Finished. 0 errors, 0 warnings. (took 1s.699ms)
+10:51:47 Build Finished. 0 errors, 0 warnings. (took 972ms)
 
